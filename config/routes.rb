@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'posts#index'
+  resources :comments
+  root to: 'comments#new'
 end
