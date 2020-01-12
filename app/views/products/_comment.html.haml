@@ -1,0 +1,17 @@
+%li.comment__content__list__box
+  = link_to "#", class: "comment__content__list__box__user" do
+    .comment__content__list__box__user__icon
+      = image_tag "/image/user/obake.jpeg", class: "comment__content__list__box__user__icon__image"
+    .comment__content__list__box__user__name cherry
+    .comment__content__list__box__user__seller 出品者
+  .comment__content__list__box__body
+    .comment__content__list__box__body__text
+      コメントありがとうございます。
+      %br
+      申し訳ないですがそこまでの値下げは考えておりません(> <)
+    .comment__content__list__box__body__bottom
+      .comment__content__list__box__body__bottom__time
+        %i.far.fa-clock
+        1日前
+      = link_to "#", class: "comment__content__list__box__body__bottom__report" do
+        %i.far.fa-flag
