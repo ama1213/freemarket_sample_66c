@@ -76,7 +76,7 @@ $(function(){
     arrows: false,
     speed: 1500,
     waitForAnimate: false,
-    infinite: false //これはつけましょう。
+    infinite: false
   });
   $(thumbnailItem).on('click',function(){
     var index = $(this).attr("data-index");
@@ -88,10 +88,4 @@ $(function(){
     });
     $(thumbnailItem+'[data-index="'+nextSlide+'"]').addClass("thumbnail-current");
   });
-  
-  // $('.item__bottom__left__like').click(function(){
-  //   $(".fas.fa-heart.like").jrumble({ x:8, y:8, rotation:9 })
-  //     $(".fas.fa-heart.like").trigger('startRumble');
-  //     $(".far.fa-heart.like").trigger('stopRumble');
-	// 	});
 });
