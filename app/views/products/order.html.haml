@@ -1,0 +1,55 @@
+.buy
+  %header.buy__header
+    .buy__header__box
+      = link_to "#" do
+        = image_tag "/image/SVG/fmarket_logo_red.svg", class: "buy__header__box__image"
+  .buy__main
+    %h2.buy__main__title
+      購入内容の確認
+    .buy__main__item
+      .buy__main__item__area
+        = image_tag "/image/user/obake.jpeg", class: "buy__main__item__area__image"
+      .buy__main__item__body
+        %p.buy__main__item__body__text
+          舞踏会の仮面のレプリカ
+        %p.buy__main__item__body__price
+          %span ¥2,999
+          %span (税込) 送料込み
+    .buy__main__status
+      .buy__main__status__box
+        .buy__main__status__box__price
+          %p.buy__main__status__box__price__text
+            支払い金額
+          .buy__main__status__box__price__number
+            ¥2,999
+        .buy__main__status__box__point
+          %i.fas.fa-square
+          %p ポイントを使用（所持ポイント:P0）
+        .buy__main__status__box__method
+          .buy__main__status__box__method__top
+            %h3.buy__main__status__box__method__top__left 支払い方法
+            = link_to "変更する", "#", class: "buy__main__status__box__method__top__right"
+          %p.buy__main__status__box__method__center
+            クレジットカード
+            %br ************6756
+            有効期限 10/24
+          .buy__main__status__box__method__bottom
+            = image_tag "/image/jcb.jpg", class: "buy__main__status__box__method__bottom__image"
+        .buy__main__status__box__delivery
+          .buy__main__status__box__delivery__top
+            %h3.buy__main__status__box__delivery__top__left 配送先
+            = link_to "変更する", "#", class: "buy__main__status__box__delivery__top__right"
+          .buy__main__status__box__delivery__bottom
+            〒800-0215
+            %br 福岡県 北九州市小倉南区上曽根新町 11_20 ラフィーエ上曽根
+            下釜 健一
+        %button{type: "submit", class: "buy__main__status__box__btn"} 購入する
+  .buy__footer
+    .buy__footer__content
+      .buy__footer__content__top
+        = link_to "プライバシーポリシー", "#", class: "buy__footer__content__top__left"
+        = link_to "メルカリ利用規約", "#", class: "buy__footer__content__top__center"
+        = link_to "特定商取引に関する表記", "#", class: "buy__footer__content__top__right"
+      .buy__footer__content__middle
+        = image_tag "/image/SVG/logo_gray.svg"
+      .buy__footer__content__bottom ©︎ Fmarket,inc.
