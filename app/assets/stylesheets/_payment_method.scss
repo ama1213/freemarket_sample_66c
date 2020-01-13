@@ -1,0 +1,163 @@
+@media screen and (min-width: 1100px) {
+  .content__payment_method {
+    margin-top: 30px;
+
+    &__title {
+      height: 50px;
+      width: 700px;
+      padding: 8px 24px;
+      font-size: 24px;
+      text-align: center;
+      border-bottom: solid 1px #EEEEEE;
+      background-color: #ffffff;
+    }
+
+    &__item {
+      height: 318px;
+      width: 700px;
+      padding: 64px;
+      background-color: #ffffff;
+
+      &__list {
+        height: 133px;
+        border-bottom: solid 1px #EEEEEE;
+
+        &__top {
+          width: 320px;
+          margin: 0 126px;
+        }
+
+        &__data {
+          
+          &__1 {
+            padding: 24px 0;
+            margin: 0 126px;
+
+            &__card {
+              display: flex;
+              justify-content: space-between;
+
+              &__btn {
+                height: 24px;
+                width: 70px;
+                background: #fff;
+                border-radius: 3px;
+                border: 1px solid #ea352d;
+                color: #ea352d;
+                font: 14px;
+              }
+  
+              &__btn:focus {
+                outline: none;
+              }
+            }
+
+            &__password {
+              padding: 8px 0 0;
+            }
+
+            &__date {
+              padding: 8px 0 0;
+            }
+          }
+        }
+        &__bottom {
+          display: flex;
+          justify-content: flex-end;
+
+          &__link {
+            margin: 40px 0 0;
+            font-size: 14px;
+            color: #0099E8;
+          }
+          
+          &__icon {
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .content__payment_method {
+    margin: 30px auto;
+
+    &__title {
+      height: 50px;
+      width: 70vw;
+      padding: 8px 24px;
+      font-size: 24px;
+      text-align: center;
+      border-bottom: solid 1px #EEEEEE;
+      background-color: #ffffff;
+    }
+
+    &__item {
+      height: 318px;
+      width: 70vw;
+      padding: 64px;
+      background-color: #ffffff;
+
+      &__list {
+        height: 133px;
+        border-bottom: solid 1px #EEEEEE;
+
+        &__top {
+          width: 320px;
+          margin: 0 126px;
+        }
+
+        &__data {
+          
+          &__1 {
+            padding: 24px 0;
+            margin: 0 126px;
+
+            &__card {
+              display: flex;
+              justify-content: space-between;
+
+              &__btn {
+                height: 24px;
+                width: 70px;
+                background: #fff;
+                border-radius: 3px;
+                border: 1px solid #ea352d;
+                color: #ea352d;
+                font: 14px;
+              }
+  
+              &__btn:focus {
+                outline: none;
+              }
+            }
+
+            &__password {
+              padding: 8px 0 0;
+            }
+
+            &__date {
+              padding: 8px 0 0;
+            }
+          }
+        }
+        &__bottom {
+          display: flex;
+          justify-content: flex-end;
+
+          &__link {
+            margin: 40px 0 0;
+            font-size: 14px;
+            color: #0099E8;
+          }
+          
+          &__icon {
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+  }
+}
