@@ -1,0 +1,15 @@
+.content
+  .content__left
+    = render "sidebar"
+  .content__right
+    .content__right_title
+      プロフィール
+    .content__right_user
+      .content__right_user__image
+        = image_tag "/images/member_photo_noimage_thumb.svg", height:"60px", width:"60px", class: "content__right__user__link__data__icon"
+      .content__right_user__input
+        %input{type: "text", placeholder: "例）AYA☆セール中", value: "天辰誠一郎", class: "textbox"}
+    .content__right_contents
+      .content__right_contents__form
+        %textarea{placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class: "textarea_decorate"}
+        %input{type: "submit", value: "変更する", id: "submit_button"}/
