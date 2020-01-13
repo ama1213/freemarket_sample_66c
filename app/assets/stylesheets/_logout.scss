@@ -1,0 +1,47 @@
+@media screen and (min-width: 1100px) {
+  .content__logout {
+    height: 179px;
+    width: 700px;
+    background-color: #ffffff;
+    margin-top: 30px;
+    padding: 64px;
+
+    &__item {
+      padding: 0 126px 0 126px;
+
+      &__btn {
+        height: 50px;
+        width: 320px;
+        background-color: red;
+        color: #ffffff;
+        text-align: center;
+        line-height: 50px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .content__logout {
+    height: 179px;
+    width: 70vw;
+    background-color: #ffffff;
+    padding: 64px;
+    margin: 30px auto;
+
+    &__item {
+      padding: 0 126px 0 126px;
+
+      &__btn {
+        height: 50px;
+        width: 320px;
+        background-color: red;
+        color: #ffffff;
+        text-align: center;
+        line-height: 50px;
+        font-size: 14px;
+      }
+    }
+  }
+}
