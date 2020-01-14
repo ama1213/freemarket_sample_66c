@@ -1,0 +1,129 @@
+.content
+  .content__left
+    = render "sidebar"
+  .content__information
+    .content__information__title
+      本人情報の登録
+    .content__information__item
+      .content__information__item__text
+        .content__information__item__text__main
+          お客さまの本人情報をご登録ください。
+          %br
+          登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        .content__information__item__text__sub
+          = link_to"#", class: "content__information__item__text__sub__link" do
+            本人確認書類のアップロードについて
+            = icon('fas', 'chevron-right', class: "content__information__item__text__sub__icon")
+      .content__information__item__name_kanji
+        .content__information__item__name_kanji__top
+          お名前
+        .content__information__item__name_kanji__bottom
+          天辰 誠一郎
+      .content__information__item__name_reading
+        .content__information__item__name_reading__top
+          お名前カナ
+        .content__information__item__name_reading__bottom
+          アマタツ セイイチロウ
+      .content__information__item__birthday
+        .content__information__item__birthday__top
+          生年月日
+        .content__information__item__birthday__bottom
+          1975/04/18
+      .content__information__item__postal_code
+        .content__information__item__postal_code__top
+          .content__information__item__postal_code__top__left
+            郵便番号
+          .content__information__item__postal_code__top__right.label
+            任意
+        .content__information__item__postal_code__bottom
+          %input{type: "text", placeholder: "例）1234567", class:"content__information__item__postal_code__bottom__form"}
+      .content__information__item__adress_1
+        .content__information__item__adress_1__top
+          .content__information__item__adress_1__top__left
+            都道府県
+          .content__information__item__adress_1__top__right.label
+            任意
+        .content__information__item__adress_1__bottom.abc
+          %select{name: "pref_id", class: "select_default"}
+            %option{selected: "selected", value: ""} --
+            %option{value: "1"} 北海道
+            %option{value: "2"} 青森県
+            %option{value: "3"} 岩手県
+            %option{value: "4"} 宮城県
+            %option{value: "5"} 秋田県
+            %option{value: "6"} 山形県
+            %option{value: "7"} 福島県
+            %option{value: "8"} 茨城県
+            %option{value: "9"} 栃木県
+            %option{value: "10"} 群馬県
+            %option{value: "11"} 埼玉県
+            %option{value: "12"} 千葉県
+            %option{value: "13"} 東京都
+            %option{value: "14"} 神奈川県
+            %option{value: "15"} 新潟県
+            %option{value: "16"} 富山県
+            %option{value: "17"} 石川県
+            %option{value: "18"} 福井県
+            %option{value: "19"} 山梨県
+            %option{value: "20"} 長野県
+            %option{value: "21"} 岐阜県
+            %option{value: "22"} 静岡県
+            %option{value: "23"} 愛知県
+            %option{value: "24"} 三重県
+            %option{value: "25"} 滋賀県
+            %option{value: "26"} 京都府
+            %option{value: "27"} 大阪府
+            %option{value: "28"} 兵庫県
+            %option{value: "29"} 奈良県
+            %option{value: "30"} 和歌山県
+            %option{value: "31"} 鳥取県
+            %option{value: "32"} 島根県
+            %option{value: "33"} 岡山県
+            %option{value: "34"} 広島県
+            %option{value: "35"} 山口県
+            %option{value: "36"} 徳島県
+            %option{value: "37"} 香川県
+            %option{value: "38"} 愛媛県
+            %option{value: "39"} 高知県
+            %option{value: "40"} 福岡県
+            %option{value: "41"} 佐賀県
+            %option{value: "42"} 長崎県
+            %option{value: "43"} 熊本県
+            %option{value: "44"} 大分県
+            %option{value: "45"} 宮崎県
+            %option{value: "46"} 鹿児島県
+            %option{value: "47"} 沖縄県
+          = icon('fas', 'chevron-down', class: "content__information__item__adress_1__bottom__icon")
+      .content__information__item__adress_2
+        .content__information__item__adress_2__top
+          .content__information__item__adress_2__top__left
+            市区町村
+          .content__information__item__adress_2__top__right.label
+            任意
+        .content__information__item__adress_2__bottom
+          %input{type: "text", placeholder: "例）横浜市緑区", class:"content__information__item__adress_2__bottom__form"}
+      .content__information__item__adress_3
+        .content__information__item__adress_3__top
+          .content__information__item__adress_3__top__left
+            番地
+          .content__information__item__adress_3__top__right.label
+            任意
+        .content__information__item__adress_3__bottom
+          %input{type: "text", placeholder: "例）青山1−1−1", class:"content__information__item__adress_3__bottom__form"}
+      .content__information__item__adress_4
+        .content__information__item__adress_4__top
+          .content__information__item__adress_4__top__left
+            建物名
+          .content__information__item__adress_4__top__right.label
+            任意
+        .content__information__item__adress_4__bottom
+          %input{type: "text", placeholder: "例）柳ビル103", class:"content__information__item__adress_4__bottom__form"}
+      = link_to"#" do
+        .content__information__item__send
+          登録する
+      .content__information__item__text
+        .content__information__item__text__sub
+          = link_to"#", class: "content__information__item__text__sub__link" do
+            本人情報の登録について
+            = icon('fas', 'chevron-right', class: "content__information__item__text__sub__icon")
+= render "layouts/footer_sell_btn"
