@@ -1,0 +1,222 @@
+-# = render"header"
+
+= render"new"
+
+.news
+  = link_to"#" do
+    %img{src: "free.jpg",height:"390px",width:"1440px"}
+    .news__text
+      %pスマホでかんたん
+      %pフリマアプリ
+    .news__comment
+      %pメルカリはスマホカメラからすぐに出品できる
+      %p購入時も安心な独自システムのアプリです
+    .news__app
+      = link_to"https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
+        = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg",width:"170px",height:"50px")
+    .news__google
+      = link_to"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
+        = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg",width:"170px",height:"50px")
+
+.menu
+  .menu__box
+    .menu__box__top
+      人気のカテゴリー
+    .menu__box__bottom
+      = link_to "#", class:"cc" do
+        .menu__box__bottom__item1
+          レディース
+      = link_to "#", class:"cc" do
+        .menu__box__bottom__item2
+          メンズ
+      = link_to "#", class:"cc" do
+        .menu__box__bottom__item3
+          家電・スマホ・カメラ
+      = link_to "#", class:"cc" do
+        .menu__box__bottom__item4
+          おもちゃ・ホビー・グッズ
+.item-index
+  .item-index__box
+    .item-index__box__container
+      .item-index__box__container__title
+        %h3 レディース新着アイテム
+        = link_to "#", class: "item-index__box__container__title__right" do
+          もっと見る
+          %i.fas.fa-chevron-right
+      %ul.item-index__box__container__content
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+    .item-index__box__container
+      .item-index__box__container__title
+        %h3 メンズ新着アイテム
+        = link_to "#", class: "item-index__box__container__title__right" do
+          もっと見る
+          %i.fas.fa-chevron-right
+      %ul.item-index__box__container__content
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+    .item-index__box__container
+      .item-index__box__container__title
+        %h3 家電・スマホ・カメラ新着アイテム
+        = link_to "#", class: "item-index__box__container__title__right" do
+          もっと見る
+          %i.fas.fa-chevron-right
+      %ul.item-index__box__container__content
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+    .item-index__box__container
+      .item-index__box__container__title
+        %h3 おもちゃ・ホビー・グッズ新着アイテム
+        = link_to "#", class: "item-index__box__container__title__right" do
+          もっと見る
+          %i.fas.fa-chevron-right
+      %ul.item-index__box__container__content
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+.menu
+  .menu__box
+    .menu__box__top
+      人気のブランド
+    .menu__box__bottom
+      = link_to "#", class:"cc" do
+        .menu__box__bottom__item1
+          シャネル
+      = link_to "#", class:"cc" do
+        .menu__box__bottom__item2
+          ルイヴィトン
+      = link_to "#", class:"cc" do
+        .menu__box__bottom__item3
+          シュプリーム
+      = link_to "#", class:"cc" do
+        .menu__box__bottom__item4
+          ナイキ
+.item-index
+  .item-index__box
+    .item-index__box__container
+      .item-index__box__container__title
+        %h3 シャネル新着アイテム
+        = link_to "#", class: "item-index__box__container__title__right" do
+          もっと見る
+          %i.fas.fa-chevron-right
+      %ul.item-index__box__container__content
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+    .item-index__box__container
+      .item-index__box__container__title
+        %h3 ルイヴィトン新着アイテム
+        = link_to "#", class: "item-index__box__container__title__right" do
+          もっと見る
+          %i.fas.fa-chevron-right
+      %ul.item-index__box__container__content
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+    .item-index__box__container
+      .item-index__box__container__title
+        %h3 シュプリーム新着アイテム
+        = link_to "#", class: "item-index__box__container__title__right" do
+          もっと見る
+          %i.fas.fa-chevron-right
+      %ul.item-index__box__container__content
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+    .item-index__box__container
+      .item-index__box__container__title
+        %h3 ナイキ新着アイテム
+        = link_to "#", class: "item-index__box__container__title__right" do
+          もっと見る
+          %i.fas.fa-chevron-right
+      %ul.item-index__box__container__content
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+        = render partial: 'product'
+
+.banner
+  = link_to"#" do
+    %img{src: "free.jpg",height:"390px",width:"1440px"}
+    .banner__text
+      スマホでかんたんフリマアプリ
+    .banner__comment
+      今すぐ無料ダウンロード!
+    .banner__merucari
+      = link_to "#" do
+        %img{src:"logo_white.svg",width:"50px",height:"50px"}
+    .banner__app
+      = link_to"https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
+        = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg",width:"144px",height:"40px")
+    .banner__google
+      = link_to"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
+        = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg",width:"144px",height:"40px")
+
+
+= render"footer"
