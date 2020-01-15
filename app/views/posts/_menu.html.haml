@@ -4,7 +4,7 @@
 
 .news
   = link_to"#" do
-    %img{src: "free.jpg",height:"390px",width:"1440px"}
+    = image_tag"free.jpg",height:"390px",width:"1440px"
     .news__text
       %pスマホでかんたん
       %pフリマアプリ
@@ -203,14 +203,14 @@
 
 .banner
   = link_to"#" do
-    %img{src: "free.jpg",height:"390px",width:"1440px"}
+    = image_tag"free.jpg",height:"390px",width:"1440px"
     .banner__text
       スマホでかんたんフリマアプリ
     .banner__comment
       今すぐ無料ダウンロード!
     .banner__merucari
       = link_to "#" do
-        %img{src:"logo_white.svg",width:"50px",height:"50px"}
+        = image_tag"logo_white.svg",width:"50px",height:"50px"
     .banner__app
       = link_to"https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
         = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg",width:"144px",height:"40px")
