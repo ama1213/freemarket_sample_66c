@@ -37,7 +37,6 @@
     
         &__help {
           width: 300px;
-          // height: 240px;
           margin-top: 18px;
           line-height: 1.5em;
           padding: 0 40px 0 0;
@@ -48,8 +47,6 @@
         }
       }
       &__privacy {
-        // width: 20%;
-        // height: 240px;
         margin-top: 18px;
         line-height: 1.5em;
         position: relative;
@@ -61,13 +58,11 @@
         &__box{
           display: flex;
           &__list {
-            // position: absolute;
             width: 50%;
             padding: 0 10px 0 0;
           }
   
           &__list2 {
-            // position: absolute;
             width: 50%;
             padding: 0 0 0 10px;
           }
