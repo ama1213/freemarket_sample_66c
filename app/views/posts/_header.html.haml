@@ -2,7 +2,7 @@
   .header__top
     = link_to "#" do
       .header__top__logo
-        %img{src:"mercari.png",class:"image"}
+        = image_tag"mercari.png",class:"image"
     .header__top__search
       何かお探しですか？
       = link_to "#", class:"color" do
@@ -620,6 +620,6 @@
             やることリスト
       = link_to "#" do
         .header__bottom__right__mypage
-          %img{src: "member.png",height:"30px",width:"30px", class:"man"}
+          = image_tag"member.png",height:"30px",width:"30px", class:"man"
           .header__bottom__right__mypage__text
             マイページ
