@@ -1,0 +1,539 @@
+.newuser {
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  &__logo {
+    margin-top: 40px;
+    width: 185px;
+    height: 49px;
+  }
+  &__sign__one {
+    ul {
+      display: flex;
+      padding: 40px 0 0 44px;
+      color: #888;
+      li {
+        font-size: 12px;
+        margin: 0 40px 0 0;
+        .box-one {
+          background-color: red;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-two {
+          background-color: #ccc;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-three {
+          background-color: #ccc;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-four {
+          background-color: #ccc;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-five {
+          background-color: #ccc;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+      }
+      .red {
+        color: red;
+        
+      }
+    }
+    
+    &__boder {
+      &__one {
+      height: 2px;
+      width: 78%;
+      margin-left: 65px;
+      margin-top: -7px;
+      background: linear-gradient(90deg,red 0%, red 0%, #ccc 0%, #ccc 100%);
+      }
+      &__two {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 23%, #ccc 23%, #ccc 100%);
+      }
+    }
+  }
+}
+.newuser {
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  &__logo {
+    margin-top: 40px;
+    width: 185px;
+    height: 49px;
+  }
+  &__sign__two {
+    ul {
+      display: flex;
+      padding: 40px 0 0 44px;
+      color: #888;
+      li {
+        font-size: 12px;
+        margin: 0 40px 0 0;
+        .box-one {
+          background-color: red;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-two {
+          background-color: red;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-three {
+          background-color: #ccc;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-four {
+          background-color: #ccc;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-five {
+          background-color: #ccc;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+      }
+      .red {
+        color: red;
+        
+      }
+    }
+    
+    &__boder {
+      &__one {
+      height: 2px;
+      width: 78%;
+      margin-left: 65px;
+      margin-top: -7px;
+      background: linear-gradient(90deg,red 0%, red 0%, #ccc 0%, #ccc 100%);
+      }
+      &__two {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 23%, #ccc 23%, #ccc 100%);
+      }
+      &__three {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 23%, #ccc 23%, #ccc 100%);
+      }
+      &__four {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 23%, #ccc 23%, #ccc 100%);
+      }
+      &__five {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 23%, #ccc 23%, #ccc 100%);
+      }
+    }
+  }
+}
+.newuser {
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  &__logo {
+    margin-top: 40px;
+    width: 185px;
+    height: 49px;
+  }
+  &__sign__three {
+    ul {
+      display: flex;
+      padding: 40px 0 0 44px;
+      color: #888;
+      li {
+        font-size: 12px;
+        margin: 0 40px 0 0;
+        .box-one {
+          background-color: red;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-two {
+          background-color: red;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-three {
+          background-color: red;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-four {
+          background-color: #ccc;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-five {
+          background-color: #ccc;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+      }
+      .red {
+        color: red;
+        
+      }
+    }
+    
+    &__boder {
+      &__one {
+      height: 2px;
+      width: 78%;
+      margin-left: 65px;
+      margin-top: -7px;
+      background: linear-gradient(90deg,red 0%, red 0%, #ccc 0%, #ccc 100%);
+      }
+      &__two {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 23%, #ccc 23%, #ccc 100%);
+      }
+      &__three {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 55%, #ccc 55%, #ccc 100%);
+      }
+      &__four {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 23%, #ccc 23%, #ccc 100%);
+      }
+      &__five {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 23%, #ccc 23%, #ccc 100%);
+      }
+    }
+  }
+}
+.newuser {
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  &__logo {
+    margin-top: 40px;
+    width: 185px;
+    height: 49px;
+  }
+  &__sign__four {
+    ul {
+      display: flex;
+      padding: 40px 0 0 44px;
+      color: #888;
+      li {
+        font-size: 12px;
+        margin: 0 40px 0 0;
+        .box-one {
+          background-color: red;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-two {
+          background-color: red;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-three {
+          background-color: red;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-four {
+          background-color: red;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-five {
+          background-color: #ccc;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+      }
+      .red {
+        color: red;
+        
+      }
+    }
+    
+    &__boder {
+      &__one {
+      height: 2px;
+      width: 78%;
+      margin-left: 65px;
+      margin-top: -7px;
+      background: linear-gradient(90deg,red 0%, red 0%, #ccc 0%, #ccc 100%);
+      }
+      &__two {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 23%, #ccc 23%, #ccc 100%);
+      }
+      &__three {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 55%, #ccc 55%, #ccc 100%);
+      }
+      &__four {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 80%, #ccc 80%, #ccc 100%);
+      }
+      &__five {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 100%, #ccc 100%, #ccc 100%);
+      }
+    }
+  }
+}
+.newuser {
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  &__logo {
+    margin-top: 40px;
+    width: 185px;
+    height: 49px;
+  }
+  &__sign__five {
+    ul {
+      display: flex;
+      padding: 40px 0 0 44px;
+      color: #888;
+      li {
+        font-size: 12px;
+        margin: 0 40px 0 0;
+        .box-one {
+          background-color: red;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-two {
+          background-color: red;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-three {
+          background-color: red;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-four {
+          background-color: red;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+
+        .box-five {
+          background-color: red;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: block;
+          margin: 8px auto 0;
+          z-index: 10;
+        }
+      }
+      .red {
+        color: red;
+        
+      }
+    }
+    
+    &__boder {
+      &__one {
+      height: 2px;
+      width: 78%;
+      margin-left: 65px;
+      margin-top: -7px;
+      background: linear-gradient(90deg,red 0%, red 0%, #ccc 0%, #ccc 100%);
+      }
+      &__two {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 23%, #ccc 23%, #ccc 100%);
+      }
+      &__three {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 55%, #ccc 55%, #ccc 100%);
+      }
+      &__four {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 80%, #ccc 80%, #ccc 100%);
+      }
+      &__five {
+        height: 2px;
+        width: 78%;
+        margin-left: 65px;
+        margin-top: -7px;
+        background: linear-gradient(90deg,red 0%, red 100%, #ccc 100%, #ccc 100%);
+      }
+    }
+  }
+}
