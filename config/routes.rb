@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get 'layouts/mailer.text', to: 'layouts#mailer.text'
 
   get 'posts/menu', to: 'posts#menu'
-  get 'posts/index', to: 'posts#index'
 
   get 'products/order', to: 'products#order'
   get 'products/show', to: 'products#show'
