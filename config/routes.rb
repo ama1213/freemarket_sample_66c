@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get 'users/logout', to: 'users#logout'
   get 'users/payment_method', to: 'users#payment_method'
   get 'users/show', to: 'users#show'
+  
 end
