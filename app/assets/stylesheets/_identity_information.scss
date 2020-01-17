@@ -140,7 +140,7 @@
           position: relative;
           z-index: 1;
 
-          .select_default {
+          #prefecture_id {
             padding-left: 16px;
             position: absolute;
             top: 0;
@@ -151,10 +151,11 @@
             border-radius: 4px;
             border: 1px solid #ccc;
           }
-          .select_default:focus {
+          
+          #prefecture_id:focus {
             border: solid 1px #0099E8;
           }
-          
+
           &__icon {
             position: absolute;
             right: 0;
