@@ -40,53 +40,100 @@
         .signin_adress__contents__adress_1__item__wrap
           %select{name: "pref_id", class: "select_default1000"}
             %option{selected: "selected", value: ""} --
-            %option{value: "adress1"} 北海道
-            %option{value: "adress2"} 青森県
-            %option{value: "adress3"} 岩手県
-            %option{value: "adress4"} 宮城県
-            %option{value: "adress5"} 秋田県
-            %option{value: "adress6"} 山形県
-            %option{value: "adress7"} 福島県
-            %option{value: "adress8"} 茨城県
-            %option{value: "adress9"} 栃木県
-            %option{value: "adress10"} 群馬県
-            %option{value: "adress11"} 埼玉県
-            %option{value: "adress12"} 千葉県
-            %option{value: "adress13"} 東京都
-            %option{value: "adress14"} 神奈川県
-            %option{value: "adress15"} 新潟県
-            %option{value: "adress16"} 富山県
-            %option{value: "adress17"} 石川県
-            %option{value: "adress18"} 福井県
-            %option{value: "adress19"} 山梨県
-            %option{value: "adress20"} 長野県
-            %option{value: "adress21"} 岐阜県
-            %option{value: "adress22"} 静岡県
-            %option{value: "adress23"} 愛知県
-            %option{value: "adress24"} 三重県
-            %option{value: "adress25"} 滋賀県
-            %option{value: "adress26"} 京都府
-            %option{value: "adress27"} 大阪府
-            %option{value: "adress28"} 兵庫県
-            %option{value: "adress29"} 奈良県
-            %option{value: "adress30"} 和歌山県
-            %option{value: "adress31"} 鳥取県
-            %option{value: "adress32"} 島根県
-            %option{value: "adress33"} 岡山県
-            %option{value: "adress34"} 広島県
-            %option{value: "adress35"} 山口県
-            %option{value: "adress36"} 徳島県
-            %option{value: "adress37"} 香川県
-            %option{value: "adress38"} 愛媛県
-            %option{value: "adress39"} 高知県
-            %option{value: "adress40"} 福岡県
-            %option{value: "adress41"} 佐賀県
-            %option{value: "adress42"} 長崎県
-            %option{value: "adress43"} 熊本県
-            %option{value: "adress44"} 大分県
-            %option{value: "adress45"} 宮崎県
-            %option{value: "adress46"} 鹿児島県
-            %option{value: "adress47"} 沖縄県
+            %option{value: "adress1"}
+              = Prefecture.find(1).name
+            %option{value: "adress2"}
+              = Prefecture.find(2).name
+            %option{value: "adress3"}
+              = Prefecture.find(3).name
+            %option{value: "adress4"}
+              = Prefecture.find(4).name
+            %option{value: "adress5"}
+              = Prefecture.find(5).name
+            %option{value: "adress6"}
+              = Prefecture.find(6).name
+            %option{value: "adress7"}
+              = Prefecture.find(7).name
+            %option{value: "adress8"}
+              = Prefecture.find(8).name
+            %option{value: "adress9"}
+              = Prefecture.find(9).name
+            %option{value: "adress10"}
+              = Prefecture.find(10).name
+            %option{value: "adress11"}
+              = Prefecture.find(11).name
+            %option{value: "adress12"}
+              = Prefecture.find(12).name
+            %option{value: "adress13"}
+              = Prefecture.find(13).name
+            %option{value: "adress14"}
+              = Prefecture.find(14).name
+            %option{value: "adress15"}
+              = Prefecture.find(15).name
+            %option{value: "adress16"}
+              = Prefecture.find(16).name
+            %option{value: "adress17"}
+              = Prefecture.find(17).name
+            %option{value: "adress18"}
+              = Prefecture.find(18).name
+            %option{value: "adress19"}
+              = Prefecture.find(19).name
+            %option{value: "adress20"}
+              = Prefecture.find(20).name
+            %option{value: "adress21"}
+              = Prefecture.find(21).name
+            %option{value: "adress22"}
+              = Prefecture.find(22).name
+            %option{value: "adress23"}
+              = Prefecture.find(23).name
+            %option{value: "adress24"}
+              = Prefecture.find(24).name
+            %option{value: "adress25"}
+              = Prefecture.find(25).name
+            %option{value: "adress26"}
+              = Prefecture.find(26).name
+            %option{value: "adress27"}
+              = Prefecture.find(27).name
+            %option{value: "adress28"}
+              = Prefecture.find(28).name
+            %option{value: "adress29"}
+              = Prefecture.find(29).name
+            %option{value: "adress30"}
+              = Prefecture.find(30).name
+            %option{value: "adress31"}
+              = Prefecture.find(31).name
+            %option{value: "adress32"}
+              = Prefecture.find(32).name
+            %option{value: "adress33"}
+              = Prefecture.find(33).name
+            %option{value: "adress34"}
+              = Prefecture.find(34).name
+            %option{value: "adress35"}
+              = Prefecture.find(35).name
+            %option{value: "adress36"}
+              = Prefecture.find(36).name
+            %option{value: "adress37"}
+              = Prefecture.find(37).name
+            %option{value: "adress38"}
+              = Prefecture.find(38).name
+            %option{value: "adress39"}
+              = Prefecture.find(39).name
+            %option{value: "adress40"}
+              = Prefecture.find(40).name
+            %option{value: "adress41"}
+              = Prefecture.find(41).name
+            %option{value: "adress42"}
+              = Prefecture.find(42).name
+            %option{value: "adress43"}
+              = Prefecture.find(43).name
+            %option{value: "adress44"}
+              = Prefecture.find(44).name
+            %option{value: "adress45"}
+              = Prefecture.find(45).name
+            %option{value: "adress46"}
+              = Prefecture.find(46).name
+            %option{value: "adress47"}
+              = Prefecture.find(47).name
           = icon('fas', 'chevron-down', class: "signin_adress__contents__adress_1__item__wrap__icon")
     .signin_adress__contents__adress_2
       .signin_adress__contents__adress_2__top
