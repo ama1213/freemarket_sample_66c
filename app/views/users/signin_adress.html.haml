@@ -1,0 +1,142 @@
+.signin_adress
+  .signin_adress__top
+    発送元・お届け先住所入力
+  .signin_adress__contents
+    .signin_adress__contents__name
+      .signin_adress__contents__name__top
+        .signin_adress__contents__name__top__left
+          お名前
+        .signin_adress__contents__name__top__right.label_required
+          必須
+      .signin_adress__contents__name__family
+        %input{type: "text", placeholder: "例）山田", class: "signin_adress__contents__name__family__input"}
+      .signin_adress__contents__name__first
+        %input{type: "text", placeholder: "例）彩", class: "signin_adress__contents__name__first__input"}
+    .signin_adress__contents__reading
+      .signin_adress__contents__reading__top
+        .signin_adress__contents__reading__top__left
+          お名前カナ
+        .signin_adress__contents__reading__top__right.label_required
+          必須
+      .signin_adress__contents__reading__family
+        %input{type: "text", placeholder: "例）ヤマダ", class: "signin_adress__contents__reading__family__input"}
+      .signin_adress__contents__reading__first
+        %input{type: "text", placeholder: "例）アヤ", class: "signin_adress__contents__reading__first__input"}
+    .signin_adress__contents__postal_code
+      .signin_adress__contents__postal_code__top
+        .signin_adress__contents__postal_code__top__left
+          郵便番号
+        .signin_adress__contents__postal_code__top__right.label_required
+          必須
+      .signin_adress__contents__postal_code__item
+        %input{type: "text", placeholder: "例）123-4567", class: "signin_adress__contents__postal_code__item__input"}
+    .signin_adress__contents__adress_1
+      .signin_adress__contents__adress_1__top
+        .signin_adress__contents__adress_1__top__left
+          都道府県
+        .signin_adress__contents__adress_1__top__right.label_required
+          必須
+      .signin_adress__contents__adress_1__item
+        .signin_adress__contents__adress_1__item__wrap
+          %select{name: "pref_id", class: "select_default1000"}
+            %option{selected: "selected", value: ""} --
+            %option{value: "adress1"} 北海道
+            %option{value: "adress2"} 青森県
+            %option{value: "adress3"} 岩手県
+            %option{value: "adress4"} 宮城県
+            %option{value: "adress5"} 秋田県
+            %option{value: "adress6"} 山形県
+            %option{value: "adress7"} 福島県
+            %option{value: "adress8"} 茨城県
+            %option{value: "adress9"} 栃木県
+            %option{value: "adress10"} 群馬県
+            %option{value: "adress11"} 埼玉県
+            %option{value: "adress12"} 千葉県
+            %option{value: "adress13"} 東京都
+            %option{value: "adress14"} 神奈川県
+            %option{value: "adress15"} 新潟県
+            %option{value: "adress16"} 富山県
+            %option{value: "adress17"} 石川県
+            %option{value: "adress18"} 福井県
+            %option{value: "adress19"} 山梨県
+            %option{value: "adress20"} 長野県
+            %option{value: "adress21"} 岐阜県
+            %option{value: "adress22"} 静岡県
+            %option{value: "adress23"} 愛知県
+            %option{value: "adress24"} 三重県
+            %option{value: "adress25"} 滋賀県
+            %option{value: "adress26"} 京都府
+            %option{value: "adress27"} 大阪府
+            %option{value: "adress28"} 兵庫県
+            %option{value: "adress29"} 奈良県
+            %option{value: "adress30"} 和歌山県
+            %option{value: "adress31"} 鳥取県
+            %option{value: "adress32"} 島根県
+            %option{value: "adress33"} 岡山県
+            %option{value: "adress34"} 広島県
+            %option{value: "adress35"} 山口県
+            %option{value: "adress36"} 徳島県
+            %option{value: "adress37"} 香川県
+            %option{value: "adress38"} 愛媛県
+            %option{value: "adress39"} 高知県
+            %option{value: "adress40"} 福岡県
+            %option{value: "adress41"} 佐賀県
+            %option{value: "adress42"} 長崎県
+            %option{value: "adress43"} 熊本県
+            %option{value: "adress44"} 大分県
+            %option{value: "adress45"} 宮崎県
+            %option{value: "adress46"} 鹿児島県
+            %option{value: "adress47"} 沖縄県
+          = icon('fas', 'chevron-down', class: "signin_adress__contents__adress_1__item__wrap__icon")
+    .signin_adress__contents__adress_2
+      .signin_adress__contents__adress_2__top
+        .signin_adress__contents__adress_2__top__left
+          市区町村
+        .signin_adress__contents__adress_2__top__right.label_required
+          必須
+      .signin_adress__contents__adress_2__item
+        %input{type: "text", placeholder: "例）横浜市緑区", class: "signin_adress__contents__adress_2__item__input"}
+    .signin_adress__contents__adress_3
+      .signin_adress__contents__adress_3__top
+        .signin_adress__contents__adress_3__top__left
+          番地
+        .signin_adress__contents__adress_3__top__right.label_required
+          必須
+      .signin_adress__contents__adress_3__item
+        %input{type: "text", placeholder: "例）青山1-1-1", class: "signin_adress__contents__adress_3__item__input"}
+    .signin_adress__contents__adress_4
+      .signin_adress__contents__adress_4__top
+        .signin_adress__contents__adress_4__top__left
+          建物名
+        .signin_adress__contents__adress_4__top__right.label_any
+          任意
+      .signin_adress__contents__adress_4__item
+        %input{type: "text", placeholder: "例）柳ビル103", class: "signin_adress__contents__adress_4__item__input"}
+    .signin_adress__contents__phone_number
+      .signin_adress__contents__phone_number__top
+        .signin_adress__contents__phone_number__top__left
+          電話
+        .signin_adress__contents__phone_number__top__right.label_any
+          任意
+      .signin_adress__contents__phone_number__item
+        %input{type: "text", placeholder: "例）09012345678", class: "signin_adress__contents__phone_number__item__input"}
+    = link_to "#", class: "signin_adress__contents__btn__link" do
+      .signin_adress__contents__btn 
+        次に進む
+  .signin_adress__footer
+    .signin_adress__footer__nav
+      .signin_adress__footer__nav__1
+        = link_to "#", class: "signin_adress__footer__nav__link" do
+          プライバシーポリシー
+      .signin_adress__footer__nav__2
+        = link_to "#", class: "signin_adress__footer__nav__link" do
+          メルカリ利用規約
+      .signin_adress__footer__nav__3
+        = link_to "#", class: "signin_adress__footer__nav__link" do
+          特定商取引に関する表記
+    .signin_adress__footer__logo
+      = link_to "#" do
+        = image_tag "/images/logo_gray.svg", height: "65px", width: "80px", class: "signin_adress__footer__logo__icon"
+    %p
+      %small
+        © Amatatsu, Inc.
