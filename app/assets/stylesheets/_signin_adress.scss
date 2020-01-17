@@ -197,7 +197,7 @@
             position: relative;
             z-index: 1;
 
-            .select_default1000 {
+            #prefecture_id {
               position: absolute;
               top: 0;
               left: 0;
@@ -215,7 +215,7 @@
               cursor: pointer;
             }
 
-            .select_default1000:focus {
+            #prefecture_id:focus {
               border: solid 1px #0099E8;
             }
 
@@ -234,7 +234,6 @@
             -moz-appearance: none;
             appearance: none;
             outline: none;
-  
           }
   
           &__wrap select::-ms-expand {
