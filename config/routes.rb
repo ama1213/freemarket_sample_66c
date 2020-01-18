@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'comments/new', to: 'comments#new'
   get 'layouts/footer', to: 'layouts#footer'
   get 'layouts/application', to: 'layouts#application'
   get 'layouts/mailer', to: 'layouts#mailer'
