@@ -18,7 +18,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:name] = user_params[:name]
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
-    # session[:password_confirmation] = user_params[:password_confirmation]
     session[:kanji_name] = user_params[:kanji_name]
     session[:kanji_family] = user_params[:kanji_family]
     session[:katakana_name] = user_params[:katakana_name]
@@ -30,7 +29,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       name: session[:name],
       email: session[:email],
       password: session[:password],
-      # password_confirmation: session[:password_confirmation],
       kanji_name: session[:kanji_name],
       kanji_family: session[:kanji_family],
       katakana_name: session[:katakana_name],

@@ -1,3 +1,31 @@
+.newuser
+  .newuser__logo
+    = link_to "#" do
+      = image_tag ("/images/fmarket_logo_red.svg")
+  .newuser__sign__one
+    %ul.newuser__sign__one__list
+      %li.red
+        会員情報
+        %br/
+        .box-one
+      %li
+        電話番号情報
+        %br/
+        .box-two
+      %li
+        お届け先住所入力
+        %br/
+        .box-three
+      %li
+        支払い方法
+        %br/
+        .box-four
+      %li
+        完了
+        %br/
+        .box-five
+    .newuser__sign__one__boder__one
+
 .user-new
   %h2.user-new__title 会員情報入力
   = form_for @user, url: user_registration_path do |f|
@@ -37,8 +65,6 @@
             = f.text_field :kanji_family, class: "new_user__form__box__name__input", placeholder: "例) 山田", data: {name: '姓'}
           .harf
             = f.text_field :kanji_name, class: "new_user__form__box__name__input", placeholder: "例) 彩", data: {name: '名'}
-        -# .error-text 姓を入力してください
-        -# .error-text 名を入力してください
 
 
       .new_user__form__box
@@ -49,8 +75,6 @@
             = f.text_field :katakana_family, class: "new_user__form__box__name__input", placeholder: "例) ヤマダ", data: {name: '姓カナ'}
           .harf
             = f.text_field :katakana_name, class: "new_user__form__box__name__input", placeholder: "例) アヤ", data: {name: '名カナ'}
-        -# .error-text 姓カナを入力してください
-        -# .error-text 名カナを入力してください
 
       .new_user__form__box
         = f.label :birthday_year, "生年月日"
@@ -68,7 +92,6 @@
             = f.select :birthday_day, ["--"],{}, {class:"new_user__form__box__content__select__body", id: "user_birthday_day"}
             %i.fas.fa-chevron-down
           %span 日
-        -# .error-text 生年月日を入力してください
 
       %p.new_user__form__text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 
@@ -91,3 +114,15 @@
           and
           %a{ href: '#' } Terms of Service
           apply.
+
+.user-new__footer
+  .user-new__footer__content
+    .user-new__footer__content__top
+      = link_to "プライバシーポリシー", "#", class: "user-new__footer__content__top__left"
+      = link_to "メルカリ利用規約", "#", class: "user-new__footer__content__top__center"
+      = link_to "特定商取引に関する表記", "#", class: "user-new__footer__content__top__right"
+    .user-new__footer__content__middle
+      = link_to "#" do
+        .footer__img
+          = image_tag "/images/logo_gray.svg"
+    .user-new__footer__content__bottom ©︎ Fmarket,inc.
