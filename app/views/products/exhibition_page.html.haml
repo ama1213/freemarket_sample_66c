@@ -146,17 +146,21 @@
     .exhibition__contents__btn_box
       .exhibition__contents__btn_box__text
         %p
-          %a{ href: '#', class:"exhibition__contents__btn_box__text__link"}禁止されている出品
+          = link_to "#", class:"exhibition__contents__btn_box__text__link" do
+            禁止されている出品
           、
-          %a{ href: '#', class:"exhibition__contents__btn_box__text__link"}行為
+          = link_to "#", class:"exhibition__contents__btn_box__text__link" do
+            行為
           を必ずご確認ください。
         %p
           またブランド品でシリアルナンバー等がある場合はご記載ください。
-          %a{ href: '#', class:"exhibition__contents__btn_box__text__link"}偽ブランドの販売
+          = link_to "#", class:"exhibition__contents__btn_box__text__link" do
+            偽ブランドの販売
           は犯罪であり処罰される可能性があります。
         %p  
           また、出品をもちまして
-          %a{ href: '#', class:"exhibition__contents__btn_box__text__link"}加盟店規約
+          = link_to "#", class:"exhibition__contents__btn_box__text__link" do
+            加盟店規約
           に同意したことになります。
       = link_to "#" do
         .exhibition__contents__btn_box__red
