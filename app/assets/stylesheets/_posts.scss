@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
   text-decoration: none;
-  // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .header {
@@ -21,10 +20,6 @@
       margin: 0px 45px 0px 0px ;
 
     }
-    .image {
-      
-    }
-
     &__search {
       color: darkgray;
       padding: 0px 0px 0px 10px;
@@ -179,7 +174,6 @@
                     line-height: 29px;
                   }
                   &:hover {
-                    // display: block;
                     height: 29px;
                     background-color: rgb(216, 209, 209);
                     li{
@@ -195,12 +189,6 @@
           }
         }
       }
-
-      
-
-
-
-
 
       &__brand {
         height: 40px;

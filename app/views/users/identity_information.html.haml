@@ -1,0 +1,103 @@
+= render partial: "posts/header"
+
+.content
+  .content__left
+    = render "sidebar"
+  .content__information
+    .content__information__title
+      本人情報の登録
+    .content__information__item
+      .content__information__item__text
+        .content__information__item__text__main
+          お客さまの本人情報をご登録ください。
+          %br
+          登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        .content__information__item__text__sub
+          = link_to"#", class: "content__information__item__text__sub__link" do
+            本人確認書類のアップロードについて
+            = icon('fas', 'chevron-right', class: "content__information__item__text__sub__icon")
+      .content__information__item__name_kanji
+        .content__information__item__name_kanji__top
+          お名前
+        .content__information__item__name_kanji__bottom
+          天辰 誠一郎
+      .content__information__item__name_reading
+        .content__information__item__name_reading__top
+          お名前カナ
+        .content__information__item__name_reading__bottom
+          アマタツ セイイチロウ
+      .content__information__item__birthday
+        .content__information__item__birthday__top
+          生年月日
+        .content__information__item__birthday__bottom
+          1975/04/18
+      .content__information__item__postal_code
+        .content__information__item__postal_code__top
+          .content__information__item__postal_code__top__left
+            郵便番号
+          .content__information__item__postal_code__top__right.label
+            任意
+        .content__information__item__postal_code__bottom
+          %input{type: "text", placeholder: "例）1234567", class:"content__information__item__postal_code__bottom__form"}
+      .content__information__item__adress_1
+        .content__information__item__adress_1__top
+          .content__information__item__adress_1__top__left
+            都道府県
+          .content__information__item__adress_1__top__right.label
+            任意
+        .content__information__item__adress_1__bottom.abc
+          = form_for '' do |f|
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: "content__information__item__adress_1__bottom__input"
+            = icon('fas', 'chevron-down', class: "content__information__item__adress_1__bottom__icon")
+      .content__information__item__adress_2
+        .content__information__item__adress_2__top
+          .content__information__item__adress_2__top__left
+            市区町村
+          .content__information__item__adress_2__top__right.label
+            任意
+        .content__information__item__adress_2__bottom
+          %input{type: "text", placeholder: "例）横浜市緑区", class:"content__information__item__adress_2__bottom__form"}
+      .content__information__item__adress_3
+        .content__information__item__adress_3__top
+          .content__information__item__adress_3__top__left
+            番地
+          .content__information__item__adress_3__top__right.label
+            任意
+        .content__information__item__adress_3__bottom
+          %input{type: "text", placeholder: "例）青山1−1−1", class:"content__information__item__adress_3__bottom__form"}
+      .content__information__item__adress_4
+        .content__information__item__adress_4__top
+          .content__information__item__adress_4__top__left
+            建物名
+          .content__information__item__adress_4__top__right.label
+            任意
+        .content__information__item__adress_4__bottom
+          %input{type: "text", placeholder: "例）柳ビル103", class:"content__information__item__adress_4__bottom__form"}
+      = link_to"#" do
+        .content__information__item__send
+          登録する
+      .content__information__item__text
+        .content__information__item__text__sub
+          = link_to"#", class: "content__information__item__text__sub__link" do
+            本人情報の登録について
+            = icon('fas', 'chevron-right', class: "content__information__item__text__sub__icon")
+
+.banner
+  = link_to"#" do
+    = image_tag"/images/fre.jpg", class:"header-image"
+    .banner__text
+      スマホでかんたんフリマアプリ
+    .banner__comment
+      今すぐ無料ダウンロード!
+    .banner__merucari
+      = link_to "#" do
+        = image_tag"/images/logo_white.svg",width:"50px",height:"50px"
+    .banner__app
+      = link_to"https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
+        = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg",width:"144px",height:"40px")
+    .banner__google
+      = link_to"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
+        = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg",width:"144px",height:"40px")
+
+= render "layouts/footer_sell_btn"
+= render partial: "posts/footer"
