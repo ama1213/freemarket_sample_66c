@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'users/identity_information', to: 'users#identity_information'
   get 'users/logout', to: 'users#logout'
   get 'users/payment_method', to: 'users#payment_method'
+
   get 'users/new', to: 'users#new'
   get 'users/entry', to: 'users#entry'
   get 'users/number', to: 'users#number'
