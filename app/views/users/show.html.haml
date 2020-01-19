@@ -1,11 +1,13 @@
+= render partial: "posts/header"
+
 .content
   .content__left
-    = render "sidebar"  
+    = render "sidebar"
   .content__right
     .content__right__user
       = link_to"#", class:"content__right__user__link" do
         .content__right__user__link__data
-          %img{src: "images/member_photo_noimage_thumb.svg", height:"60px", width:"60px", class: "content__right__user__link__data__icon"}
+          %img{src: "/images/obake.jpg", height:"60px", width:"60px", class: "content__right__user__link__data__icon"}
           .content__right__user__link__data__name
             天辰誠一郎
           .content__right__user__link__data__number
@@ -33,9 +35,9 @@
                 = link_to"#" do
                   .content__right__contents__item
                     .content__right__contents__item__body
-                      %img{src: "images/logo_red.svg", class:"content__right__contents__item__body__icon", height:"48px", width:"48px"}
+                      %img{src: "/images/logo_red.svg", class:"content__right__contents__item__body__icon", height:"48px", width:"48px"}
                       .content__right__contents__item__body__text
-                        《新規登録者限定》”最大1,000円分のポイントがもらえる”出品キャンペーン開催中！
+                        《新規登録者限定》”最大1,000円分のポイントがもらえる”出品キャンペーン！
                         .content__right__contents__item__body__text__time
                           = icon('far', 'clock', class: "content__right__contents__item__body__text__time__icon")
                           1日前
@@ -43,7 +45,7 @@
                 = link_to"#" do
                   .content__right__contents__item
                     .content__right__contents__item__body
-                      %img{src: "images/logo_red.svg", class:"content__right__contents__item__body__icon", height:"48px", width:"48px"}
+                      %img{src: "/images/logo_red.svg", class:"content__right__contents__item__body__icon", height:"48px", width:"48px"}
                       .content__right__contents__item__body__text
                         事務局から個別メッセージ「ログイン通知」
                         .content__right__contents__item__body__text__time
@@ -54,7 +56,7 @@
                 = link_to"#" do
                   .content__right__contents__item
                     .content__right__contents__item__body
-                      %img{src: "images/logo_red.svg", class:"content__right__contents__item__body__icon", height:"48px", width:"48px"}
+                      %img{src: "/images/logo_red.svg", class:"content__right__contents__item__body__icon", height:"48px", width:"48px"}
                       .content__right__contents__item__body__text
                         事務局から個別メッセージ「ログイン通知」
                         .content__right__contents__item__body__text__time
@@ -73,7 +75,7 @@
                 = link_to"#" do
                   .content__right__contents__item
                     .content__right__contents__item__body
-                      %img{src: "images/logo_red.svg", class:"content__right__contents__item__body__icon", height:"48px", width:"48px"}
+                      %img{src: "/images/logo_red.svg", class:"content__right__contents__item__body__icon", height:"48px", width:"48px"}
                       .content__right__contents__item__body__text
                         ご登録のメールアドレスに認証メールを送りました。メールに記載のURLをクリックして、メールアドレスを認証してください。
                         .content__right__contents__item__body__text__time
@@ -106,4 +108,22 @@
               .content__right__bottom_item__image
               .content__right__bottom_item__text
                 過去に取引した商品がありません
+.banner
+  = link_to"#" do
+    = image_tag"/images/fre.jpg", class:"header-image"
+    .banner__text
+      スマホでかんたんフリマアプリ
+    .banner__comment
+      今すぐ無料ダウンロード!
+    .banner__merucari
+      = link_to "#" do
+        = image_tag"/images/logo_white.svg",width:"50px",height:"50px"
+    .banner__app
+      = link_to"https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
+        = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg",width:"144px",height:"40px")
+    .banner__google
+      = link_to"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
+        = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg",width:"144px",height:"40px")
+
 = render "layouts/footer_sell_btn"
+= render partial: "posts/footer"

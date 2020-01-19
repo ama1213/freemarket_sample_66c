@@ -1,3 +1,5 @@
+= render partial: "posts/header"
+
 .item
   %h1.item__name
     かわいいワンピース
@@ -5,30 +7,30 @@
     .item__content__photo
       %ul.item__content__photo__main
         %li.item__content__photo__main__box.active
-          = image_tag "/image/1/oneisan-1.jpg", class:"item__content__photo__main__box__image"
+          = image_tag "/images/oneisan-1.jpg", class:"item__content__photo__main__box__image"
         %li.item__content__photo__main__box
-          = image_tag "/image/1/oneisan-2.jpg", class:"item__content__photo__main__box__image"
+          = image_tag "/images/oneisan-2.jpg", class:"item__content__photo__main__box__image"
         %li.item__content__photo__main__box
-          = image_tag "/image/1/oneisan-3.jpg", class:"item__content__photo__main__box__image"
+          = image_tag "/images/oneisan-3.jpg", class:"item__content__photo__main__box__image"
         %li.item__content__photo__main__box
-          = image_tag "/image/1/oneisan-4.jpg", class:"item__content__photo__main__box__image"
+          = image_tag "/images/oneisan-4.jpg", class:"item__content__photo__main__box__image"
         %li.item__content__photo__main__box
-          = image_tag "/image/1/oneisan-5.jpg", class:"item__content__photo__main__box__image"
+          = image_tag "/images/oneisan-5.jpg", class:"item__content__photo__main__box__image"
         %li.item__content__photo__main__box
-          = image_tag "/image/1/oneisan-6.jpg", class:"item__content__photo__main__box__image"
+          = image_tag "/images/oneisan-6.jpg", class:"item__content__photo__main__box__image"
       %ul.item__content__photo__sub
         %li.item__content__photo__sub__box.active
-          = image_tag "/image/1/oneisan-1.jpg", class:"item__content__photo__sub__box__image"
+          = image_tag "/images/oneisan-1.jpg", class:"item__content__photo__sub__box__image"
         %li.item__content__photo__sub__box
-          = image_tag "/image/1/oneisan-2.jpg", class:"item__content__photo__sub__box__image"
+          = image_tag "/images/oneisan-2.jpg", class:"item__content__photo__sub__box__image"
         %li.item__content__photo__sub__box
-          = image_tag "/image/1/oneisan-3.jpg", class:"item__content__photo__sub__box__image"
+          = image_tag "/images/oneisan-3.jpg", class:"item__content__photo__sub__box__image"
         %li.item__content__photo__sub__box
-          = image_tag "/image/1/oneisan-4.jpg", class:"item__content__photo__sub__box__image"
+          = image_tag "/images/oneisan-4.jpg", class:"item__content__photo__sub__box__image"
         %li.item__content__photo__sub__box
-          = image_tag "/image/1/oneisan-5.jpg", class:"item__content__photo__sub__box__image"
+          = image_tag "/images/oneisan-5.jpg", class:"item__content__photo__sub__box__image"
         %li.item__content__photo__sub__box
-          = image_tag "/image/1/oneisan-6.jpg", class:"item__content__photo__sub__box__image"
+          = image_tag "/images/oneisan-6.jpg", class:"item__content__photo__sub__box__image"
     %table.item__content__detail
       %tr.item__content__detail__box
         %th.item__content__detail__box__left 出品者
@@ -202,3 +204,5 @@
 
 .bottom-area
   = link_to "購入画面に進む", "#", class: "bottom-area__btn"
+
+= render partial: "posts/footer"
