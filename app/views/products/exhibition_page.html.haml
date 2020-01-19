@@ -1,0 +1,187 @@
+.exhibition
+  .exhibition__header
+    = image_tag "/images/fmarket_logo_red.svg", height: "49px", width: "185px", class: "exhibition__header__icon"
+  .exhibition__contents
+    .exhibition__contents__title
+      商品の情報を入力
+    .exhibition__contents__image_upload
+      .exhibition__contents__image_upload__head
+        .exhibition__contents__image_upload__head__left
+          出品画像
+        .exhibition__contents__image_upload__head__right.label_required
+          必須
+      .exhibition__contents__image_upload__text
+        最大10枚までアップロードできます
+      .exhibition__contents__image_upload__container.clearfix.state_image_number_10
+        .exhibition__contents__image_upload__container__items
+        .exhibition__contents__image_upload__container__upload_box.have_item_0
+          .exhibition__contents__image_upload__container__upload_box.have_item_0__text
+    .exhibition__contents__description
+      .exhibition__contents__description__head
+        .exhibition__contents__description__head__left
+          商品名
+        .exhibition__contents__description__head__right.label_required
+          必須
+      .exhibition__contents__description__input  
+        %input{type: "text", placeholder:"商品名（必須 40文字まで）", class:"exhibition__contents__description__input__form"}
+      .exhibition__contents__description__box
+        .exhibition__contents__description__box__left
+          商品の説明
+        .exhibition__contents__description__box__right.label_required
+          必須
+      %textarea{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class:"exhibition__contents__description__box__textarea"}
+    .exhibition__contents__detail
+      .exhibition__contents__detail__head
+        商品の詳細
+      .exhibition__contents__detail__box
+        .exhibition__contents__detail__box__categorie
+          .exhibition__contents__detail__box__categorie__head
+            .exhibition__contents__detail__box__categorie__head__left
+              カテゴリー
+            .exhibition__contents__detail__box__categorie__head__right.label_required
+              必須
+          .exhibition__contents__detail__box__categorie__container
+            .exhibition__contents__detail__box__categorie__container__wrap
+              %select{name: "", class: "select_default2"}
+                %option{selected: "selected", value: ""} ---
+                %option{value: "categorie1"} レディース
+                %option{value: "categorie2"} メンズ
+                %option{value: "categorie3"} ベビー・キッズ
+                %option{value: "categorie4"} インテリア・住まい・小物
+                %option{value: "categorie5"} 本・音楽・ゲーム
+                %option{value: "categorie6"} おもちゃ・ホビー・グッズ
+                %option{value: "categorie7"} コスメ・香水・美容
+                %option{value: "categorie8"} 家電・スマホ・カメラ
+                %option{value: "categorie9"} スポーツ・レジャー
+                %option{value: "categorie10"} ハンドメイド
+                %option{value: "categorie11"} チケット
+                %option{value: "categorie12"} 自転車・オートバイ
+                %option{value: "categorie13"} その他
+              = icon('fas', 'chevron-down', class: "exhibition__contents__detail__box__categorie__container__wrap__icon")
+        .exhibition__contents__detail__box__status
+          .exhibition__contents__detail__box__status__head
+            .exhibition__contents__detail__box__status__head__left
+              商品の状態
+            .exhibition__contents__detail__box__status__head__right.label_required
+              必須
+          .exhibition__contents__detail__box__status__container
+            .exhibition__contents__detail__box__status__container__wrap
+              %select{name: "pref_id", class: "select_default3"}
+                %option{selected: "selected", value: ""} ---
+                %option{value: "status1"} 新品、未使用
+                %option{value: "status2"} 未使用に近い
+                %option{value: "status3"} 目立った傷や汚れなし
+                %option{value: "status4"} やや傷や汚れあり
+                %option{value: "status5"} 傷や汚れあり
+                %option{value: "status6"} 全体的に状態が悪い
+              = icon('fas', 'chevron-down', class: "exhibition__contents__detail__box__status__container__wrap__icon")
+    .exhibition__contents__shipping
+      .exhibition__contents__shipping__head
+        発送について
+      .exhibition__contents__shipping__box
+        .exhibition__contents__shipping__box__shipping_charges
+          .exhibition__contents__shipping__box__shipping_charges__head
+            .exhibition__contents__shipping__box__shipping_charges__head__left
+              配送料の負担
+            .exhibition__contents__shipping__box__shipping_charges__head__right.label_required
+              必須
+          .exhibition__contents__shipping__box__shipping_charges__container
+            .exhibition__contents__shipping__box__shipping_charges__container__wrap
+              - @shipping_charges = ["---","送料込み(出品者負担)","着払い(購入者負担)"]
+              = form_for '' do |f|
+                = f.select :shipping_charges, @shipping_charges, {}, {selected: 0, id: "shipping_charges", class: "exhibition__contents__shipping__box__shipping_charges__container__wrap__select"}
+                = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__shipping_charges__container__wrap__icon")
+        .append_shipping_method
+        .exhibition__contents__shipping__box__area
+          .exhibition__contents__shipping__box__area__head
+            .exhibition__contents__shipping__box__area__head__left
+              発送先の地域
+            .exhibition__contents__shipping__box__area__head__right.label_required
+              必須
+          .exhibition__contents__shipping__box__area__container
+            .exhibition__contents__shipping__box__area__container__wrap
+              = form_for '' do |f|
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: "exhibition__contents__shipping__box__area__container__wrap__input"
+                = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__area__container__wrap__icon")
+        .exhibition__contents__shipping__box__days
+          .exhibition__contents__shipping__box__days__head
+            .exhibition__contents__shipping__box__days__head__left
+              発送までの日数
+            .exhibition__contents__shipping__box__days__head__right.label_required
+              必須
+          .exhibition__contents__shipping__box__days__container
+            .exhibition__contents__shipping__box__days__container__wrap
+              %select{name: "pref_id", class: "select_default7"}
+                %option{selected: "selected", value: ""} ---
+                %option{value: "days1"} 1~2日で発送
+                %option{value: "days2"} 2~3日で発送
+                %option{value: "days3"} 4~7日で発送
+              = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__days__container__wrap__icon")
+    .exhibition__contents__price
+      .exhibition__contents__price__head
+        販売価格(300〜9,999,999)
+      .exhibition__contents__price__box
+        .exhibition__contents__price__box__price_input
+          .exhibition__contents__price__box__price_input__head
+            .exhibition__contents__price__box__price_input__head__left
+              価格
+            .exhibition__contents__price__box__price_input__head__right.label_required
+              必須
+          .exhibition__contents__price__box__price_input__container
+            .exhibition__contents__price__box__price_input__container__wrap
+              ¥
+              .exhibition__contents__price__box__price_input__container__wrap__item
+                %input{type: "text", placeholder:"例）300", class: "exhibition__contents__price__box__price_input__container__wrap__item__number"}
+        .exhibition__contents__price__box__tax
+          .exhibition__contents__price__box__tax__left
+            販売手数料 (10%)
+          .exhibition__contents__price__box__tax__right
+            &#8211;
+        .exhibition__contents__price__box__gains
+          .exhibition__contents__price__box__gains__left
+            販売履歴
+          .exhibition__contents__price__box__gains__right
+            &#8212;
+
+    .exhibition__contents__btn_box
+      .exhibition__contents__btn_box__text
+        %p
+          = link_to "#", class:"exhibition__contents__btn_box__text__link" do
+            禁止されている出品
+          、
+          = link_to "#", class:"exhibition__contents__btn_box__text__link" do
+            行為
+          を必ずご確認ください。
+        %p
+          またブランド品でシリアルナンバー等がある場合はご記載ください。
+          = link_to "#", class:"exhibition__contents__btn_box__text__link" do
+            偽ブランドの販売
+          は犯罪であり処罰される可能性があります。
+        %p  
+          また、出品をもちまして
+          = link_to "#", class:"exhibition__contents__btn_box__text__link" do
+            加盟店規約
+          に同意したことになります。
+      = link_to "#" do
+        .exhibition__contents__btn_box__red
+          出品する
+      = link_to "#" do
+        .exhibition__contents__btn_box__gray
+          もどる
+  .exhibition__footer
+    .exhibition__footer__nav
+      .exhibition__footer__nav__1
+        = link_to "#", class: "exhibition__footer__nav__link" do
+          プライバシーポリシー
+      .exhibition__footer__nav__2
+        = link_to "#", class: "exhibition__footer__nav__link" do
+          メルカリ利用規約
+      .exhibition__footer__nav__3
+        = link_to "#", class: "exhibition__footer__nav__link" do
+          特定商取引に関する表記
+    .exhibition__footer__logo
+      = link_to "#" do
+        = image_tag "/images/logo_gray.svg", height: "65px", width: "80px", class: "exhibition__footer__logo__icon"
+    %p
+      %small
+        © Amatatsu, Inc.
