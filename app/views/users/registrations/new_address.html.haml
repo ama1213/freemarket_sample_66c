@@ -1,0 +1,24 @@
+= form_for @user, url: addresses_path do |f|
+  = render 'layouts/error_messages', model: f.object
+
+  = f.label :post_number1, "郵便番号"
+  = f.text_field :post_number1
+
+  = f.label :prefecture1, "都道府県"
+  = f.select :prefecture1, ["1", "2"]
+
+  = f.label :municipality1, "市区町村"
+  = f.text_field :municipality1
+
+  = f.label :house_number1, "番地"
+  = f.text_field :house_number1
+
+  = f.label :building_name1, "建物名"
+  = f.text_field :building_name1
+
+  = f.label :address_phone, "電話番号"
+  = f.text_field :address_phone
+
+  = f.submit '次へ進む'
+
+

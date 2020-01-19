@@ -1,0 +1,263 @@
+@media screen and (min-width: 768px) {
+  .new{
+    margin: 0 auto;
+    &__header{
+      height: 128px;
+      text-align: center;
+      &__box{
+        padding-top: 40px;
+        margin: 0 8px 0 0;
+        line-height: 49px;
+        &__image{
+          width: 185px;
+          height: 49px;
+        }
+      }
+    }
+    &__main{
+      width: 700px;
+      margin: 0 auto;
+      background-color: #fff;
+      &__title{
+        padding: 32px;
+        text-align: center;
+        font-size: 22px;
+        border-bottom: solid 1px #f5f5f5;
+      }
+      &__form{
+        padding: 24px 16px 40px;
+        &__contents{
+          .contents__btn{
+            width : 100%;
+            font-size: 14px;
+            text-decoration: none;
+            display: block;
+            border: 1px solid transparent;
+            border-radius:  5px; 
+            line-height: 48px;
+            max-width: 343px;
+            margin: 0 auto;
+            position: relative;
+            transition: 0.2s ;
+            &__icon__mail{
+              font-size: 20px;
+              position: absolute;
+              left: 16px;
+              top: 13px;
+            }
+            &__icon__facebook{
+              font-size: 30px;
+              position: absolute;
+              left: 16px;
+              top: 9px;
+            }
+            &__icon__google{
+              font-size: 18px;
+              left: 17px;
+              top: 15px;
+              background: -webkit-linear-gradient(top, red , orange , green , blue ,);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              position: absolute;
+            }
+            &__mail{
+              background-color: #ea352d;
+              color:#fff;
+              margin-top: 16px;
+              text-align: center;
+            }
+            &__facebook{
+              background-color: #385185;
+              color:#fff;
+              margin: 16px 162px 0;
+              text-align: center;
+            }
+            &__google{
+              margin: 16px 162px 24px;
+              border: #979797 solid 1px;
+              color: #333;
+              text-align: center;
+            }
+          }
+          .contents__btn:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+
+
+    &__footer{
+      width: 456px;
+      height: 220px;
+      margin: 0 auto;
+      padding: 40px 0;
+      &__content{
+        margin: 56px 0 0;
+        &__top{
+          display: flex;
+          justify-content: space-between;
+          font-size: 12px;
+          line-height: 1;
+          color: #333;
+          &__left{
+            color: #333;
+            margin-left: 40px;
+            text-decoration: none;
+          }
+          &__center{
+            color: #333;
+            text-decoration: none;
+          }
+          &__right{
+            color: #333;
+            margin-right: 40px;
+            text-decoration: none;
+          }
+        }
+        &__middle{
+          margin: 40px auto 0;
+          width: 80px;
+          height: 65px;
+        }
+        &__bottom{
+          margin-top: 8px;
+          font-size: 13px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .new{
+    &__header{
+      height: 56px;
+      text-align: center;
+      &__box{
+        padding: 11px 0 12px;
+        margin: 0 8px 0 0;
+        line-height: 49px;
+        &__image{
+          width: 120px;
+          height: 33px;
+        }
+      }
+    }
+    &__main{
+      margin: 0 auto;
+      background-color: #fff;
+      &__title{
+        padding: 16px;
+        text-align: center;
+        font-size: 22px;
+        border-bottom: solid 1px #f5f5f5;
+      }
+      &__form{
+        padding: 24px 16px 40px;
+        &__contents{
+          .contents__btn{
+            width : 100%;
+            font-size: 14px;
+            text-decoration: none;
+            display: block;
+            border: 1px solid transparent;
+            border-radius:  5px; 
+            line-height: 48px;
+            max-width: 343px;
+            margin: 0 auto;
+            position: relative;
+            transition: 0.2s ;
+            &__icon__mail{
+              font-size: 20px;
+              position: absolute;
+              left: 16px;
+              top: 13px;
+            }
+            &__icon__facebook{
+              // width : 100%;
+              // margin: 0 auto;
+              font-size: 30px;
+              position: absolute;
+              left: 16px;
+              top: 9px;
+            }
+            &__icon__google{
+              // width : 100%;
+              font-size: 18px;
+              left: 17px;
+              top: 15px;
+              background: -webkit-linear-gradient(top, red , orange , green , blue ,);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              position: absolute;
+            }
+            &__mail{
+              background-color: #ea352d;
+              color:#fff;
+              margin-top: 16px;
+              text-align: center;
+            }
+            &__facebook{
+              background-color: #385185;
+              color:#fff;
+              margin: 16px 162px 0;
+              text-align: center;
+            }
+            &__google{
+              margin: 16px 162px 24px;
+              border: #979797 solid 1px;
+              color: #333;
+              text-align: center;
+            }
+          }
+          .contents__btn:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+
+
+    &__footer{
+      width: 456px;
+      height: 220px;
+      margin: 0 auto;
+      padding: 40px 0;
+      &__content{
+        &__top{
+          display: flex;
+          justify-content: space-between;
+          font-size: 12px;
+          line-height: 1;
+          color: #333;
+          &__left{
+            color: #333;
+            margin-left: 40px;
+            text-decoration: none;
+          }
+          &__center{
+            color: #333;
+            text-decoration: none;
+          }
+          &__right{
+            color: #333;
+            margin-right: 40px;
+            text-decoration: none;
+          }
+        }
+        &__middle{
+          margin: 40px auto 0;
+          width: 80px;
+          height: 65px;
+        }
+        &__bottom{
+          margin-top: 8px;
+          font-size: 13px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

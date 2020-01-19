@@ -1,0 +1,93 @@
+.user-new
+  %h2.user-new__title 会員情報入力
+  = form_for @user, url: user_registration_path do |f|
+    .new_user__form
+      .new_user__form__box.top-form
+        = f.label :name, "ニックネーム"
+        %span.new_user__form__box__require 必須
+        = f.text_field :name, class: "new_user__form__box__input", placeholder: "例) メルカリ太郎", data: {name: 'ニックネーム'}
+
+      .new_user__form__box
+        = f.label :email, "メールアドレス"
+        %span.new_user__form__box__require 必須
+        = f.text_field :email, class: "new_user__form__box__input", placeholder: "PC・携帯どちらでも可", data: {name: 'メールアドレス'}
+
+      .new_user__form__box
+        = f.label :password, "パスワード"
+        %span.new_user__form__box__require 必須
+        = f.password_field :password, class: "new_user__form__box__input", id: 'password-form', placeholder: "7文字以上の半角英数字", data: {name: 'パスワード'}
+      .pass-text
+        %p.new_user__form__box__text ※ 英字と数字の両方を含めて設定してください
+      .pass-box
+        .new_user__form__box__confirm
+          %input#passcheck{type: "checkbox"}
+          %i.fas.fa-check
+          %label{for: "passcheck"} パスワードを表示する
+        .passward-check
+
+      .new_user__form__box
+        %h3.new_user__form__box__parson 本人確認
+        %p.new_user__form__box__message 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+      .new_user__form__box
+        = f.label :kanji_family, "お名前(全角)"
+        %span.new_user__form__box__require 必須
+        .new_user__form__box__name
+          .harf
+            = f.text_field :kanji_family, class: "new_user__form__box__name__input", placeholder: "例) 山田", data: {name: '姓'}
+          .harf
+            = f.text_field :kanji_name, class: "new_user__form__box__name__input", placeholder: "例) 彩", data: {name: '名'}
+        -# .error-text 姓を入力してください
+        -# .error-text 名を入力してください
+
+
+      .new_user__form__box
+        = f.label :katakana_family, "お名前カナ(全角)"
+        %span.new_user__form__box__require 必須
+        .new_user__form__box__name
+          .harf
+            = f.text_field :katakana_family, class: "new_user__form__box__name__input", placeholder: "例) ヤマダ", data: {name: '姓カナ'}
+          .harf
+            = f.text_field :katakana_name, class: "new_user__form__box__name__input", placeholder: "例) アヤ", data: {name: '名カナ'}
+        -# .error-text 姓カナを入力してください
+        -# .error-text 名カナを入力してください
+
+      .new_user__form__box
+        = f.label :birthday_year, "生年月日"
+        %span.new_user__form__box__require 必須
+        .new_user__form__box__content
+          .new_user__form__box__content__select
+            = f.select :birthday_year, ["--"],{}, {class:"new_user__form__box__content__select__body", id:"user_birthday_year"}
+            %i.fas.fa-chevron-down
+          %span 年
+          .new_user__form__box__content__select
+            = f.select :birthday_month, ["--"],{}, {class:"new_user__form__box__content__select__body", id: "user_birthday_month"}
+            %i.fas.fa-chevron-down
+          %span 月
+          .new_user__form__box__content__select
+            = f.select :birthday_day, ["--"],{}, {class:"new_user__form__box__content__select__body", id: "user_birthday_day"}
+            %i.fas.fa-chevron-down
+          %span 日
+        -# .error-text 生年月日を入力してください
+
+      %p.new_user__form__text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+
+      .new_user__form__box
+        %p.new_user__form__box__container
+          「次へ進む」のボタンを押すことにより、 
+          %a{ href: '#' } 利用規約
+          に同意したものとみなします
+
+      = f.submit '次へ進む', class: "new_user__form__btn"
+
+      = link_to "#", class: "new_user__form__right" do
+        %p 本人情報の登録について
+        %i.fas.fa-chevron-right
+
+      .new_user__form__box.new_info
+        %p
+          This site is protected by reCAPTCHA and the Google 
+          %a{ href: '#' } Privacy Policy
+          and
+          %a{ href: '#' } Terms of Service
+          apply.
