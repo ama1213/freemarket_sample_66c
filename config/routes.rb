@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'products/show', to: 'products#show'
 
   get 'users/edit', to: 'users#edit'
+  get 'users/show', to: 'users#show'
   get 'users/identity_information', to: 'users#identity_information'
   get 'users/logout', to: 'users#logout'
   get 'users/payment_method', to: 'users#payment_method'
