@@ -29,14 +29,14 @@
 .pay
   .pay__main
     %h2.pay__main__title 支払い方法
-    .pay__main__form
+    = form_for :card , url: cards_path, html: {class: "pay__main__form", id: "pay_form"} do |f|
       .pay__main__form__group
         .pay__main__form__group__text
           .pay__main__form__group__text__title
             カード番号
             .pay__main__form__group__text__title__label
               必須
-          %input{type: "text", placeholder: "半角数字のみ", class:"pay__main__form__group__text__box"}
+          %input{type: "text", placeholder: "半角数字のみ", class:"pay__main__form__group__text__box", id: "pay_number"}
         .pay__main__form__group__list
           .pay__main__form__group__list__card_1
             = image_tag "/images/visa.ico", height:"20px", width:"28px"
@@ -61,7 +61,7 @@
               必須
           .pay__main__form__group__expire__bottom
             .pay__main__form__group__expire__bottom__month
-              %select{name: "pref_id", class: "select_default"}
+              %select{name: "pref_id", class: "select_default", id: "pay_month"}
                 %option{selected: "selected", value: ""} --
                 %option{value: "1"} 1
                 %option{value: "2"} 2
@@ -80,19 +80,19 @@
               月
             
             .pay__main__form__group__expire__bottom__day
-              %select{name: "pref_id", class: "select_default"}
+              %select{name: "pref_id", class: "select_default", id: "pay_year"}
                 %option{selected: "selected", value: ""} --
-                %option{value: "1"} 20
-                %option{value: "2"} 21
-                %option{value: "3"} 22
-                %option{value: "4"} 23
-                %option{value: "5"} 24
-                %option{value: "6"} 25
-                %option{value: "7"} 26
-                %option{value: "8"} 27
-                %option{value: "9"} 28
-                %option{value: "10"} 29
-                %option{value: "11"} 30
+                %option{value: "2020"} 20
+                %option{value: "2021"} 21
+                %option{value: "2022"} 22
+                %option{value: "2023"} 23
+                %option{value: "2024"} 24
+                %option{value: "2025"} 25
+                %option{value: "2026"} 26
+                %option{value: "2027"} 27
+                %option{value: "2028"} 28
+                %option{value: "2029"} 29
+                %option{value: "2030"} 30
               = icon('fas', 'chevron-down', class: "pay__main__form__group__expire__bottom__day__icon")
             .pay__main__form__group__expire__bottom__day-name
               日
@@ -102,13 +102,13 @@
               セキュリティコード
               .pay__main__form__group__security__code__title__label
                 必須
-            %input{type: "text", placeholder: "カード背面4桁もしくは3桁の番号", class:"pay__main__form__group__security__code__box"}
+            %input{type: "text", placeholder: "カード背面4桁もしくは3桁の番号", class:"pay__main__form__group__security__code__box", id:"pay_security"}
         
         .pay__main__form__group__reason
           = link_to"#", class: "number__main__form__group__reason__link" do
             %i.fas.fa-question-circle
             カード裏面の番号とは？
-        %button{type: "submit", class: "pay__main__form__group__btn"} 次へ進む
+        = f.submit "次へ進む", class: "pay__main__form__group__btn", id: "pay_submit"
 
   .pay__footer
     .pay__footer__content

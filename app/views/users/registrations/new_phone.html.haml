@@ -29,15 +29,16 @@
 .number
   .number__main
     %h2.number__main__title 電話番号の確認
-    .number__main__form
+    = form_for @user, url: phones_path, html: {class: "number__main__form"} do |f|
+      = render 'layouts/error_messages', model: f.object
       .number__main__form__group
         .number__main__form__group__text
           .number__main__form__group__text__title
             携帯電話の番号
-          %input{type: "text", placeholder: "携帯電話の番号を入力", class:"number__main__form__group__text__box"}
+          = f.text_field :phone_number, placeholder: "携帯電話の番号を入力", class:"number__main__form__group__text__box"
         %p.number__main__form__group__confirmation
           本人確認のため、携帯電話SMS(ショートメッセージサービス)を利用して認証を行います。
-        %button{type: "submit", class: "number__main__form__group__btn"} SMSを送信する
+        = f.submit "電話番号を登録する", class: "number__main__form__group__btn"
         %p.number__main__form__group__note
           ※電話番号は本人確認や不正利用防止のために使用します。他のユーザーに公開されることはありません。
         .number__main__form__group__reason
