@@ -65,7 +65,7 @@ $(function(){
   });
 
   var form = $("#pay_form");
-  Payjp.setPublicKey("pk_test_6fa7f5f625ade9f3981c6a37");
+  Payjp.setPublicKey(ENV["PAYJP_PUBLIC_KEY"]);
   $("#pay_submit").on("click",function(e){
     e.preventDefault();
     var card = {

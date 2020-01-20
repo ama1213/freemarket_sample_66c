@@ -98,7 +98,7 @@
       .new_user__form__box
         %p.new_user__form__box__container
           「次へ進む」のボタンを押すことにより、 
-          %a{ href: '#' } 利用規約
+          = link_to "利用規約", '#'
           に同意したものとみなします
 
       = f.submit '次へ進む', class: "new_user__form__btn"
@@ -110,9 +110,9 @@
       .new_user__form__box.new_info
         %p
           This site is protected by reCAPTCHA and the Google 
-          %a{ href: '#' } Privacy Policy
+          = link_to "Privacy Policy", '#'
           and
-          %a{ href: '#' } Terms of Service
+          = link_to "Terms of Service", '#'
           apply.
 
 .user-new__footer
