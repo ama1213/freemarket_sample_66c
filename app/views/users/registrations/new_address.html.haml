@@ -46,9 +46,8 @@
           必須
       .signin_adress__contents__adress_1__item
         .signin_adress__contents__adress_1__item__wrap
-          = form_for '' do |f|
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: "signin_adress__contents__adress_1__item__wrap__input"
-            = icon('fas', 'chevron-down', class: "signin_adress__contents__adress_1__item__wrap__icon")
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: "signin_adress__contents__adress_1__item__wrap__input"
+          = icon('fas', 'chevron-down', class: "signin_adress__contents__adress_1__item__wrap__icon")
     .signin_adress__contents__adress_2
       .signin_adress__contents__adress_2__top
         .signin_adress__contents__adress_2__top__left
@@ -82,8 +81,7 @@
       .signin_adress__contents__phone_number__item
         = f.text_field :address_phone, placeholder: "例）09012345678", class: "signin_adress__contents__phone_number__item__input"
     = link_to "#", class: "signin_adress__contents__btn__link" do
-      .signin_adress__contents__btn 
-        次に進む
+      = f.submit '次へ進む', class: "signin_adress__contents__btn"
   .signin_adress__footer
     .signin_adress__footer__nav
       .signin_adress__footer__nav__1
