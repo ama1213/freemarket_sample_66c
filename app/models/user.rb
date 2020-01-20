@@ -22,7 +22,7 @@ class User < ApplicationRecord
          validates :katakana_family,    presence: true, format: { with: VALID_KATAKANA_REGEX }
          validates :katakana_name,      presence: true, format: { with: VALID_KATAKANA_REGEX }
          validates :post_number1,       presence: true, length: { maximum: 8 }, format: { with: VALID_POSTAL_CODE }
-         validates :prefecture1,        presence: true
+         validates :prefecture_id,      presence: true
          validates :municipality1,      presence: true
          validates :house_number1,      presence: true
 
@@ -44,7 +44,7 @@ class User < ApplicationRecord
       katakana_family       {"ヤマダ"}
       katakana_name         {"タロウ"}
       post_number1          {"090-0000"}
-      prefecture1           {"7"}
+      prefecture_id         {"7"}
       municipality1         {"福岡市"}
       house_number1         {"博多区"}
     end

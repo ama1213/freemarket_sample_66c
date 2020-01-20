@@ -38,7 +38,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       birthday_day: session[:birthday_day],
       phone_number: "08000000000",
       post_number1: "000-0000",
-      prefecture1: "1",
+      prefecture_id: "1",
       municipality1: "福岡市",
       house_number1: "博多区",
       building_name1: "",
@@ -67,7 +67,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         birthday_day: session[:birthday_day],
         phone_number: session[:phone_number],
         post_number1: "000-0000",
-        prefecture1: "1",
+        prefecture_id: "1",
         municipality1: "福岡市",
         house_number1: "博多区",
         building_name1: "",
@@ -83,7 +83,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create_address
     session[:post_number1] = user_params[:post_number1]
-    session[:prefecture1] = user_params[:prefecture1]
+    session[:prefecture_id] = user_params[:prefecture_id]
     session[:municipality1] = user_params[:municipality1]
     session[:house_number1] = user_params[:house_number1]
     session[:building_name1] = user_params[:building_name1]
@@ -101,7 +101,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         birthday_day: session[:birthday_day],
         phone_number: session[:phone_number],
         post_number1: session[:post_number1],
-        prefecture1: session[:prefecture1],
+        prefecture_id: session[:prefecture_id],
         municipality1: session[:municipality1],
         house_number1: session[:house_number1],
         building_name1: session[:building_name1],
@@ -197,7 +197,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :katakana_name,
       :phone_number,
       :post_number1,
-      :prefecture1,
+      :prefecture_id,
       :municipality1,
       :house_number1,
       :building_name1,

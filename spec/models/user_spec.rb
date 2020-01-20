@@ -3,7 +3,7 @@ require 'rails_helper'
 describe User do
   describe '#create' do
 
-    it "is valid with a name, email, password, birthday_year, birthday_month, birthday_day, phone_numberber, kanji_family, kanji_name, katakana_family, katakana_name, post_number1, prefecture1, municipality1, house_number1" do
+    it "is valid with a name, email, password, birthday_year, birthday_month, birthday_day, phone_numberber, kanji_family, kanji_name, katakana_family, katakana_name, post_number1, prefecture_id, municipality1, house_number1" do
       user = build(:user)
       expect(user).to be_valid
     end
@@ -80,10 +80,10 @@ describe User do
       expect(user.errors[:post_number1]).to include("を入力してください")
     end
 
-    it "is invalid without a prefecture1" do
-      user = build(:user, prefecture1: "")
+    it "is invalid without a prefecture_id" do
+      user = build(:user, prefecture_id: "")
       user.valid?
-      expect(user.errors[:prefecture1]).to include("を入力してください")
+      expect(user.errors[:prefecture_id]).to include("を入力してください")
     end
     
     it "is invalid without a municipality1" do
@@ -200,19 +200,19 @@ describe User do
       expect(user.errors[:post_number1]).to include("は不正な値です")
     end
 
-    it "is valid with a prefecture1 that has less than 48" do
-      user = build(:user, prefecture1: "48")
+    it "is valid with a prefecture_id that has less than 48" do
+      user = build(:user, prefecture_id: "48")
       expect(user).to be_valid
     end
 
-    it "is invalid with a prefecture1 that has more than 49" do
-      user = build(:user, prefecture1: "49")
+    it "is invalid with a prefecture_id that has more than 49" do
+      user = build(:user, prefecture_id: "49")
       user.valid?
       expect(user.errors[:city])
     end
 
-    it "is invalid with a prefecture1 only integer" do
-      user = build(:user, prefecture1: "a")
+    it "is invalid with a prefecture_id only integer" do
+      user = build(:user, prefecture_id: "a")
       user.valid?
       expect(user.errors[:city])
     end

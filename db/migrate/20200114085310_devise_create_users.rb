@@ -10,15 +10,15 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer :birthday_year,     null: false
       t.integer :birthday_month,    null: false
       t.integer :birthday_day,      null: false
-      t.string :phone_number,      null: false, unique: true
+      t.string :phone_number,       null: false, unique: true
       t.string :kanji_family,       null: false
       t.string :kanji_name,         null: false
       t.string :katakana_family,    null: false
       t.string :katakana_name,      null: false
-      t.string :post_number1,      null: false
-      t.string :prefecture1,        null: false
+      t.string :post_number1,       null: false
+      t.string :prefecture_id,      null: false
       t.string :municipality1,      null: false
-      t.string :house_number1,     null: false
+      t.string :house_number1,      null: false
       t.string :building_name1
       t.string :address_phone
       t.text :text
