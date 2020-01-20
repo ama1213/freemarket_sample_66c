@@ -46,8 +46,9 @@
           必須
       .signin_adress__contents__adress_1__item
         .signin_adress__contents__adress_1__item__wrap
-          -# = f.collection_select :prefecture1, Prefecture.all, prompt: "--", class: "signin_adress__contents__adress_1__item__wrap__input"
-          = icon('fas', 'chevron-down', class: "signin_adress__contents__adress_1__item__wrap__icon")
+          = form_for "" do |f|
+            = f.collection_select :prefecture1, Prefecture.all, prompt: "--", class: "signin_adress__contents__adress_1__item__wrap__input"
+            = icon('fas', 'chevron-down', class: "signin_adress__contents__adress_1__item__wrap__icon")
     .signin_adress__contents__adress_2
       .signin_adress__contents__adress_2__top
         .signin_adress__contents__adress_2__top__left
