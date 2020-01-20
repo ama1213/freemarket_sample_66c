@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+  }
+  devise_scope :user do
+    get 'index', to: 'users/registrations#index'
+    get 'phones', to: 'users/registrations#new_phone'
+    post 'phones', to: 'users/registrations#create_phone'
+    get 'addresses', to: 'users/registrations#new_address'
+    post 'addresses', to: 'users/registrations#create_address'
+    get 'cards', to: 'users/registrations#new_card'
+    post 'cards', to: 'users/registrations#create_card'
+  end
+
   get 'comments/new', to: 'comments#new'
   get 'layouts/footer', to: 'layouts#footer'
   get 'layouts/application', to: 'layouts#application'
@@ -17,10 +30,4 @@ Rails.application.routes.draw do
   get 'users/logout', to: 'users#logout'
   get 'users/payment_method', to: 'users#payment_method'
 
-  get 'users/new', to: 'users#new'
-  get 'users/entry', to: 'users#entry'
-  get 'users/number', to: 'users#number'
-  get 'users/signin_adress', to: 'users#signin_adress'
-  get 'users/pay', to: 'users#pay'
-  get 'users/done', to: 'users#done'
 end
