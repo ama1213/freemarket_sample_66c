@@ -1,13 +1,21 @@
 class ProductsController < ApplicationController
-  def comment
+  def index
+    @products = Product.includes(:images).order('created_at DESC')
   end
 
-  def content
+  def new
   end
 
-  def order
+  def create
   end
 
-  def show
+  def edit
   end
+
+  def update
+  end
+
+  def destroy
+  end
+
 end
