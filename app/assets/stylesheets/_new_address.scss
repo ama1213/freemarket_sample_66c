@@ -30,7 +30,7 @@
 
     &__contents {
       width: 700px;
-      height: 1083px;
+      height: 850px;
       padding: 40px 40px 64px;
       background-color: #ffffff;
 
@@ -197,7 +197,7 @@
             position: relative;
             z-index: 1;
 
-            #prefecture_id {
+            #user_prefecture_id {
               position: absolute;
               top: 0;
               left: 0;
@@ -215,7 +215,7 @@
               cursor: pointer;
             }
 
-            #prefecture_id:focus {
+            #user_prefecture_id:focus {
               border: solid 1px #0099E8;
             }
 
@@ -849,12 +849,12 @@
       }
 
       &__btn {
+        display: block;
         width: 343px;
         height: 50px;
-        
         font-size: 14px;
         background-color: #EA532D;
-        margin: 32px auto 0;
+        margin: 42px auto 0;
         text-align: center;
         line-height: 50px;
 
