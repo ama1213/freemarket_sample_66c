@@ -117,7 +117,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create_card
-    Payjp.api_key = "sk_test_a953276c4707a1d8f7700184"
+    Payjp.api_key = ENV['PAYJP_ACCESS_KEY']
     if params['payjpToken'].blank?
       render :new_card
     else
