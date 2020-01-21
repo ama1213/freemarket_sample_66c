@@ -502,7 +502,7 @@
                 position: relative;
                 z-index: 1;
               
-                #prefecture_id {
+                #product_area {
                   position: absolute;
                   top: 0;
                   left: 0;
@@ -520,7 +520,7 @@
                   cursor: pointer;
                 }
 
-                #prefecture_id6:focus {
+                #product_area:focus {
                   border: solid 1px #0099E8;
                 }
 

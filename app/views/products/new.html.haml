@@ -1,7 +1,7 @@
 .exhibition
   .exhibition__header
     = image_tag "/images/fmarket_logo_red.svg", height: "49px", width: "185px", class: "exhibition__header__icon"
-  = form_for @products url: products_path, html:{class:"exhibition__contents"} do |f|
+  = form_for @product, url: products_path, html:{class:"exhibition__contents"} do |f|
     .exhibition__contents__title
       商品の情報を入力
     .exhibition__contents__image_upload
@@ -88,8 +88,8 @@
           .exhibition__contents__shipping__box__shipping_charges__container
             .exhibition__contents__shipping__box__shipping_charges__container__wrap
               - @shipping_charges = ["---","送料込み(出品者負担)","着払い(購入者負担)"]
-                = f.select :shipping_charges, @shipping_charges, {}, {selected: 0, id: "shipping_charges", class: "exhibition__contents__shipping__box__shipping_charges__container__wrap__select"}
-                = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__shipping_charges__container__wrap__icon")
+              = f.select :postage, @shipping_charges, {}, {selected: 0, id: "shipping_charges", class: "exhibition__contents__shipping__box__shipping_charges__container__wrap__select"}
+              = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__shipping_charges__container__wrap__icon")
         .append_shipping_method
         .exhibition__contents__shipping__box__area
           .exhibition__contents__shipping__box__area__head
@@ -99,8 +99,8 @@
               必須
           .exhibition__contents__shipping__box__area__container
             .exhibition__contents__shipping__box__area__container__wrap
-                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: "exhibition__contents__shipping__box__area__container__wrap__input"
-                = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__area__container__wrap__icon")
+              = f.collection_select :area, Prefecture.all, :id, :name, prompt: "---", class: "exhibition__contents__shipping__box__area__container__wrap__input"
+              = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__area__container__wrap__icon")
         .exhibition__contents__shipping__box__days
           .exhibition__contents__shipping__box__days__head
             .exhibition__contents__shipping__box__days__head__left
