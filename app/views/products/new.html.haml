@@ -1,7 +1,7 @@
 .exhibition
   .exhibition__header
     = image_tag "/images/fmarket_logo_red.svg", height: "49px", width: "185px", class: "exhibition__header__icon"
-  .exhibition__contents
+  = form_for @products url: products_path, html:{class:"exhibition__contents"} do |f|
     .exhibition__contents__title
       商品の情報を入力
     .exhibition__contents__image_upload
@@ -23,7 +23,7 @@
         .exhibition__contents__description__head__right.label_required
           必須
       .exhibition__contents__description__input  
-        %input{type: "text", placeholder:"商品名（必須 40文字まで）", class:"exhibition__contents__description__input__form"}
+        = f.text_field :name, class:"exhibition__contents__description__input__form", placeholder:"商品名（必須 40文字まで）"
       .exhibition__contents__description__box
         .exhibition__contents__description__box__left
           商品の説明
@@ -88,7 +88,6 @@
           .exhibition__contents__shipping__box__shipping_charges__container
             .exhibition__contents__shipping__box__shipping_charges__container__wrap
               - @shipping_charges = ["---","送料込み(出品者負担)","着払い(購入者負担)"]
-              = form_for '' do |f|
                 = f.select :shipping_charges, @shipping_charges, {}, {selected: 0, id: "shipping_charges", class: "exhibition__contents__shipping__box__shipping_charges__container__wrap__select"}
                 = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__shipping_charges__container__wrap__icon")
         .append_shipping_method
@@ -100,7 +99,6 @@
               必須
           .exhibition__contents__shipping__box__area__container
             .exhibition__contents__shipping__box__area__container__wrap
-              = form_for '' do |f|
                 = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: "exhibition__contents__shipping__box__area__container__wrap__input"
                 = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__area__container__wrap__icon")
         .exhibition__contents__shipping__box__days
@@ -131,7 +129,7 @@
             .exhibition__contents__price__box__price_input__container__wrap
               ¥
               .exhibition__contents__price__box__price_input__container__wrap__item
-                %input{type: "text", placeholder:"例）300", class: "exhibition__contents__price__box__price_input__container__wrap__item__number"}
+                = f.text_field :price, placeholder:"例）300", class: "exhibition__contents__price__box__price_input__container__wrap__item__number"
         .exhibition__contents__price__box__tax
           .exhibition__contents__price__box__tax__left
             販売手数料 (10%)
