@@ -29,24 +29,24 @@ class User < ApplicationRecord
   has_one :card
   accepts_nested_attributes_for :card
 
-  FactoryBot.define do
+  # FactoryBot.define do
 
-    factory :user do
-      name                  {"taka"}
-      email                 {"yyh7uk@gmail.com"}
-      password              {"takayy7899"}
-      birthday_year         {"7"}
-      birthday_month        {"7"}
-      birthday_day          {"7"}
-      phone_number          {"08011110000"}
-      kanji_family          {"山田"}
-      kanji_name            {"太郎"}
-      katakana_family       {"ヤマダ"}
-      katakana_name         {"タロウ"}
-      post_number1          {"090-0000"}
-      prefecture_id         {"7"}
-      municipality1         {"福岡市"}
-      house_number1         {"博多区"}
-    end
-  end
+  #   factory :user do
+  #     name                  {"taka"}
+  #     email                 {"yyh7uk@gmail.com"}
+  #     password              {"takayy7899"}
+  #     birthday_year         {"7"}
+  #     birthday_month        {"7"}
+  #     birthday_day          {"7"}
+  #     phone_number          {"08011110000"}
+  #     kanji_family          {"山田"}
+  #     kanji_name            {"太郎"}
+  #     katakana_family       {"ヤマダ"}
+  #     katakana_name         {"タロウ"}
+  #     post_number1          {"090-0000"}
+  #     prefecture_id         {"7"}
+  #     municipality1         {"福岡市"}
+  #     house_number1         {"博多区"}
+  #   end
+  # end
 end
