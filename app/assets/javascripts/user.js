@@ -10,11 +10,17 @@ $(function(){
   for (var i = 1; i <= 31; i++) {
       $('#user_birthday_day').append('<option value="' + i + '">' + i + '</option>');
   }
+
+  $("#password-form").keyup(function(){
+    var text = $("#password-form").val();
+    $(".passward-check").text(text);
+  });
+
   $('#passcheck').change(function(){
     if ( $(this).prop('checked') ) {
-        $('#password').attr('type','text');
+      $(".passward-check").css("display", "inline-block");
     } else {
-        $('#password').attr('type','password');
+      $(".passward-check").css("display", "none");
     }
   });
 
@@ -51,10 +57,12 @@ $(function(){
   });
 
   $(".new_user__form__box__content__select__body").focus(function(){
+    var nameBox = $(this).parent().parent();
     $(this).css("border-color","#0099E8");
+    nameBox.next().remove();
   }).blur(function(){
     var nameBox = $(this).parent().parent();
-    if($(this).val() == ""){
+    if($(this).val() == "--"){
       $(this).css("border-color","#ea352d");
       var name = $(this).attr("data-name");
       nameBox.after('<div class="error-text">' + name + 'を入力してください</div>');

@@ -81,15 +81,15 @@
         %span.new_user__form__box__require 必須
         .new_user__form__box__content
           .new_user__form__box__content__select
-            = f.select :birthday_year, ["--"],{}, {class:"new_user__form__box__content__select__body", id:"user_birthday_year"}
+            = f.select :birthday_year, ["--"],{}, {class:"new_user__form__box__content__select__body", id:"user_birthday_year", data: {name: '生年月日'}}
             %i.fas.fa-chevron-down
           %span 年
           .new_user__form__box__content__select
-            = f.select :birthday_month, ["--"],{}, {class:"new_user__form__box__content__select__body", id: "user_birthday_month"}
+            = f.select :birthday_month, ["--"],{}, {class:"new_user__form__box__content__select__body", id: "user_birthday_month", data: {name: '生年月日'}}
             %i.fas.fa-chevron-down
           %span 月
           .new_user__form__box__content__select
-            = f.select :birthday_day, ["--"],{}, {class:"new_user__form__box__content__select__body", id: "user_birthday_day"}
+            = f.select :birthday_day, ["--"],{}, {class:"new_user__form__box__content__select__body", id: "user_birthday_day", data: {name: '生年月日'}}
             %i.fas.fa-chevron-down
           %span 日
 
