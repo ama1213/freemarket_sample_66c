@@ -36,7 +36,7 @@
             カード番号
             .pay__main__form__group__text__title__label
               必須
-          %input{type: "text", placeholder: "半角数字のみ", class:"pay__main__form__group__text__box", id: "pay_number"}
+          %input{type: "text", placeholder: "半角数字のみ", class:"pay__main__form__group__text__box", id: "pay_number", data: {name: 'カード番号'}}
         .pay__main__form__group__list
           .pay__main__form__group__list__card_1
             = image_tag "/images/visa.ico", height:"20px", width:"28px"
@@ -61,7 +61,7 @@
               必須
           .pay__main__form__group__expire__bottom
             .pay__main__form__group__expire__bottom__month
-              %select{name: "pref_id", class: "select_default", id: "pay_month"}
+              %select{name: "pref_id", class: "select_default", id: "pay_month", data: {name: '有効期限'}}
                 %option{selected: "selected", value: ""} --
                 %option{value: "1"} 1
                 %option{value: "2"} 2
@@ -80,7 +80,7 @@
               月
             
             .pay__main__form__group__expire__bottom__day
-              %select{name: "pref_id", class: "select_default", id: "pay_year"}
+              %select{name: "pref_id", class: "select_default", id: "pay_year", data: {name: '有効期限'}}
                 %option{selected: "selected", value: ""} --
                 %option{value: "2020"} 20
                 %option{value: "2021"} 21
@@ -102,7 +102,7 @@
               セキュリティコード
               .pay__main__form__group__security__code__title__label
                 必須
-            %input{type: "text", placeholder: "カード背面4桁もしくは3桁の番号", class:"pay__main__form__group__security__code__box", id:"pay_security"}
+            %input{type: "text", placeholder: "カード背面4桁もしくは3桁の番号", class:"pay__main__form__group__security__code__box", id:"pay_security", data: {name: 'セキュリティコード'}}
         
         .pay__main__form__group__reason
           = link_to"#", class: "number__main__form__group__reason__link" do
