@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   get 'posts/menu', to: 'posts#menu'
 
   get 'products/order', to: 'products#order'
-  get 'products/show', to: 'products#show'
   get 'products/exhibition_page', to: 'products#exhibition_page'
 
   get 'users/edit', to: 'users#edit'
@@ -29,5 +28,7 @@ Rails.application.routes.draw do
   get 'users/identity_information', to: 'users#identity_information'
   get 'users/logout', to: 'users#logout'
   get 'users/payment_method', to: 'users#payment_method'
-
+  
+  root 'products#index'
+  resources :products, except: :show
 end
