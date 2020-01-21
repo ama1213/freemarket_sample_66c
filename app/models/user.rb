@@ -28,6 +28,7 @@ class User < ApplicationRecord
 
   has_one :card
   accepts_nested_attributes_for :card
+  has_many :products
 
   # FactoryBot.define do
 
