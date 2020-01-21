@@ -15,7 +15,8 @@
       .exhibition__contents__image_upload__container.clearfix.state_image_number_10
         .exhibition__contents__image_upload__container__items
         .exhibition__contents__image_upload__container__upload_box.have_item_0
-          .exhibition__contents__image_upload__container__upload_box.have_item_0__text
+          = f.fields_for :images do |i|
+            i.exhibition__contents__image_upload__container__upload_box.have_item_0__text
     .exhibition__contents__description
       .exhibition__contents__description__head
         .exhibition__contents__description__head__left
