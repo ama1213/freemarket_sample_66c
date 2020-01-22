@@ -65,18 +65,21 @@
             = link_to "#" do
               %i.fas.fa-chevron-right
               ひざ丈ワンピース
-      %tr.item__content__detail__box
-        %th.item__content__detail__box__left ブランド
-        %td.item__content__detail__box__right
-          = link_to "トッコ クローゼット", "#"
-      %tr.item__content__detail__box
-        %th.item__content__detail__box__left 商品のサイズ
-        %td.item__content__detail__box__right
-          = @product.status
+      - if @product.brand != nil
+        %tr.item__content__detail__box
+          %th.item__content__detail__box__left ブランド
+          %td.item__content__detail__box__right
+            = link_to "#" do
+              = @product.brand
+      - if @product.size != nil
+        %tr.item__content__detail__box
+          %th.item__content__detail__box__left 商品のサイズ
+          %td.item__content__detail__box__right
+            = @product.size
       %tr.item__content__detail__box
         %th.item__content__detail__box__left 商品の状態
         %td.item__content__detail__box__right
-          = @product.situation
+          = @product.status
       %tr.item__content__detail__box
         %th.item__content__detail__box__left 配送料の負担
         %td.item__content__detail__box__right
@@ -92,28 +95,23 @@
             = @product.area
       %tr.item__content__detail__box
         %th.item__content__detail__box__left 発送日の目安
-        %td.item__content__detail__box__right 1~2日で発送
+        %td.item__content__detail__box__right
+          = @product.situation
   .item__price
     %span.item__price__en
       = number_to_currency(@product.price, unit: "¥", format: "%u%n", precision: 0)
     %span.item__price__zei (税込)
     %span.item__price__sou 送料込み
-  = link_to "購入画面に進む", "#", class: "item__buy-btn"
-  %p.item__merubin この商品はゆうゆうアマタツ便を使用しているため、アプリからのみ購入できます。
+  - if @product.user_id == current_user.id
+    = link_to "#", class: "item__buy-btn" do
+      この商品を削除する
+  - else
+    = link_to "#", class: "item__buy-btn" do
+      購入画面へ進む
+  - if @product.method == "ゆうゆうアマタツ便"
+    %p.item__merubin この商品はゆうゆうアマタツ便を使用しているため、アプリからのみ購入できます。
   %P.item__message
-    即購入オーケーです！
-
-    去年購入し、何度か着用しましたがきれいな状態です。
-
-    使用感は個人的に感じませんが、
-    スカート部分に若干シワがあります。写真でご確認ください。
-    気にならない方にお譲りいたします。
-
-    首回りのスカラップが可愛くて、ウエストラインもすっきりして見えます！
-
-
-
-    よろしくお願いいたします(*´꒳`*)
+    = @product.detail
   .item__bottom
     .item__bottom__left
       %button.item__bottom__left__like{type: "butttom"}

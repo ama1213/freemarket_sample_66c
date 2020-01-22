@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @products = Product.includes(:images).order('created_at DESC')
   end
@@ -20,6 +22,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id]).includes(:images, :users)
+    @product = Product.find(params[:id])
   end
 end
