@@ -1,0 +1,33 @@
+.buy
+  %header.buy__header
+    .buy__header__box
+      = link_to "#" do
+        = image_tag "/images/fmarket_logo_red.svg", class: "buy__header__box__image"
+.login
+  .login__main
+    .login__main__new
+      %p.login__main__new__text アカウントをお持ちでない方はこちら
+      = link_to "新規会員登録", index_path, class: "login__main__new__btn"
+    .login__main__api
+      .login__main__api__face
+        = link_to "#", class: "login__main__api__face__btn" do
+          = icon('fab', 'facebook-square', class: "login__main__api__face__btn__icon")
+          Facebookでログイン
+      .login__main__api__google
+        = link_to "#", class: "login__main__api__google__btn" do
+          = icon('fab', 'google', class: "login__main__api__google__btn__icon")
+          Googleでログイン
+    = form_for resource, as: resource_name, url: session_path(resource_name), html: {class: "login__main__form"} do |f|
+      = f.email_field :email, placeholder: "メールアドレス", autofocus: true, autocomplete: "email", class: "login__main__form__email"
+      = f.password_field :password, placeholder: "パスワード", autocomplete: "current-password", class: "login__main__form__pass"
+      = f.submit "ログイン", class: "login__main__form__btn"
+      = link_to "パスワードをお忘れの方", "#", class: "login__main__form__forget"
+.buy__footer
+  .buy__footer__content
+    .buy__footer__content__top
+      = link_to "プライバシーポリシー", "#", class: "buy__footer__content__top__left"
+      = link_to "アマタツ利用規約", "#", class: "buy__footer__content__top__center"
+      = link_to "特定商取引に関する表記", "#", class: "buy__footer__content__top__right"
+    .buy__footer__content__middle
+      = image_tag "/images/logo_gray.svg"
+    .buy__footer__content__bottom ©︎ Fmarket,inc.

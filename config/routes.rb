@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations',
+    sessions:      'users/sessions',
   }
   devise_scope :user do
     get 'index', to: 'users/registrations#index'
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
     get 'cards', to: 'users/registrations#new_card'
     post 'cards', to: 'users/registrations#create_card'
+    get 'users/login', to: 'users/sessions#new'
   end
 
   get 'comments/new', to: 'comments#new'
