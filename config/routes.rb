@@ -30,5 +30,5 @@ Rails.application.routes.draw do
   get 'users/payment_method', to: 'users#payment_method'
   
   root 'products#index'
-  resources :products, except: :show
+  resources :products
 end

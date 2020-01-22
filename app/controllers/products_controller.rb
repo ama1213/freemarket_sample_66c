@@ -18,4 +18,8 @@ class ProductsController < ApplicationController
 
   def destroy
   end
+
+  def show
+    @product = Product.find(params[:id]).includes(:images, :users)
+  end
 end

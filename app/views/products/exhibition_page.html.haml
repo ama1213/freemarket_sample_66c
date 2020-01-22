@@ -2,7 +2,7 @@
 
 .item
   %h1.item__name
-    かわいいワンピース
+    = @product.name
   .item__content
     .item__content__photo
       %ul.item__content__photo__main
@@ -35,7 +35,8 @@
       %tr.item__content__detail__box
         %th.item__content__detail__box__left 出品者
         %td.item__content__detail__box__right
-          = link_to "cherry", "#", class: "item__content__detail__box__right__name"
+          = link_to "#", class: "item__content__detail__box__right__name" do
+            = @product.user.name
           .item__content__detail__box__right__evaluation
             .item__content__detail__box__right__evaluation__great
               %i.fas.fa-laugh
@@ -48,7 +49,7 @@
               0
       .item__price.price-hidden
         %span.item__price__en
-          ¥4,200
+          = number_to_currency(@product.price, unit: "¥", format: "%u%n", precision: 0)
         %span.item__price__zei (税込)
         %span.item__price__sou 送料込み
       %tr.item__content__detail__box
@@ -70,26 +71,31 @@
           = link_to "トッコ クローゼット", "#"
       %tr.item__content__detail__box
         %th.item__content__detail__box__left 商品のサイズ
-        %td.item__content__detail__box__right M
+        %td.item__content__detail__box__right
+          = @product.status
       %tr.item__content__detail__box
         %th.item__content__detail__box__left 商品の状態
-        %td.item__content__detail__box__right 目立った傷や汚れなし
+        %td.item__content__detail__box__right
+          = @product.situation
       %tr.item__content__detail__box
         %th.item__content__detail__box__left 配送料の負担
-        %td.item__content__detail__box__right 送料込み(出品者負担)
+        %td.item__content__detail__box__right
+          = @product.postage
       %tr.item__content__detail__box
         %th.item__content__detail__box__left 配送の方法
-        %td.item__content__detail__box__right ゆうゆうアマタツ便
+        %td.item__content__detail__box__right
+          = @product.method
       %tr.item__content__detail__box
         %th.item__content__detail__box__left 配送元地域
-        %td.item__content__detail__box__right 
-          = link_to "富山県", "#"
+        %td.item__content__detail__box__right
+          = link_to "#" do
+            = @product.area
       %tr.item__content__detail__box
         %th.item__content__detail__box__left 発送日の目安
         %td.item__content__detail__box__right 1~2日で発送
   .item__price
     %span.item__price__en
-      ¥4,200
+      = number_to_currency(@product.price, unit: "¥", format: "%u%n", precision: 0)
     %span.item__price__zei (税込)
     %span.item__price__sou 送料込み
   = link_to "購入画面に進む", "#", class: "item__buy-btn"
