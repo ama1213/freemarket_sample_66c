@@ -35,7 +35,7 @@
         .number__main__form__group__text
           .number__main__form__group__text__title
             携帯電話の番号
-          = f.text_field :phone_number, placeholder: "携帯電話の番号を入力", class:"number__main__form__group__text__box"
+          = f.text_field :phone_number, placeholder: "携帯電話の番号を入力", class:"number__main__form__group__text__box", data: {name: '電話番号'}
         %p.number__main__form__group__confirmation
           本人確認のため、携帯電話SMS(ショートメッセージサービス)を利用して認証を行います。
         = f.submit "電話番号を登録する", class: "number__main__form__group__btn"
@@ -50,7 +50,7 @@
     .number__footer__content
       .number__footer__content__top
         = link_to "プライバシーポリシー", "#", class: "number__footer__content__top__left"
-        = link_to "メルカリ利用規約", "#", class: "number__footer__content__top__center"
+        = link_to "アマタツ利用規約", "#", class: "number__footer__content__top__center"
         = link_to "特定商取引に関する表記", "#", class: "number__footer__content__top__right"
       .number__footer__content__middle
         = image_tag "/images/logo_gray.svg"

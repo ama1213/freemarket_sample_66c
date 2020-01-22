@@ -37,7 +37,7 @@
         .signin_adress__contents__postal_code__top__right.label_required
           必須
       .signin_adress__contents__postal_code__item
-        = f.text_field :post_number1, placeholder: "例）123-4567", class: "signin_adress__contents__postal_code__item__input"
+        = f.text_field :post_number1, placeholder: "例）123-4567", class: "signin_adress__contents__postal_code__item__input", data: {name: '郵便番号'}
     .signin_adress__contents__adress_1
       .signin_adress__contents__adress_1__top
         .signin_adress__contents__adress_1__top__left
@@ -46,7 +46,7 @@
           必須
       .signin_adress__contents__adress_1__item
         .signin_adress__contents__adress_1__item__wrap
-          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: "signin_adress__contents__adress_1__item__wrap__input"
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: "signin_adress__contents__adress_1__item__wrap__input", data: {name: '都道府県'}
           = icon('fas', 'chevron-down', class: "signin_adress__contents__adress_1__item__wrap__icon")
     .signin_adress__contents__adress_2
       .signin_adress__contents__adress_2__top
@@ -55,7 +55,7 @@
         .signin_adress__contents__adress_2__top__right.label_required
           必須
       .signin_adress__contents__adress_2__item
-        = f.text_field :municipality1, placeholder: "例）横浜市緑区", class: "signin_adress__contents__adress_2__item__input"
+        = f.text_field :municipality1, placeholder: "例）横浜市緑区", class: "signin_adress__contents__adress_2__item__input", data: {name: '市区町村'}
     .signin_adress__contents__adress_3
       .signin_adress__contents__adress_3__top
         .signin_adress__contents__adress_3__top__left
@@ -63,7 +63,7 @@
         .signin_adress__contents__adress_3__top__right.label_required
           必須
       .signin_adress__contents__adress_3__item
-        = f.text_field :house_number1, placeholder: "例）青山1-1-1", class: "signin_adress__contents__adress_3__item__input"
+        = f.text_field :house_number1, placeholder: "例）青山1-1-1", class: "signin_adress__contents__adress_3__item__input", data: {name: '番地'}
     .signin_adress__contents__adress_4
       .signin_adress__contents__adress_4__top
         .signin_adress__contents__adress_4__top__left
@@ -88,7 +88,7 @@
           プライバシーポリシー
       .signin_adress__footer__nav__2
         = link_to "#", class: "signin_adress__footer__nav__link" do
-          メルカリ利用規約
+          アマタツ利用規約
       .signin_adress__footer__nav__3
         = link_to "#", class: "signin_adress__footer__nav__link" do
           特定商取引に関する表記

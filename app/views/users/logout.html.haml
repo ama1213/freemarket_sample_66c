@@ -1,0 +1,30 @@
+= render partial: "products/header"
+
+.content
+  .content__left
+    = render "sidebar"
+  .content__logout
+    .content__logout__item
+      = link_to "#" do
+        .content__logout__item__btn
+          ログアウト
+
+.banner
+  = link_to"#" do
+    = image_tag"/images/fre.jpg", class:"header-image"
+    .banner__text
+      スマホでかんたんフリマアプリ
+    .banner__comment
+      今すぐ無料ダウンロード!
+    .banner__merucari
+      = link_to "#" do
+        = image_tag"/images/logo_white.svg",width:"50px",height:"50px"
+    .banner__app
+      = link_to"https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
+        = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg",width:"144px",height:"40px")
+    .banner__google
+      = link_to"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
+        = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg",width:"144px",height:"40px")
+
+= render "layouts/footer_sell_btn"
+= render partial: "products/footer"

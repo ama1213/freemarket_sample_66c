@@ -7,7 +7,7 @@
       %pスマホでかんたん
       %pフリマアプリ
     .news__comment
-      %pメルカリはスマホカメラからすぐに出品できる
+      %pアマタツはスマホカメラからすぐに出品できる
       %p購入時も安心な独自システムのアプリです
     .news__app
       = link_to"https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
@@ -42,17 +42,7 @@
           もっと見る
           %i.fas.fa-chevron-right
       %ul.item-index__box__container__content
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
+        = render @products
     .item-index__box__container
       .item-index__box__container__title
         %h3 メンズ新着アイテム
@@ -60,17 +50,7 @@
           もっと見る
           %i.fas.fa-chevron-right
       %ul.item-index__box__container__content
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
+        = render @products
     .item-index__box__container
       .item-index__box__container__title
         %h3 家電・スマホ・カメラ新着アイテム
@@ -78,17 +58,7 @@
           もっと見る
           %i.fas.fa-chevron-right
       %ul.item-index__box__container__content
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
+        = render @products
     .item-index__box__container
       .item-index__box__container__title
         %h3 おもちゃ・ホビー・グッズ新着アイテム
@@ -96,17 +66,7 @@
           もっと見る
           %i.fas.fa-chevron-right
       %ul.item-index__box__container__content
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
+        = render @products
 .menu
   .menu__box
     .menu__box__top
@@ -133,17 +93,7 @@
           もっと見る
           %i.fas.fa-chevron-right
       %ul.item-index__box__container__content
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
+        = render @products
     .item-index__box__container
       .item-index__box__container__title
         %h3 ルイヴィトン新着アイテム
@@ -151,17 +101,7 @@
           もっと見る
           %i.fas.fa-chevron-right
       %ul.item-index__box__container__content
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
+        = render @products
     .item-index__box__container
       .item-index__box__container__title
         %h3 シュプリーム新着アイテム
@@ -169,17 +109,7 @@
           もっと見る
           %i.fas.fa-chevron-right
       %ul.item-index__box__container__content
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
+        = render @products
     .item-index__box__container
       .item-index__box__container__title
         %h3 ナイキ新着アイテム
@@ -187,17 +117,7 @@
           もっと見る
           %i.fas.fa-chevron-right
       %ul.item-index__box__container__content
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
-        = render partial: 'product'
+        = render @products
 
 .banner
   = link_to"#" do
@@ -216,5 +136,5 @@
       = link_to"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
         = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg",width:"144px",height:"40px")
 
-
+= render "layouts/footer_sell_btn"
 = render"footer"
