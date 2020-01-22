@@ -1,7 +1,7 @@
 .exhibition
   .exhibition__header
     = image_tag "/images/fmarket_logo_red.svg", height: "49px", width: "185px", class: "exhibition__header__icon"
-  = form_for @product, url: products_path, html:{class:"exhibition__contents"} do |f|
+  .exhibition__contents
     .exhibition__contents__title
       商品の情報を入力
     .exhibition__contents__image_upload
@@ -12,11 +12,14 @@
           必須
       .exhibition__contents__image_upload__text
         最大10枚までアップロードできます
-      .exhibition__contents__image_upload__container.clearfix.state_image_number_10
-        .exhibition__contents__image_upload__container__items
-        .exhibition__contents__image_upload__container__upload_box.have_item_0
-          = f.fields_for :images do |i|
-            i.exhibition__contents__image_upload__container__upload_box.have_item_0__text
+      .exhibition__contents__image_upload__container
+      = form_for "" do |f|
+        = f.label "", for:"image_label" do
+          .exhibition__contents__image_upload__container__upload_box
+            = f.file_field "", class: 'exhibition__contents__image_upload__container__upload_box__file_select', id: "image_label"
+            .exhibition__contents__image_upload__container__upload_box__text
+              ドラッグアンドドロップ
+              またはクリックしてファイルをアップロード
     .exhibition__contents__description
       .exhibition__contents__description__head
         .exhibition__contents__description__head__left
@@ -24,7 +27,7 @@
         .exhibition__contents__description__head__right.label_required
           必須
       .exhibition__contents__description__input  
-        = f.text_field :name, class:"exhibition__contents__description__input__form", placeholder:"商品名（必須 40文字まで）"
+        %input{type: "text", placeholder:"商品名（必須 40文字まで）", class:"exhibition__contents__description__input__form"}
       .exhibition__contents__description__box
         .exhibition__contents__description__box__left
           商品の説明
@@ -43,22 +46,44 @@
               必須
           .exhibition__contents__detail__box__categorie__container
             .exhibition__contents__detail__box__categorie__container__wrap
-              %select{name: "", class: "select_default2"}
-                %option{selected: "selected", value: ""} ---
-                %option{value: "categorie1"} レディース
-                %option{value: "categorie2"} メンズ
-                %option{value: "categorie3"} ベビー・キッズ
-                %option{value: "categorie4"} インテリア・住まい・小物
-                %option{value: "categorie5"} 本・音楽・ゲーム
-                %option{value: "categorie6"} おもちゃ・ホビー・グッズ
-                %option{value: "categorie7"} コスメ・香水・美容
-                %option{value: "categorie8"} 家電・スマホ・カメラ
-                %option{value: "categorie9"} スポーツ・レジャー
-                %option{value: "categorie10"} ハンドメイド
-                %option{value: "categorie11"} チケット
-                %option{value: "categorie12"} 自転車・オートバイ
-                %option{value: "categorie13"} その他
-              = icon('fas', 'chevron-down', class: "exhibition__contents__detail__box__categorie__container__wrap__icon")
+              - @shipping_categorie = ["---","レディース","メンズ","ベビー・キッズ","インテリア・住まい・小物","本・音楽・ゲーム","おもちゃ・ホビー・グッズ","コスメ・香水・美容","家電・スマホ・カメラ","スポーツ・レジャー","ハンドメイド","チケット","自転車・オートバイ","その他"]
+              = form_for '' do |f|
+                = f.select :shipping_categorie, @shipping_categorie, {}, {selected: 0, id: "shipping_categorie", class: "exhibition__contents__shipping__box__shipping_categorie__container__wrap__select"}
+                = icon('fas', 'chevron-down', class: "exhibition__contents__detail__box__categorie__container__wrap__icon")
+          .exhibition__contents__detail__box__categorie__container#append_container_child_1
+            .exhibition__contents__detail__box__categorie__container__wrap
+              - @shipping_categorie_child_1 = ["---","トップス","ジャケット/アウター","パンツ","スカート","ワンピース","靴","ルームウェア/パジャマ","レッグウェア","帽子","バッグ","アクセサリー","ヘアアクセサリー","小物","時計","ウィッグ/エクステ","浴衣/水着","スーツ/フォーマル/ドレス","マタニティ","その他"]
+              = form_for '' do |f|
+                = f.select :shipping_categorie_child_1, @shipping_categorie_child_1, {}, {selected: 0, class: "exhibition__contents__shipping__box__shipping_categorie__container__wrap__select"}
+                = icon('fas', 'chevron-down', class: "exhibition__contents__detail__box__categorie__container__wrap__icon")
+          .exhibition__contents__detail__box__categorie__container#append_container_grandchild_1
+            .exhibition__contents__detail__box__categorie__container__wrap
+              - @shipping_categorie_grandchild_1 = ["---","Tシャツ/カットソー(半袖/袖なし)","Tシャツ/カットソー(七部/長袖)","シャツ/ブラウス(半袖/袖なし)","シャツ/ブラウス(七部/長袖)","ポロシャツ","キャミソール","タンクトップ","ホルターネック","ニット/セーター","チュニック","カーディガン/ボレロ","アンサンブル","ベスト/ジレ","パーカー","トレーナー/スウェット","ベアトップ/チューブトップ","ジャージ","その他"]
+              = form_for '' do |f|
+                = f.select :shipping_categorie_grandchild_1, @shipping_categorie_grandchild_1, {}, {selected: 0, class: "exhibition__contents__shipping__box__shipping_categorie__container__wrap__select"}
+                = icon('fas', 'chevron-down', class: "exhibition__contents__detail__box__categorie__container__wrap__icon")
+        .exhibition__contents__detail__box__size#append_container_size
+          .exhibition__contents__detail__box__size__head
+            .exhibition__contents__detail__box__size__head__left
+              サイズ
+            .exhibition__contents__detail__box__size__head__right.label_required
+              必須
+          .exhibition__contents__detail__box__status__container
+            .exhibition__contents__detail__box__status__container__wrap
+              - @shipping_categorie_grandchild_1__size = ["---","XXS以下","XS(SS)","S","M","L","XL(LL)","2XL(3L)","3XL(4L)","4XL(5L)以上","FREE SIZE"]
+              = form_for '' do |f|
+                = f.select :shipping_categorie_grandchild_1__size, @shipping_categorie_grandchild_1__size, {}, {selected: 0, class: "exhibition__contents__shipping__box__shipping_categorie__container__wrap__select"}
+                = icon('fas', 'chevron-down', class: "exhibition__contents__detail__box__categorie__container__wrap__icon")
+        .exhibition__contents__detail__box__brand#append_container_brand
+          .exhibition__contents__detail__box__brand__head
+            .exhibition__contents__detail__box__brand__head__left
+              ブランド
+            .exhibition__contents__detail__box__brand__head__right.label_any
+              任意
+          .exhibition__contents__detail__box__brand__container
+            .exhibition__contents__detail__box__brand__container__wrap
+              = form_for '' do |f|
+                = f.text_field "", placeholder: "例）シャネル", class: "exhibition__contents__detail__box__brand__container__wrap__input"
         .exhibition__contents__detail__box__status
           .exhibition__contents__detail__box__status__head
             .exhibition__contents__detail__box__status__head__left
@@ -79,6 +104,9 @@
     .exhibition__contents__shipping
       .exhibition__contents__shipping__head
         発送について
+        = link_to "#" do
+          .exhibition__contents__shipping__head__question
+            ?
       .exhibition__contents__shipping__box
         .exhibition__contents__shipping__box__shipping_charges
           .exhibition__contents__shipping__box__shipping_charges__head
@@ -89,9 +117,45 @@
           .exhibition__contents__shipping__box__shipping_charges__container
             .exhibition__contents__shipping__box__shipping_charges__container__wrap
               - @shipping_charges = ["---","送料込み(出品者負担)","着払い(購入者負担)"]
-              = f.select :postage, @shipping_charges, {}, {selected: 0, id: "shipping_charges", class: "exhibition__contents__shipping__box__shipping_charges__container__wrap__select"}
-              = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__shipping_charges__container__wrap__icon")
-        .append_shipping_method
+              = form_for '' do |f|
+                = f.select :shipping_charges, @shipping_charges, {}, {selected: 0, id: "shipping_charges", class: "exhibition__contents__shipping__box__shipping_charges__container__wrap__select"}
+                = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__shipping_charges__container__wrap__icon")
+        .exhibition__contents__shipping__box__shipping_method#shipping_method_1
+          .exhibition__contents__shipping__box__shipping_method__head
+            .exhibition__contents__shipping__box__shipping_method__head__left
+              配送の方法
+            .exhibition__contents__shipping__box__shipping_method__head__right.label_required
+              必須
+          .exhibition__contents__shipping__box__shipping_method__container
+            .exhibition__contents__shipping__box__shipping_method__container__wrap
+              %select{name: "pref_id", class: "select_default5"}
+                %option{selected: "selected", value: ""} ---
+                %option{value: "shipping_method1"} 未定
+                %option{value: "shipping_method2"} らくらくメルカリ便
+                %option{value: "shipping_method3"} ゆうメール
+                %option{value: "shipping_method4"} レターパック
+                %option{value: "shipping_method5"} 普通郵便(定形、定形外)
+                %option{value: "shipping_method6"} クロネコヤマト
+                %option{value: "shipping_method7"} ゆうパック
+                %option{value: "shipping_method8"} クリックポスト
+                %option{value: "shipping_method9"} ゆうパケット
+              = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__shipping_method__container__wrap__icon")
+        .exhibition__contents__shipping__box__shipping_method#shipping_method_2
+          .exhibition__contents__shipping__box__shipping_method__head
+            .exhibition__contents__shipping__box__shipping_method__head__left
+              配送の方法
+            .exhibition__contents__shipping__box__shipping_method__head__right.label_required
+              必須
+          .exhibition__contents__shipping__box__shipping_method__container
+            .exhibition__contents__shipping__box__shipping_method__container__wrap
+              %select{name: "pref_id", class: "select_default5"}
+                %option{selected: "selected", value: ""} ---
+                %option{value: "shipping_method1"} 未定
+                %option{value: "shipping_method6"} クロネコヤマト
+                %option{value: "shipping_method7"} ゆうパック
+                %option{value: "shipping_method9"} ゆうメール
+              = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__shipping_method__container__wrap__icon")
+
         .exhibition__contents__shipping__box__area
           .exhibition__contents__shipping__box__area__head
             .exhibition__contents__shipping__box__area__head__left
@@ -100,8 +164,9 @@
               必須
           .exhibition__contents__shipping__box__area__container
             .exhibition__contents__shipping__box__area__container__wrap
-              = f.collection_select :area, Prefecture.all, :id, :name, prompt: "---", class: "exhibition__contents__shipping__box__area__container__wrap__input"
-              = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__area__container__wrap__icon")
+              = form_for '' do |f|
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: "exhibition__contents__shipping__box__area__container__wrap__input"
+                = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__area__container__wrap__icon")
         .exhibition__contents__shipping__box__days
           .exhibition__contents__shipping__box__days__head
             .exhibition__contents__shipping__box__days__head__left
@@ -119,6 +184,9 @@
     .exhibition__contents__price
       .exhibition__contents__price__head
         販売価格(300〜9,999,999)
+        = link_to "#" do
+          .exhibition__contents__price__head__question
+            ?
       .exhibition__contents__price__box
         .exhibition__contents__price__box__price_input
           .exhibition__contents__price__box__price_input__head
@@ -130,18 +198,17 @@
             .exhibition__contents__price__box__price_input__container__wrap
               ¥
               .exhibition__contents__price__box__price_input__container__wrap__item
-                = f.text_field :price, placeholder:"例）300", class: "exhibition__contents__price__box__price_input__container__wrap__item__number"
+                %input{type: "text", placeholder:"例）300", id: "input_price", class: "exhibition__contents__price__box__price_input__container__wrap__item__number"}
         .exhibition__contents__price__box__tax
           .exhibition__contents__price__box__tax__left
             販売手数料 (10%)
-          .exhibition__contents__price__box__tax__right
+          .exhibition__contents__price__box__tax__right#price_tax
             &#8211;
         .exhibition__contents__price__box__gains
           .exhibition__contents__price__box__gains__left
-            販売履歴
-          .exhibition__contents__price__box__gains__right
+            販売利益
+          .exhibition__contents__price__box__gains__right#final_price
             &#8212;
-
     .exhibition__contents__btn_box
       .exhibition__contents__btn_box__text
         %p
