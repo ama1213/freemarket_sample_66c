@@ -6,23 +6,21 @@
 
 .header {
   background-color: white;
-  width: 1440px;
+  width: 100vw;
   height: 100px;
-  padding: 0px 210px;
-
+  
   &__top {
     width: 1020px;
     height: 50px;
     display: flex;
     padding: 8px 0px 0px ;
+    margin: 0 auto;
+
     .image {
       height: 36px;
       width: 134px;
       margin: 0px 45px 0px 0px ;
 
-    }
-    .image {
-      
     }
 
     &__search {
@@ -58,6 +56,8 @@
     height: 40px;
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
+
     &__left {
       display: flex;
       font-size: 14px;

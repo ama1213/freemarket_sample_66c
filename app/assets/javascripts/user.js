@@ -40,6 +40,102 @@ $(function(){
     }
   });
 
+  $(".number__main__form__group__text__box").focus(function(){
+    $(this).css("border-color","#0099E8");
+    $(this).next().remove();
+  }).blur(function(){
+    if($(this).val() == ""){
+      $(this).addClass("error");
+      $(this).css("border-color","#ea352d");
+      var name = $(this).attr("data-name");
+      $(this).after('<div class="error-text">' + name + 'を入力してください</div>');
+    }else{
+      $(this).removeClass("error");
+      $(this).css("border-color","#ccc");
+      $(this).next().remove();
+    }
+  });
+
+  $(".signin_adress__contents__postal_code__item__input").focus(function(){
+    $(this).css("border-color","#0099E8");
+    $(this).next().remove();
+  }).blur(function(){
+    if($(this).val() == ""){
+      $(this).addClass("error");
+      $(this).css("border-color","#ea352d");
+      var name = $(this).attr("data-name");
+      $(this).after('<div class="error-text">' + name + 'を入力してください</div>');
+    }else{
+      $(this).removeClass("error");
+      $(this).css("border-color","#ccc");
+      $(this).next().remove();
+    }
+  });
+
+  $(".signin_adress__contents__adress_2__item__input").focus(function(){
+    $(this).css("border-color","#0099E8");
+    $(this).next().remove();
+  }).blur(function(){
+    if($(this).val() == ""){
+      $(this).addClass("error");
+      $(this).css("border-color","#ea352d");
+      var name = $(this).attr("data-name");
+      $(this).after('<div class="error-text">' + name + 'を入力してください</div>');
+    }else{
+      $(this).removeClass("error");
+      $(this).css("border-color","#ccc");
+      $(this).next().remove();
+    }
+  });
+
+  $(".signin_adress__contents__adress_3__item__input").focus(function(){
+    $(this).css("border-color","#0099E8");
+    $(this).next().remove();
+  }).blur(function(){
+    if($(this).val() == ""){
+      $(this).addClass("error");
+      $(this).css("border-color","#ea352d");
+      var name = $(this).attr("data-name");
+      $(this).after('<div class="error-text">' + name + 'を入力してください</div>');
+    }else{
+      $(this).removeClass("error");
+      $(this).css("border-color","#ccc");
+      $(this).next().remove();
+    }
+  });
+
+  $(".pay__main__form__group__text__box").focus(function(){
+    $(this).css("border-color","#0099E8");
+    $(this).next().remove();
+  }).blur(function(){
+    if($(this).val() == ""){
+      $(this).addClass("error");
+      $(this).css("border-color","#ea352d");
+      var name = $(this).attr("data-name");
+      $(this).after('<div class="error-text">' + name + 'を入力してください</div>');
+    }else{
+      $(this).removeClass("error");
+      $(this).css("border-color","#ccc");
+      $(this).next().remove();
+    }
+  });
+
+  $(".pay__main__form__group__security__code__box").focus(function(){
+    $(this).css("border-color","#0099E8");
+    $(this).next().remove();
+  }).blur(function(){
+    if($(this).val() == ""){
+      $(this).addClass("error");
+      $(this).css("border-color","#ea352d");
+      var name = $(this).attr("data-name");
+      $(this).after('<div class="error-text">' + name + 'を入力してください</div>');
+    }else{
+      $(this).removeClass("error");
+      $(this).css("border-color","#ccc");
+      $(this).next().remove();
+    }
+  });
+
   $(".new_user__form__box__name__input").focus(function(){
     var nameBox = $(this).parent().parent();
     $(this).css("border-color","#0099E8");
@@ -63,6 +159,38 @@ $(function(){
   }).blur(function(){
     var nameBox = $(this).parent().parent();
     if($(this).val() == "--"){
+      $(this).css("border-color","#ea352d");
+      var name = $(this).attr("data-name");
+      nameBox.after('<div class="error-text">' + name + 'を入力してください</div>');
+    }else{
+      $(this).css("border-color","#ccc");
+      nameBox.next().remove();
+    }
+  });
+
+  $(".select_default").focus(function(){
+    var nameBox = $(this).parent().parent();
+    $(this).css("border-color","#0099E8");
+    nameBox.next().remove();
+  }).blur(function(){
+    var nameBox = $(this).parent().parent();
+    if($(this).val() == ""){
+      $(this).css("border-color","#ea352d");
+      var name = $(this).attr("data-name");
+      nameBox.after('<div class="error-text">' + name + 'を入力してください</div>');
+    }else{
+      $(this).css("border-color","#ccc");
+      nameBox.next().remove();
+    }
+  });
+
+  $(".signin_adress__contents__adress_1__item__wrap__input").focus(function(){
+    var nameBox = $(this).parent().parent();
+    $(this).css("border-color","#0099E8");
+    nameBox.next().remove();
+  }).blur(function(){
+    var nameBox = $(this).parent().parent();
+    if($(this).val() == ""){
       $(this).css("border-color","#ea352d");
       var name = $(this).attr("data-name");
       nameBox.after('<div class="error-text">' + name + 'を入力してください</div>');
