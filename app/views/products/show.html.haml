@@ -6,31 +6,13 @@
   .item__content
     .item__content__photo
       %ul.item__content__photo__main
-        %li.item__content__photo__main__box.active
-          = image_tag "/images/oneisan-1.jpg", class:"item__content__photo__main__box__image"
-        %li.item__content__photo__main__box
-          = image_tag "/images/oneisan-2.jpg", class:"item__content__photo__main__box__image"
-        %li.item__content__photo__main__box
-          = image_tag "/images/oneisan-3.jpg", class:"item__content__photo__main__box__image"
-        %li.item__content__photo__main__box
-          = image_tag "/images/oneisan-4.jpg", class:"item__content__photo__main__box__image"
-        %li.item__content__photo__main__box
-          = image_tag "/images/oneisan-5.jpg", class:"item__content__photo__main__box__image"
-        %li.item__content__photo__main__box
-          = image_tag "/images/oneisan-6.jpg", class:"item__content__photo__main__box__image"
+        - @product.images.each do |image|
+          %li.item__content__photo__main__box
+            = image_tag image.image_url, class:"item__content__photo__main__box__image"
       %ul.item__content__photo__sub
-        %li.item__content__photo__sub__box.active
-          = image_tag "/images/oneisan-1.jpg", class:"item__content__photo__sub__box__image"
-        %li.item__content__photo__sub__box
-          = image_tag "/images/oneisan-2.jpg", class:"item__content__photo__sub__box__image"
-        %li.item__content__photo__sub__box
-          = image_tag "/images/oneisan-3.jpg", class:"item__content__photo__sub__box__image"
-        %li.item__content__photo__sub__box
-          = image_tag "/images/oneisan-4.jpg", class:"item__content__photo__sub__box__image"
-        %li.item__content__photo__sub__box
-          = image_tag "/images/oneisan-5.jpg", class:"item__content__photo__sub__box__image"
-        %li.item__content__photo__sub__box
-          = image_tag "/images/oneisan-6.jpg", class:"item__content__photo__sub__box__image"
+        - @product.images.each do |image|
+          %li.item__content__photo__sub__box
+            = image_tag image.image_url, class:"item__content__photo__sub__box__image"
     %table.item__content__detail
       %tr.item__content__detail__box
         %th.item__content__detail__box__left 出品者
@@ -102,8 +84,8 @@
       = number_to_currency(@product.price, unit: "¥", format: "%u%n", precision: 0)
     %span.item__price__zei (税込)
     %span.item__price__sou 送料込み
-  - if @product.user_id == current_user.id
-    = link_to "#", class: "item__buy-btn" do
+  - if user_signed_in? && @product.user_id == current_user.id
+    = link_to product_path(@product.id), method: "delete", class: "item__buy-btn" do
       この商品を削除する
   - else
     = link_to "#", class: "item__buy-btn" do
@@ -173,28 +155,18 @@
 .other
   .other__profile
     %h2.other__profile__title
-      = link_to "cherryさんのその他の出品", "#"
+      = link_to "#" do
+        = "#{@product.user.name}さんのその他の出品"
     .other__profile__group
-      = render partial: 'content'
-      = render partial: 'content'
-      = render partial: 'content'
-      = render partial: 'content'
-      = render partial: 'content'
-      = render partial: 'content'
-      = render partial: 'content'
-      = render partial: 'content'
+      =render partial: 'content', collection: @contents
 
-  .other__profile
-    %h2.other__profile__title
-      = link_to "トッコ クローゼットのひざ丈ワンピース その他の商品", "#"
-    .other__profile__group
-      = render partial: 'content'
-      = render partial: 'content'
-      = render partial: 'content'
-      = render partial: 'content'
-      = render partial: 'content'
-      = render partial: 'content'
-      = render partial: 'content'
+  - if @product.brand != nil
+    .other__profile
+      %h2.other__profile__title
+        = link_to "#" do
+          = "#{@product.brand}のひざ丈ワンピース その他の商品"
+      .other__profile__group
+        =render partial: 'content', collection: @contents
 
 .bottom-tree
   %ul.bottom-tree__box

@@ -1,5 +1,5 @@
 %li.item-index__box__container__content__products
-  = link_to "#" do
+  = link_to product_path(product.id) do
     .item-index__box__container__content__products__product
       .item-index__box__container__content__products__product__area
         - product.images.each do |image|
