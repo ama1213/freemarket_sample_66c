@@ -1,13 +1,14 @@
 .other__profile__group__box
-  =link_to "#" do
+  =link_to product_path(content.id) do
     .other__profile__group__box__top
-      = image_tag "/images/oneisan-1.jpg", class: "other__profile__group__box__top__image"
+      - content.images.each do |image|
+        = image_tag image.image_url, class: "other__profile__group__box__top__image"
     .other__profile__group__box__body
       %h3.other__profile__group__box__body__text
-        fifth コンパクトリブニットカーディガン ベージュ
+        = content.name
       .other__profile__group__box__body__bottom
         .other__profile__group__box__body__bottom__left
-          ¥1,200
+          = number_to_currency(content.price, unit: "¥", format: "%u%n", precision: 0)
         .other__profile__group__box__body__bottom__right
           %i.far.fa-heart
           7
