@@ -5,7 +5,7 @@
     = render "sidebar"
   .content__logout
     .content__logout__item
-      = link_to "#" do
+      = link_to destroy_user_session_path, method: 'delete' do
         .content__logout__item__btn
           ログアウト
 

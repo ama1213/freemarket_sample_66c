@@ -1,20 +1,25 @@
 = render"header"
 
-.news
-  = link_to"#" do
-    = image_tag"/images/freee.jpg", class:"header-image"
-    .news__text
-      %pスマホでかんたん
-      %pフリマアプリ
-    .news__comment
-      %pアマタツはスマホカメラからすぐに出品できる
-      %p購入時も安心な独自システムのアプリです
-    .news__app
-      = link_to"https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
-        = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg",width:"170px",height:"50px")
-    .news__google
-      = link_to"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
-        = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg",width:"170px",height:"50px")
+%ul.news
+  %li
+    = link_to"#" do
+      = image_tag"/images/freee.jpg", class:"header-image"
+      .news__text
+        %p スマホでかんたん
+        %p フリマアプリ
+        %p.news__comment.margin_com アマタツはスマホカメラからすぐに出品できる
+        %p.news__comment 購入時も安心な独自システムのアプリです
+      .news__app
+        = link_to"https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
+          = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg",width:"170px",height:"50px")
+      .news__google
+        = link_to"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
+          = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg",width:"170px",height:"50px")
+  %li
+    = link_to"#" do
+      = image_tag"/images/haikeisea.jpg", class:"header-image"
+      .odenkun
+        = image_tag "/images/odenkun.png"
 
 .menu
   .menu__box
