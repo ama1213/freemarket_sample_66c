@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  protect_from_forgery
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
   require 'payjp'
@@ -15,16 +16,30 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    session[:name] = user_params[:name]
-    session[:email] = user_params[:email]
-    session[:password] = user_params[:password]
-    session[:kanji_name] = user_params[:kanji_name]
-    session[:kanji_family] = user_params[:kanji_family]
-    session[:katakana_name] = user_params[:katakana_name]
-    session[:katakana_family] = user_params[:katakana_family]
-    session[:birthday_year] = user_params[:birthday_year]
-    session[:birthday_month] = user_params[:birthday_month]
-    session[:birthday_day] = user_params[:birthday_day]
+    if params[:sns_auth] == 'true'
+      pass = Devise.friendly_token
+      session[:name] = user_params[:name]
+      session[:email] = user_params[:email]
+      session[:password] = user_params[:password] = pass
+      session[:kanji_name] = user_params[:kanji_name]
+      session[:kanji_family] = user_params[:kanji_family]
+      session[:katakana_name] = user_params[:katakana_name]
+      session[:katakana_family] = user_params[:katakana_family]
+      session[:birthday_year] = user_params[:birthday_year]
+      session[:birthday_month] = user_params[:birthday_month]
+      session[:birthday_day] = user_params[:birthday_day]
+    else
+      session[:name] = user_params[:name]
+      session[:email] = user_params[:email]
+      session[:password] = user_params[:password]
+      session[:kanji_name] = user_params[:kanji_name]
+      session[:kanji_family] = user_params[:kanji_family]
+      session[:katakana_name] = user_params[:katakana_name]
+      session[:katakana_family] = user_params[:katakana_family]
+      session[:birthday_year] = user_params[:birthday_year]
+      session[:birthday_month] = user_params[:birthday_month]
+      session[:birthday_day] = user_params[:birthday_day]
+    end
     @user = User.new(
       name: session[:name],
       email: session[:email],
@@ -44,6 +59,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       building_name1: "",
       address_phone: ""
     )
+    
     unless @user.valid?
       flash.now[:alert] = @user.errors.full_messages
       render :new and return

@@ -35,6 +35,7 @@ $(function(){
       $(this).css("width", "100%");
     }
   });
+  $('.item__content__photo__sub__box').eq(0).addClass('active');
   $('.item__content__photo__sub__box').click(
     function(){
     $('.item__content__photo__sub__box').removeClass('active');

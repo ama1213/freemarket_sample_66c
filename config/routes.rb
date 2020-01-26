@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations',
+    sessions:      'users/sessions',
+    omniauth_callbacks: 'users/omniauth_callbacks',
   }
   devise_scope :user do
     get 'index', to: 'users/registrations#index'
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
     get 'cards', to: 'users/registrations#new_card'
     post 'cards', to: 'users/registrations#create_card'
+    get 'users/login', to: 'users/sessions#new'
   end
 
   get 'comments/new', to: 'comments#new'
@@ -30,5 +33,5 @@ Rails.application.routes.draw do
   get 'users/payment_method', to: 'users#payment_method'
   
   root 'products#index'
-  resources :products, except: :show
+  resources :products
 end
