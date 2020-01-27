@@ -3,11 +3,11 @@
     = link_to "/" do
       .header__top__logo
         = image_tag"/images/fmarket_logo_red.svg",class:"image"
-    .header__top__search
-      何かお探しですか？
-      = link_to "#", class:"color" do
-        .header__top__search__btn
-          = icon('fas', 'search', class: 'icon')
+    = form_with(url: search_path, method: :get, local: true) do |f|
+      = f.text_field :search, class: "header__top__search", placeholder: "何かお探しですか？"
+      = f.label "btn-hidden", class: "header__top__search__btn" do
+        = icon('fas', 'search', class: 'icon')
+        = f.submit id: "btn-hidden"
   .header__bottom
     .header__bottom__left
       = link_to "#", class:"color" do

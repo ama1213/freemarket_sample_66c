@@ -40,6 +40,11 @@ class ProductsController < ApplicationController
     @contents = Product.includes(:images).order('created_at DESC')
   end
 
+  def search
+    @search = params[:search]
+    @products = Product.search(@search)
+  end
+
   def set_product
     @product = Product.find(params[:id])
   end
