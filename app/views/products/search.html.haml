@@ -9,7 +9,9 @@
       = @search
       %span の検索結果
     .search__right__number
-      1 - 132件表示
+      1 - 
+      = @products.length
+      件表示
     .search__right__content
       - @products.each do |product|
         .search__right__content__box
