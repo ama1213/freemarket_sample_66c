@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_20_103809) do
+ActiveRecord::Schema.define(version: 2020_01_25_141757) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_01_20_103809) do
     t.bigint "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "src"
     t.index ["product_id"], name: "index_images_on_product_id"
   end
 
@@ -77,7 +78,19 @@ ActiveRecord::Schema.define(version: 2020_01_20_103809) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category_parents", default: "", null: false
+    t.string "category_children", default: "", null: false
+    t.string "category_grand_children", default: "", null: false
     t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -93,7 +106,7 @@ ActiveRecord::Schema.define(version: 2020_01_20_103809) do
     t.string "katakana_family", null: false
     t.string "katakana_name", null: false
     t.string "post_number1", null: false
-    t.string "prefecture_id", null: false
+    t.string "prefecture1", null: false
     t.string "municipality1", null: false
     t.string "house_number1", null: false
     t.string "building_name1"
@@ -117,4 +130,5 @@ ActiveRecord::Schema.define(version: 2020_01_20_103809) do
   add_foreign_key "cards", "users"
   add_foreign_key "images", "products"
   add_foreign_key "products", "users"
+  add_foreign_key "sns_credentials", "users"
 end
