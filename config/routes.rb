@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   get 'products/exhibition_page', to: 'products#exhibition_page'
   get 'search', to: 'products#search'
 
-  get 'users/edit', to: 'users#edit'
+  get 'users/editdata', to: 'users#editdata'
   get 'users/show', to: 'users#show'
   get 'users/identity_information', to: 'users#identity_information'
   get 'users/logout', to: 'users#logout'
