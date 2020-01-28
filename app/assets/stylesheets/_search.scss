@@ -1,0 +1,94 @@
+.search{
+  margin: 40px auto 0;
+  width: 1020px;
+  display: flex;
+  &__left{
+    width: 280px;
+    margin-right: 40px;
+    &__form{
+      width: 280px;
+    }
+  }
+  &__right{
+    &__title{
+      font-size: 22px;
+      margin-bottom: 8px;
+      span{
+        font-size: 18px;
+        font-weight: 400px;
+      }
+    }
+    &__number{
+      margin: 16px 0;
+      font-size: 12px;
+      color: #888;
+    }
+    &__content{
+      display: flex;
+      flex-wrap: wrap;
+      &__box{
+        margin: 0 20px 20px 0;
+        width: 160px;
+        background-color: #fff;
+        position: relative;
+        &:nth-child(4n){
+          margin-right: 0;
+        }
+        &__area{
+          width: 160px;
+          height: 160px;
+          overflow: hidden;
+          &__image{
+            width: 100%;
+          }
+        }
+        &__body{
+          height: 58px;
+          padding: 8px 12px;
+          &__name{
+            color: #333;
+            font-size: 14px;
+            overflow: hidden;
+            font-weight: 400;
+            height: 3em;
+            line-height: 1.5;
+            word-break: break-word;
+            position: relative;
+            &:after{
+              content: '';
+              position: absolute;
+              bottom: 0;
+              right: 10px;
+              width: 50%;
+              height: 1.5em;
+              background: linear-gradient(to right, rgba(255,255,255,0), #fff 72%);
+            }
+          }
+        }
+        &__price{
+          z-index: 2;
+          position: absolute;
+          bottom: 62px;
+          left: 0;
+          padding: 4px 12px 4px 8px;
+          border-radius: 0 16px 16px 0;
+          font-weight: 600;
+          color: #fff;
+          background-color: rgba(0,0,0,0.3);
+        }
+        &__heart{
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          font-size: 14px;
+          font-weight: 400px;
+          color: #333;
+          .far{
+            color: #ccc;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

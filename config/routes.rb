@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   get 'products/order', to: 'products#order'
   get 'products/exhibition_page', to: 'products#exhibition_page'
+  get 'search', to: 'products#search'
 
   get 'users/edit', to: 'users#edit'
   get 'users/show', to: 'users#show'

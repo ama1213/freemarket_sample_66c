@@ -1,0 +1,29 @@
+= render"header"
+
+.search
+  .search__left
+    .search__left__form
+      こちら側未実装でお送りしております。
+  .search__right
+    %h2.search__right__title
+      = @search
+      %span の検索結果
+    .search__right__number
+      1 - 
+      = @products.length
+      件表示
+    .search__right__content
+      - @products.each do |product|
+        .search__right__content__box
+          = link_to product_path(product.id) do
+            .search__right__content__box__area
+              - product.images.each do |image|
+                = image_tag image.image_url, class: "search__right__content__box__area__image"
+            .search__right__content__box__body
+              .search__right__content__box__body__name
+                = product.name
+            .search__right__content__box__price
+              = number_to_currency(product.price, unit: "¥", format: "%u%n", precision: 0)
+            .search__right__content__box__heart
+              %i.far.fa-heart
+              7
