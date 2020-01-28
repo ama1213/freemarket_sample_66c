@@ -176,7 +176,8 @@
       %i.fas.fa-chevron-right
     %li
       = link_to "#", class: "bottom-tree__box__right" do
-        %span かわいいワンピース
+        %span
+          = @product.name
 
 .bottom-area
   = link_to "購入画面に進む", "#", class: "bottom-area__btn"
