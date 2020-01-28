@@ -1,50 +1,50 @@
 $(function(){
-  $('#shipping_categorie').change(function() {
-    if ($('#shipping_categorie').val() == "レディース"){
+  $('#shipping_categories').change(function() {
+    if ($('#shipping_categories').val() == "レディース"){
       $('#append_container_child_1').css('display', 'block');
       $('.exhibition__contents__detail').css('height', '317px');
-      $('.exhibition__contents__detail__box__categorie').css('height', '126px');
-  } else if ($('#shipping_categorie').val() == "---"){
+      $('.exhibition__contents__detail__box__categories').css('height', '126px');
+  } else if ($('#shipping_categories').val() == "---"){
       $('#append_container_child_1').css('display', 'none');
-      $('#shipping_categorie_child_1').val('---');
+      $('#shipping_categories_child_1').val('---');
       $('#append_container_grandchild_1').css('display', 'none');
-      $('#shipping_categorie_grandchild_1').val('---');
+      $('#shipping_categories_grandchild_1').val('---');
       $('#append_container_size').css('display', 'none');
-      $('#shipping_categorie_grandchild_1__size').val('---');
+      $('#shipping_categories_grandchild_1__size').val('---');
       $('#append_container_brand').css('display', 'none');
       $('.exhibition__contents__detail').css('height', '261px');
-      $('.exhibition__contents__detail__box__categorie').css('height', '70px');
+      $('.exhibition__contents__detail__box__categories').css('height', '70px');
     }
   });
 
-  $('#shipping_categorie_child_1').change(function() {
-    if ($('#shipping_categorie_child_1').val() == "トップス"){
+  $('#shipping_categories_child_1').change(function() {
+    if ($('#shipping_categories_child_1').val() == "トップス"){
       $('#append_container_grandchild_1').css('display', 'block');
       $('.exhibition__contents__detail').css('height', '373px');
-      $('.exhibition__contents__detail__box__categorie').css('height', '182px');
-  } else if ($('#shipping_categorie_child_1').val() == "---"){
+      $('.exhibition__contents__detail__box__categories').css('height', '182px');
+  } else if ($('#shipping_categories_child_1').val() == "---"){
       $('#append_container_grandchild_1').css('display', 'none');
-      $('#shipping_categorie_grandchild_1').val('---');
+      $('#shipping_categories_grandchild_1').val('---');
       $('#append_container_size').css('display', 'none');
-      $('#shipping_categorie_grandchild_1__size').val('---');
+      $('#shipping_categories_grandchild_1__size').val('---');
       $('#append_container_brand').css('display', 'none');
       $('.exhibition__contents__detail').css('height', '317px');
-      $('.exhibition__contents__detail__box__categorie').css('height', '126px');
+      $('.exhibition__contents__detail__box__categories').css('height', '126px');
     }
   });
 
-    $('#shipping_categorie_grandchild_1').change(function() {
-    if ($('#shipping_categorie_grandchild_1').val() == "Tシャツ/カットソー(半袖/袖なし)"){
+    $('#shipping_categories_grandchild_1').change(function() {
+    if ($('#shipping_categories_grandchild_1').val() == "Tシャツ/カットソー(半袖/袖なし)"){
       $('#append_container_size').css('display', 'block');
       $('#append_container_brand').css('display', 'block');
       $('.exhibition__contents__detail').css('height', '593px');
-      $('.exhibition__contents__detail__box__categorie').css('height', '182px');
-  } else if ($('#shipping_categorie_grandchild_1').val() == "---"){
+      $('.exhibition__contents__detail__box__categories').css('height', '182px');
+  } else if ($('#shipping_categories_grandchild_1').val() == "---"){
       $('#append_container_size').css('display', 'none');
-      $('#shipping_categorie_grandchild_1__size').val('---');
+      $('#shipping_categories_grandchild_1__size').val('---');
       $('#append_container_brand').css('display', 'none');
       $('.exhibition__contents__detail').css('height', '373px');
-      $('.exhibition__contents__detail__box__categorie').css('height', '182px');
+      $('.exhibition__contents__detail__box__categories').css('height', '182px');
     }
   });
   
