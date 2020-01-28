@@ -31,8 +31,9 @@
             = link_to "変更する", "#", class: "buy__main__status__box__method__top__right"
           %p.buy__main__status__box__method__center
             クレジットカード
-            %br ************6756
-            有効期限 10/24
+            %br= @songs[0]['customer_id']
+
+            -# 有効期限 10/24
           .buy__main__status__box__method__bottom
             = image_tag "/images/jcb.jpg", class: "buy__main__status__box__method__bottom__image"
         .buy__main__status__box__delivery
