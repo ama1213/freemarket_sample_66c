@@ -14,10 +14,9 @@
     }
   
     &__top {
-      margin: 0px 190px;
+      margin: 0 auto;
       width: 1020px;
       display: block;
-      position: absolute;
       display: flex;
       justify-content: space-around;
 
@@ -86,14 +85,17 @@
     }
     
     &__bottom {
-      position: absolute;
-      bottom: 20px;
-      margin: 0 190px;
-      
-      &__center {
-        left: 480px;
-        position: relative;
-        bottom: 20px;
+      margin: 0 auto;
+      width: 100vh;
+      margin-left: 190px;
+      &__text{
+        position: absolute;
+        margin: 30px auto 20px;
+        &__center {
+          left: 480px;
+          position: relative;
+          bottom: 20px;
+        }
       }
     }
 
@@ -153,7 +155,7 @@
   
 
   &__top {
-    margin: 0px 190px;
+    margin: 0 auto;
     width: 1020px;
     display: block;
     
