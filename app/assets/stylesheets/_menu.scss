@@ -72,12 +72,11 @@
   }
 
   &__bottom {
-    margin: 8px 0px 0px;
     width: 1020px;
     height: 40px;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    margin: 8px auto 0;
     
     &__left {
       display: flex;
