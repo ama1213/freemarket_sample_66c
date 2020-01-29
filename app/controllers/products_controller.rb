@@ -80,7 +80,7 @@ class ProductsController < ApplicationController
   end
 
   def set_card
-    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+    @card = Card.find_by(user_id: current_user.id).first if Card.find_by(user_id: current_user.id).present?
   end
 
   private
