@@ -39,8 +39,7 @@ class ProductsController < ApplicationController
     @contents = Product.includes(:images).order('created_at DESC')
   end
 
-  def order
-    @product = Product.find(params[:product_id])
+  def set_card
     card = Card.where(user_id: current_user.id).first
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
