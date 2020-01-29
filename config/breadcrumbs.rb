@@ -7,7 +7,7 @@ crumb :show do
 end
 
 crumb :edit do
-  link "プロフィール", users_edit_path
+  link "プロフィール", users_editdata_path
   parent :show
 end
 
