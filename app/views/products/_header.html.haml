@@ -58,24 +58,28 @@
             %li
               = link_to "#",class:"header__bottom__left__brand__parents__parent" do
                 ブランド一覧
-    .header__bottom__right
-      = link_to "#" do
-        .header__bottom__right__comment
-          = icon('far', 'heart', class: 'icon')
-          .header__bottom__right__comment__text
-            いいね！一覧
-      = link_to "#" do
-        .header__bottom__right__news
-          = icon('far', 'bell', class: 'icon')
-          .header__bottom__right__news__text
-            お知らせ
-      = link_to "#" do
-        .header__bottom__right__list
-          = icon('fas', 'check', class: 'icon')
-          .header__bottom__right__list__text
-            やることリスト
-      = link_to "#" do
-        .header__bottom__right__mypage
-          = image_tag"/images/obake.jpg",height:"30px",width:"30px", class:"man"
-          .header__bottom__right__mypage__text
-            マイページ
+
+    - if user_signed_in?
+      .header__bottom__right
+        = link_to "#" do
+          .header__bottom__right__comment
+            = icon('far', 'heart', class: 'icon')
+            .header__bottom__right__comment__text
+              いいね！一覧
+        = link_to "#" do
+          .header__bottom__right__news
+            = icon('far', 'bell', class: 'icon')
+            .header__bottom__right__news__text
+              お知らせ
+        = link_to "#" do
+          .header__bottom__right__list
+            = icon('fas', 'check', class: 'icon')
+            .header__bottom__right__list__text
+              やることリスト
+        = link_to users_show_path do
+          .header__bottom__right__mypage
+            = image_tag"/images/obake.jpg",height:"30px",width:"30px", class:"man"
+            .header__bottom__right__mypage__text
+              マイページ
+    - else
+      = render"login"
