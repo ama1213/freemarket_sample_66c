@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'purchase/index'
+  get 'purchase/done'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions:      'users/sessions',
@@ -23,7 +25,7 @@ Rails.application.routes.draw do
 
   get 'posts/menu', to: 'posts#menu'
 
-  get 'products/order', to: 'products#order'
+  
   get 'products/exhibition_page', to: 'products#exhibition_page'
   get 'search', to: 'products#search'
 
@@ -34,5 +36,9 @@ Rails.application.routes.draw do
   get 'users/payment_method', to: 'users#payment_method'
   
   root 'products#index'
-  resources :products
+  resources :products do
+    get 'order', to: 'products#order'
+    get 'pay', to: 'products#pay'
+    get 'complete', to: 'products#complete'
+  end
 end
