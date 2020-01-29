@@ -1,21 +1,19 @@
 .buy
   %header.buy__header
     .buy__header__box
-      = link_to "/" do
+      = link_to "#" do
         = image_tag "/images/fmarket_logo_red.svg", class: "buy__header__box__image"
   .buy__main
     %h2.buy__main__title
       購入内容の確認
     .buy__main__item
       .buy__main__item__area
-        - @product.images.each do |image|
-          = image_tag image.image_url, class:"buy__main__item__area__image"
-        -# = image_tag "/images/obake.jpg", class: "buy__main__item__area__image"
+        = image_tag "/images/obake.jpg", class: "buy__main__item__area__image"
       .buy__main__item__body
         %p.buy__main__item__body__text
-          = @product.name
+          舞踏会の仮面のレプリカ
         %p.buy__main__item__body__price
-          %span= number_to_currency(@product.price, unit: "¥", format: "%u%n", precision: 0)
+          %span ¥2,999
           %span (税込) 送料込み
     .buy__main__status
       .buy__main__status__box
@@ -23,7 +21,7 @@
           %p.buy__main__status__box__price__text
             支払い金額
           .buy__main__status__box__price__number
-            = number_to_currency(@product.price, unit: "¥", format: "%u%n", precision: 0)
+            ¥2,999
         .buy__main__status__box__point
           %i.fas.fa-square
           %p ポイントを使用（所持ポイント:P0）
@@ -33,15 +31,9 @@
             = link_to "変更する", "#", class: "buy__main__status__box__method__top__right"
           %p.buy__main__status__box__method__center
             クレジットカード
-            - if @default_card_information.blank?
-              %br /
-            - else
-              -#以下カード情報を表示
-              = "**** **** **** " + @default_card_information.last4
-              - exp_month = @default_card_information.exp_month.to_s
-              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-              = exp_month + " / " + exp_year
+            %br= @songs[0]['customer_id']
 
+            -# 有効期限 10/24
           .buy__main__status__box__method__bottom
             = image_tag "/images/jcb.jpg", class: "buy__main__status__box__method__bottom__image"
         .buy__main__status__box__delivery
@@ -49,13 +41,10 @@
             %h3.buy__main__status__box__delivery__top__left 配送先
             = link_to "変更する", "#", class: "buy__main__status__box__delivery__top__right"
           .buy__main__status__box__delivery__bottom
-            = number_to_currency(@product.user.post_number1, unit: "〒", format: "%u%n", precision: 0)
-            = @product.user.municipality1
-            = @product.user.house_number1
-            = @product.user.kanji_family
-            = @product.user.kanji_name
-        = link_to product_pay_path do
-          .buy__main__status__box__btn 購入する
+            〒800-0215
+            %br 福岡県 北九州市小倉南区上曽根新町 11_20 ラフィーエ上曽根
+            下釜 健一
+        %button{type: "submit", class: "buy__main__status__box__btn"} 購入する
   .buy__footer
     .buy__footer__content
       .buy__footer__content__top
