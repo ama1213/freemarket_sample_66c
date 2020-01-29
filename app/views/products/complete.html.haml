@@ -1,0 +1,41 @@
+.finish__header
+  %header.finish__header__box
+    .finish__header__box__like
+      = link_to root_path do
+        = image_tag '/images/fmarket_logo_red.svg', class: 'new__header__box__image'
+
+.finish__main
+  .finish__main__box
+    .finish__main__box__register
+      購入が完了しました
+    .finish__main__box__text
+      ご利用ありがとうございました。
+      %br購入が完了しました。
+    = link_to product_path(@product.id), method: "delete" do
+      .finish__main__box__complete
+        トップページへ
+
+.banner_two
+  = link_to"#" do
+    = image_tag "/images/feeeee.jpg", height:"390px", width:"700px"
+    .banner_two__text
+      スマホでかんたんフリマアプリ
+    .banner_two__comment
+      今すぐ無料ダウンロード!
+    .banner_two__merucari
+      .banner_two__app
+        = link_to"https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
+          = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg", width:"144px", height:"40px"
+      .banner_two__google
+        = link_to"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
+          = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg", width:"144px", height:"40px"
+
+.finish__footer
+  .finish__footer__content
+    .finish__footer__content__top
+      = link_to "プライバシーポリシー", "#", class: "pay__footer__content__top__left"
+      = link_to "アマタツ利用規約", "#", class: "pay__footer__content__top__center"
+      = link_to "特定商取引に関する表記", "#", class: "pay__footer__content__top__right"
+    .finish__footer__content__middle
+      = image_tag "/images/logo_gray.svg"
+    .finish__footer__content__bottom ©︎ Fmarket,inc.

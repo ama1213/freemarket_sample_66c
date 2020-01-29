@@ -34,5 +34,9 @@ Rails.application.routes.draw do
   get 'users/payment_method',       to: 'users#payment_method'
   
   root 'products#index'
-  resources :products
+  resources :products do
+    get 'order', to: 'products#order'
+    get 'pay', to: 'products#pay'
+    get 'complete', to: 'products#complete'
+  end
 end
