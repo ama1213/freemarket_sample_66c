@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product, except: [:index, :new, :create, :order, :pay, :complete]
+  before_action :set_product, except: [:index, :new, :create, :update, :order, :pay, :complete,]
   def index
     @products = Product.includes(:images).order('created_at DESC')
   end
@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
   end
 
   def update
+    @product = Product.find(params[:product_id])
     if @product.update(product_params)
       redirect_to root_path
     else
