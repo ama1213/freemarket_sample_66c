@@ -43,5 +43,6 @@ Rails.application.routes.draw do
     get 'order', to: 'products#order'
     get 'pay', to: 'products#pay'
     get 'complete', to: 'products#complete'
+    post 'update', to: 'products#update'
   end
 end
