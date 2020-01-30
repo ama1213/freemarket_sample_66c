@@ -24,16 +24,24 @@ Rails.application.routes.draw do
 
   get 'posts/menu',                 to: 'posts#menu'
 
-  get 'products/order',             to: 'products#order'
   get 'products/exhibition_page',   to: 'products#exhibition_page'
   get 'search',                     to: 'products#search'
 
   get 'users/editdata',             to: 'users#editdata'
   get 'users/show',                 to: 'users#show'
   get 'users/identity_information', to: 'users#identity_information'
-  get 'users/logout',               to: 'users#logout'
-  get 'users/payment_method',       to: 'users#payment_method'
+  
+  get 'users/logout', to: 'users#logout'
+  get 'users/payment_method', to: 'users#payment_method'
+
+  resources :products do
+    resources :users, only: :new
+  end
   
   root 'products#index'
-  resources :products
+    resources :products do
+    get 'order', to: 'products#order'
+    get 'pay', to: 'products#pay'
+    get 'complete', to: 'products#complete'
+  end
 end
