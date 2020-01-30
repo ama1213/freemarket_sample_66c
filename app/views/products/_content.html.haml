@@ -2,7 +2,7 @@
   =link_to product_path(content.id) do
     .other__profile__group__box__top
       - content.images.each do |image|
-        = image_tag image.image_url, class: "other__profile__group__box__top__image"
+        = image_tag image.image_url.url, class: "other__profile__group__box__top__image"
     .other__profile__group__box__body
       %h3.other__profile__group__box__body__text
         = content.name

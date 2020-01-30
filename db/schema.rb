@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_25_141757) do
+ActiveRecord::Schema.define(version: 2020_01_28_083816) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -58,9 +58,8 @@ ActiveRecord::Schema.define(version: 2020_01_25_141757) do
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "image_url", null: false
     t.bigint "product_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "src"
+    t.string "created_at", default: "0", null: false
+    t.string "updated_at", default: "0", null: false
     t.index ["product_id"], name: "index_images_on_product_id"
   end
 
@@ -106,7 +105,6 @@ ActiveRecord::Schema.define(version: 2020_01_25_141757) do
     t.string "katakana_family", null: false
     t.string "katakana_name", null: false
     t.string "post_number1", null: false
-    t.string "prefecture1", null: false
     t.string "municipality1", null: false
     t.string "house_number1", null: false
     t.string "building_name1"
@@ -122,6 +120,7 @@ ActiveRecord::Schema.define(version: 2020_01_25_141757) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "prefecture_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -8,11 +8,11 @@
       %ul.item__content__photo__main
         - @product.images.each do |image|
           %li.item__content__photo__main__box
-            = image_tag image.image_url, class:"item__content__photo__main__box__image"
+            = image_tag image.image_url.url, class:"item__content__photo__main__box__image"
       %ul.item__content__photo__sub
         - @product.images.each do |image|
           %li.item__content__photo__sub__box
-            = image_tag image.image_url, class:"item__content__photo__sub__box__image"
+            = image_tag image.image_url.url, class:"item__content__photo__sub__box__image"
     %table.item__content__detail
       %tr.item__content__detail__box
         %th.item__content__detail__box__left 出品者

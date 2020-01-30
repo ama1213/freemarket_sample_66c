@@ -31,6 +31,10 @@ Rails.application.routes.draw do
   get 'users/identity_information', to: 'users#identity_information'
   get 'users/logout', to: 'users#logout'
   get 'users/payment_method', to: 'users#payment_method'
+
+  resources :products do
+    resources :users, only: :new
+  end
   
   root 'products#index'
   resources :products

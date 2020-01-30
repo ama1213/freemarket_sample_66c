@@ -5,7 +5,7 @@
     .exhibition__contents
       .exhibition__contents__title
         商品の情報を入力
-      .exhibition__contents__image_upload
+      .exhibition__contents__image_upload#contents_image_container
         .exhibition__contents__image_upload__head
           .exhibition__contents__image_upload__head__left
             出品画像
@@ -13,14 +13,86 @@
             必須
         .exhibition__contents__image_upload__text
           最大10枚までアップロードできます
-        .exhibition__contents__image_upload__container
-          = f.label "", for:"image_label" do
-            .exhibition__contents__image_upload__container__upload_box#image-box__container
-              = f.fields_for :images do |i|
-                = i.file_field :src, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select', id: "image_label"
-              .exhibition__contents__image_upload__container__upload_box__text
-                ドラッグアンドドロップ
-                またはクリックしてファイルをアップロード
+        .exhibition__contents__image_upload__wrap#exhibition_image_box
+          .exhibition__contents__image_upload__wrap__box
+            .exhibition__contents__image_upload__wrap__box__preview#exhibition_image6
+              %img#preview1.preview_image_box/
+              .exhibition_preview_box
+                .exhibition_preview_box__left#exhibition_edit_btn 編集
+                .exhibition_preview_box__right 削除
+            .exhibition__contents__image_upload__wrap__box__preview#exhibition_image7
+              %img#preview2.preview_image_box/
+              .exhibition_preview_box
+                .exhibition_preview_box__left#exhibition_edit_btn 編集
+                .exhibition_preview_box__right 削除
+            .exhibition__contents__image_upload__wrap__box__preview#exhibition_image8
+              %img#preview3.preview_image_box/
+              .exhibition_preview_box
+                .exhibition_preview_box__left#exhibition_edit_btn 編集
+                .exhibition_preview_box__right 削除
+            .exhibition__contents__image_upload__wrap__box__preview#exhibition_image9
+              %img#preview4.preview_image_box/
+              .exhibition_preview_box
+                .exhibition_preview_box__left#exhibition_edit_btn 編集
+                .exhibition_preview_box__right 削除
+            .exhibition__contents__image_upload__wrap__box__preview#exhibition_image10
+              %img#preview5.preview_image_box/
+              .exhibition_preview_box
+                .exhibition_preview_box__left#exhibition_edit_btn 編集
+                .exhibition_preview_box__right 削除
+          .exhibition__contents__image_upload__wrap__input
+            .exhibition__contents__image_upload__wrap__box#wrap_box_after
+              .exhibition__contents__image_upload__wrap__box__preview#exhibition_image1
+                %img#preview6.preview_image_box/
+                .exhibition_preview_box
+                  .exhibition_preview_box__left#exhibition_edit_btn 編集
+                  .exhibition_preview_box__right 削除
+              .exhibition__contents__image_upload__wrap__box__preview#exhibition_image2
+                %img#preview7.preview_image_box/
+                .exhibition_preview_box
+                  .exhibition_preview_box__left#exhibition_edit_btn 編集
+                  .exhibition_preview_box__right 削除
+              .exhibition__contents__image_upload__wrap__box__preview#exhibition_image3
+                %img#preview8.preview_image_box/
+                .exhibition_preview_box
+                  .exhibition_preview_box__left#exhibition_edit_btn 編集
+                  .exhibition_preview_box__right 削除
+              .exhibition__contents__image_upload__wrap__box__preview#exhibition_image4
+                %img#preview9.preview_image_box/
+                .exhibition_preview_box
+                  .exhibition_preview_box__left#exhibition_edit_btn 編集
+                  .exhibition_preview_box__right 削除
+              .exhibition__contents__image_upload__wrap__box__preview#exhibition_image5
+                %img#preview10.preview_image_box/
+                .exhibition_preview_box
+                  .exhibition_preview_box__left#exhibition_edit_btn 編集
+                  .exhibition_preview_box__right 削除
+            .exhibition__contents__image_upload__wrap__input__container#exhibition_wrap_container
+              = f.label "", for:"image_label" do
+                .exhibition__contents__image_upload__wrap__input__container__upload_box#image-box__container
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file1', id: "image_label"
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file2'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file3'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file4'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file5'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file6'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file7'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file8'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file9'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file10'
+                  .exhibition__contents__image_upload__wrap__input__container__upload_box__text
+                    ドラッグアンドドロップ
+                    またはクリックしてファイルをアップロード
       .exhibition__contents__description
         .exhibition__contents__description__head
           .exhibition__contents__description__head__left
@@ -117,7 +189,7 @@
                 必須
             .exhibition__contents__shipping__box__shipping_method__container
               .exhibition__contents__shipping__box__shipping_method__container__wrap
-                - @shipping_method_1 = ["---","未定","らくらくメルカリ便","ゆうメール","レターパック","普通郵便(定形、定形外)","クロネコヤマト","ゆうパック","クリックポスト","ゆうパケット"]
+                - @shipping_method_1 = ["---","未定","らくらくアマタツ便","ゆうメール","レターパック","普通郵便(定形、定形外)","クロネコヤマト","ゆうパック","クリックポスト","ゆうパケット"]
                 = f.select :method, @shipping_method_1, {}, {selected: 0, id: "shipping_method_11", class: "exhibition__contents__shipping__box__shipping_method__container__wrap__select"}
                 = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__shipping_method__container__wrap__icon")
           .exhibition__contents__shipping__box__shipping_method#shipping_method_2
@@ -211,7 +283,7 @@
               プライバシーポリシー
           .exhibition__footer__box__nav__2
             = link_to "#", class: "exhibition__footer__box__nav__link" do
-              メルカリ利用規約
+              タツノリ利用規約
           .exhibition__footer__box__nav__3
             = link_to "#", class: "exhibition__footer__box__nav__link" do
               特定商取引に関する表記
