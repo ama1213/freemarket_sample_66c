@@ -51,12 +51,11 @@
   }
 
   &__bottom {
-    margin: 8px 0px 0px;
     width: 1020px;
     height: 40px;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    margin: 8px auto 0;
 
     &__left {
       display: flex;
@@ -108,9 +107,11 @@
               background-color: red;
               .header__bottom__left__categorie__parents__parent{
                 color: #fff;
+                
               }
               ul{
                 display: block;
+                
               }
             }
             .header__bottom__left__categorie__parents__parent__children {

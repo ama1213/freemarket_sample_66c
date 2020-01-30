@@ -1,0 +1,134 @@
+= render"header"
+
+.search
+  .search__left
+    = form_with(url: search_path, method: :get, local: true, class: "search__left__form") do |f|
+      = f.select :order, ["並び替え"], {}, {class:"search__left__form__top"}
+      %i.fas.fa-chevron-down
+      .search__left__form__body
+        .search__left__form__body__title
+          詳細検索
+        .search__left__form__body__box
+          = f.label :search_key do
+            %i.fas.fa-plus
+            %span キーワードを追加する
+          = f.text_field :search_key, value: @search, class: "search__left__form__body__box__key"
+        .search__left__form__body__box
+          = f.label :search_cat do
+            %i.fas.fa-list-ul
+            %span カテゴリーを選択する
+          = f.select :search_cat, ["すべて"], {}, {class:"search__left__form__body__box__category"}
+          %i.fas.fa-chevron-down
+        .search__left__form__body__box
+          = f.label :search_pri do
+            %i.fas.fa-coins
+            %span 価格
+          = f.select :search_pri, ["選択してください"], {}, {class:"search__left__form__body__box__price"}
+          %i.fas.fa-chevron-down
+          = f.number_field :search_pri, placeholder: "¥ Min", class: "search__left__form__body__box__en"
+          %span.search__left__form__body__box__line ~
+          = f.number_field :search_pri, placeholder: "¥ Max", class: "search__left__form__body__box__en"
+        .search__left__form__body__box
+          %i.fas.fa-star
+          %span 商品の状態
+          .search__left__form__body__box__content
+            .search__left__form__body__box__content__check
+              = f.check_box :search_sta_1, class: "search__left__form__body__box__content__check__area"
+              = f.label :search_sta_1 do
+                %i.fas.fa-check
+                %span すべて
+            .search__left__form__body__box__content__check
+              = f.check_box :search_sta_2, class: "search__left__form__body__box__content__check__area"
+              = f.label :search_sta_2 do
+                %i.fas.fa-check
+                %span 新品、未使用
+            .search__left__form__body__box__content__check
+              = f.check_box :search_sta_3, class: "search__left__form__body__box__content__check__area"
+              = f.label :search_sta_3 do
+                %i.fas.fa-check
+                %span 未使用に近い
+            .search__left__form__body__box__content__check
+              = f.check_box :search_sta_4, class: "search__left__form__body__box__content__check__area"
+              = f.label :search_sta_4 do
+                %i.fas.fa-check
+                %span 目立った傷や汚れなし
+            .search__left__form__body__box__content__check
+              = f.check_box :search_sta_5, class: "search__left__form__body__box__content__check__area"
+              = f.label :search_sta_5 do
+                %i.fas.fa-check
+                %span やや傷や汚れあり
+            .search__left__form__body__box__content__check
+              = f.check_box :search_sta_6, class: "search__left__form__body__box__content__check__area"
+              = f.label :search_sta_6 do
+                %i.fas.fa-check
+                %span 傷や汚れあり
+            .search__left__form__body__box__content__check
+              = f.check_box :search_sta_7, class: "search__left__form__body__box__content__check__area"
+              = f.label :search_sta_7 do
+                %i.fas.fa-check
+                %span 全体的に状態が悪い
+        .search__left__form__body__box
+          %i.fas.fa-truck
+          %span 配送料の負担
+          .search__left__form__body__box__content
+            .search__left__form__body__box__content__check
+              = f.check_box :search_pos_1, class: "search__left__form__body__box__content__check__area"
+              = f.label :search_pos_1 do
+                %i.fas.fa-check
+                %span すべて
+            .search__left__form__body__box__content__check
+              = f.check_box :search_pos_2, class: "search__left__form__body__box__content__check__area"
+              = f.label :search_pos_2 do
+                %i.fas.fa-check
+                %span 着払い(購入者負担)
+            .search__left__form__body__box__content__check
+              = f.check_box :search_pos_3, class: "search__left__form__body__box__content__check__area"
+              = f.label :search_pos_3 do
+                %i.fas.fa-check
+                %span 送料込み(出品者負担)
+        .search__left__form__body__box
+          %i.fas.fa-shopping-cart
+          %span 販売状況
+          .search__left__form__body__box__content
+            .search__left__form__body__box__content__check
+              = f.check_box :search_buy_1, class: "search__left__form__body__box__content__check__area"
+              = f.label :search_buy_1 do
+                %i.fas.fa-check
+                %span すべて
+            .search__left__form__body__box__content__check
+              = f.check_box :search_buy_2, class: "search__left__form__body__box__content__check__area"
+              = f.label :search_buy_2 do
+                %i.fas.fa-check
+                %span 着払い(購入者負担)
+            .search__left__form__body__box__content__check
+              = f.check_box :search_buy_3, class: "search__left__form__body__box__content__check__area"
+              = f.label :search_buy_3 do
+                %i.fas.fa-check
+                %span 送料込み(出品者負担)
+        .search__left__form__body__btn
+          .search__left__form__body__btn__clear クリア
+          = f.submit "完了", class: "search__left__form__body__btn__parfect"
+        
+  .search__right
+    %h2.search__right__title
+      = @search
+      %span の検索結果
+    .search__right__number
+      1 - 
+      = @products.length
+      件表示
+    .search__right__content
+      - @products.each do |product|
+        .search__right__content__box
+          = link_to product_path(product.id) do
+            .search__right__content__box__area
+              - product.images.each do |image|
+                = image_tag image.image_url, class: "search__right__content__box__area__image"
+            .search__right__content__box__body
+              .search__right__content__box__body__name
+                = product.name
+            .search__right__content__box__price
+              = number_to_currency(product.price, unit: "¥", format: "%u%n", precision: 0)
+            .search__right__content__box__heart
+              %i.far.fa-heart
+              7

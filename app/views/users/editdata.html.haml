@@ -1,6 +1,6 @@
 = render partial: "products/header"
 
-- breadcrumb :payment_method
+- breadcrumb :edit
 = render "layouts/breadcrumbs"
 
 .content
@@ -77,16 +77,16 @@
       %li.content__left__list_bottom__title
         設定
       = link_to users_editdata_path do
-        %li.content__left__list_bottom__menu
-          .content__left__list_bottom__menu__text
+        %li.content__left__list_top__title
+          .content__left__list_top__title__text
             プロフィール
       = link_to"#" do
         %li.content__left__list_bottom__menu
           .content__left__list_bottom__menu__text
             発送元・お届け先住所変更
       = link_to users_payment_method_path do
-        %li.content__left__list_top__title
-          .content__left__list_top__title__text
+        %li.content__left__list_bottom__menu
+          .content__left__list_bottom__menu__text
             支払い方法変更
       = link_to"#" do
         %li.content__left__list_bottom__menu
@@ -105,28 +105,18 @@
           .content__left__list_bottom__menu__text
             ログアウト
 
-  .content__payment_method
-    .content__payment_method__title
-      支払い方法
-    .content__payment_method__item
-      .content__payment_method__item__list
-        .content__payment_method__item__list__top
-          クレジットカード一覧
-        %ul.content__payment_method__item__list__data
-          %li
-            .content__payment_method__item__list__data__1
-              .content__payment_method__item__list__data__1__card
-                = image_tag "/images/jcb.jpg", height:"20px", width:"26px"
-                %button{type: "submit", class: "content__payment_method__item__list__data__1__card__btn"}
-                  削除する
-              .content__payment_method__item__list__data__1__password
-                ************1234
-              .content__payment_method__item__list__data__1__date
-                12/24
-      .content__payment_method__item__list__bottom
-        = link_to"#", class:"content__payment_method__item__list__bottom__link" do
-          支払い方法について
-          = icon('fas', 'chevron-right', class: "content__payment_method__item__list__bottom__icon")
+  .content__right
+    .content__right_title
+      プロフィール
+    .content__right_user
+      .content__right_user__image
+        = image_tag "/images/obake.jpg", height:"60px", width:"60px", class: "content__right__user__link__data__icon"
+      .content__right_user__input
+        %input{type: "text", placeholder: "例）AYA☆セール中", value: "天辰誠一郎", class: "textbox"}
+    .content__right_contents
+      .content__right_contents__form
+        %textarea{placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class: "textarea_decorate"}
+        %input{type: "submit", value: "変更する", id: "submit_button"}/
 
 .banner
   = link_to"#" do

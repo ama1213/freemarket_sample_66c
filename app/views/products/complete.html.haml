@@ -1,41 +1,19 @@
-.newuser
-  .newuser__logo
-    = link_to "/" do
-      = image_tag "/images/fmarket_logo_red.svg"
-  .newuser__sign__five
-    %ul.newuser__sign__five__list
-      %li
-        会員情報
-        %br/
-        .box-one
-      %li
-        電話番号情報
-        %br/
-        .box-two
-      %li
-        お届け先住所入力
-        %br/
-        .box-three
-      %li
-        支払い方法
-        %br/
-        .box-four
-      %li.red
-        完了
-        %br/
-        .box-five
-    .newuser__sign__five__boder__five
+.finish__header
+  %header.finish__header__box
+    .finish__header__box__like
+      = link_to root_path do
+        = image_tag '/images/fmarket_logo_red.svg', class: 'new__header__box__image'
 
-.finish
-  .finish__box
-    .finish__box__register
-      会員登録完了
-    .finish__box__text
-      ありがとうございます。
-      %br会員登録が完了しました。
-    = link_to "/" do
-      .finish__box__start
-        アマタツをはじめる
+.finish__main
+  .finish__main__box
+    .finish__main__box__register
+      購入が完了しました
+    .finish__main__box__text
+      ご利用ありがとうございました。
+      %br購入が完了しました。
+    = link_to product_path(@product.id), method: "delete" do
+      .finish__main__box__complete
+        トップページへ
 
 .banner_two
   = link_to"#" do

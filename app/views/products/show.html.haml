@@ -88,7 +88,7 @@
     = link_to product_path(@product.id), method: "delete", class: "item__buy-btn" do
       この商品を削除する
   - else
-    = link_to "#", class: "item__buy-btn" do
+    = link_to product_order_path(params[:id]), class: "item__buy-btn" do
       購入画面へ進む
   - if @product.method == "ゆうゆうアマタツ便"
     %p.item__merubin この商品はゆうゆうアマタツ便を使用しているため、アプリからのみ購入できます。
@@ -176,9 +176,10 @@
       %i.fas.fa-chevron-right
     %li
       = link_to "#", class: "bottom-tree__box__right" do
-        %span かわいいワンピース
+        %span
+          = @product.name
 
 .bottom-area
-  = link_to "購入画面に進む", "#", class: "bottom-area__btn"
+  = link_to "購入画面に進む", product_order_path(params[:id]), class: "bottom-area__btn"
 
 = render partial: "products/footer"

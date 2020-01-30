@@ -2,8 +2,22 @@
   box-sizing: border-box;
   text-decoration: none;
 }
-
-.finish {
+.finish__header{
+  &__box{
+    height: 128px;
+    text-align: center;
+    &__like{
+      padding-top: 40px;
+      margin: 0 8px 0 0;
+      line-height: 49px;
+      &__image{
+        width: 185px;
+        height: 49px;
+      }
+    }
+  }
+}
+.finish__main{
   width: 100vw;
   &__box{
     width: 700px;
@@ -24,7 +38,7 @@
       margin: 50px 0;
     }
 
-    &__start {
+    &__complete {
       display: block;
       background-color: red;
       width: 343px;
