@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product, except: [:index, :new, :create]
+  before_action :set_product, except: [:index, :new, :create, :order, :pay, :complete]
   def index
     @products = Product.includes(:images).order('created_at DESC')
   end
@@ -36,6 +36,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+
     @contents = Product.includes(:images).order('created_at DESC')
   end
 
@@ -76,7 +77,7 @@ class ProductsController < ApplicationController
   end
 
   def set_product
-    @product = Product.find_by(params[:id])
+    @product = Product.find(params[:id])
   end
 
   private
