@@ -3,7 +3,7 @@
     .item-index__box__container__content__products__product
       .item-index__box__container__content__products__product__area
         - product.images.each do |image|
-          = image_tag image.image_url, class:"item-index__box__container__content__products__product__area__image"
+          = image_tag image.image_url.url, class:"item-index__box__container__content__products__product__area__image"
         .item-index__box__container__content__products__product__area__price
           = number_to_currency(product.price, unit: "¥", format: "%u%n", precision: 0)
       .item-index__box__container__content__products__product__body
