@@ -9,7 +9,7 @@
     .buy__main__item
       .buy__main__item__area
         - @product.images.each do |image|
-          = image_tag image.image_url, class:"buy__main__item__area__image"
+          = image_tag image.image_url.url, class:"buy__main__item__area__image"
       .buy__main__item__body
         %p.buy__main__item__body__text
           = @product.name
