@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:destroy, :show]
+  before_action :set_product, only: [:destroy, :show, :edit, :update]
   def index
     @products = Product.includes(:images).order('created_at DESC')
   end
