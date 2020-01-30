@@ -114,7 +114,6 @@ ActiveRecord::Schema.define(version: 2020_01_29_023651) do
     t.string "katakana_family", null: false
     t.string "katakana_name", null: false
     t.string "post_number1", null: false
-    t.string "prefecture_id", null: false
     t.string "municipality1", null: false
     t.string "house_number1", null: false
     t.string "building_name1"

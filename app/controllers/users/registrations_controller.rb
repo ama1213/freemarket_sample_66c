@@ -150,6 +150,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def done
     sign_in User.find(session[:id]) unless user_signed_in?
+    redirect_to root_path
   end
 
   # GET /resource/edit

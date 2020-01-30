@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get 'cards',                    to: 'users/registrations#new_card'
     post 'cards',                   to: 'users/registrations#create_card'
     get 'users/login',              to: 'users/sessions#new'
+    get 'users/done',               to: 'users/registrations#done'
   end
 
   get 'comments/new',               to: 'comments#new'
