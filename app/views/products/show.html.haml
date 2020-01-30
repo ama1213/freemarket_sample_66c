@@ -74,7 +74,7 @@
         %th.item__content__detail__box__left 配送元地域
         %td.item__content__detail__box__right
           = link_to "#" do
-            = @product.area
+            = Prefecture.find(@product.area).name
       %tr.item__content__detail__box
         %th.item__content__detail__box__left 発送日の目安
         %td.item__content__detail__box__right
@@ -87,6 +87,8 @@
   - if user_signed_in? && @product.user_id == current_user.id
     = link_to product_path(@product.id), method: "delete", class: "item__buy-btn" do
       この商品を削除する
+    = link_to edit_product_path(@product.id), class: "item__buy-btn item__buy-btn__edit-btn" do
+      この商品を編集する
   - else
     = link_to product_order_path(params[:id]), class: "item__buy-btn" do
       購入画面へ進む

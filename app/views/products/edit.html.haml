@@ -1,0 +1,295 @@
+.exhibition
+  .exhibition__header
+    = image_tag "/images/fmarket_logo_red.svg", height: "49px", width: "185px", class: "exhibition__header__icon"
+  = form_for @product, url: product_update_path(@product.id), method: 'post', html:{class:"exhibition__contents"} do |f|
+    .exhibition__contents
+      .exhibition__contents__title
+        商品の情報を入力
+      .exhibition__contents__image_upload#contents_image_container
+        .exhibition__contents__image_upload__head
+          .exhibition__contents__image_upload__head__left
+            出品画像
+          .exhibition__contents__image_upload__head__right.label_required
+            必須
+        .exhibition__contents__image_upload__text
+          最大10枚までアップロードできます
+        .exhibition__contents__image_upload__wrap#exhibition_image_box
+          .exhibition__contents__image_upload__wrap__box
+            .exhibition__contents__image_upload__wrap__box__preview#exhibition_image6
+              %img#preview1.preview_image_box/
+              .exhibition_preview_box
+                .exhibition_preview_box__left#exhibition_edit_btn 編集
+                .exhibition_preview_box__right 削除
+            .exhibition__contents__image_upload__wrap__box__preview#exhibition_image7
+              %img#preview2.preview_image_box/
+              .exhibition_preview_box
+                .exhibition_preview_box__left#exhibition_edit_btn 編集
+                .exhibition_preview_box__right 削除
+            .exhibition__contents__image_upload__wrap__box__preview#exhibition_image8
+              %img#preview3.preview_image_box/
+              .exhibition_preview_box
+                .exhibition_preview_box__left#exhibition_edit_btn 編集
+                .exhibition_preview_box__right 削除
+            .exhibition__contents__image_upload__wrap__box__preview#exhibition_image9
+              %img#preview4.preview_image_box/
+              .exhibition_preview_box
+                .exhibition_preview_box__left#exhibition_edit_btn 編集
+                .exhibition_preview_box__right 削除
+            .exhibition__contents__image_upload__wrap__box__preview#exhibition_image10
+              %img#preview5.preview_image_box/
+              .exhibition_preview_box
+                .exhibition_preview_box__left#exhibition_edit_btn 編集
+                .exhibition_preview_box__right 削除
+          .exhibition__contents__image_upload__wrap__input
+            .exhibition__contents__image_upload__wrap__box#wrap_box_after
+              .exhibition__contents__image_upload__wrap__box__preview#exhibition_image1
+                %img#preview6.preview_image_box/
+                .exhibition_preview_box
+                  .exhibition_preview_box__left#exhibition_edit_btn 編集
+                  .exhibition_preview_box__right 削除
+              .exhibition__contents__image_upload__wrap__box__preview#exhibition_image2
+                %img#preview7.preview_image_box/
+                .exhibition_preview_box
+                  .exhibition_preview_box__left#exhibition_edit_btn 編集
+                  .exhibition_preview_box__right 削除
+              .exhibition__contents__image_upload__wrap__box__preview#exhibition_image3
+                %img#preview8.preview_image_box/
+                .exhibition_preview_box
+                  .exhibition_preview_box__left#exhibition_edit_btn 編集
+                  .exhibition_preview_box__right 削除
+              .exhibition__contents__image_upload__wrap__box__preview#exhibition_image4
+                %img#preview9.preview_image_box/
+                .exhibition_preview_box
+                  .exhibition_preview_box__left#exhibition_edit_btn 編集
+                  .exhibition_preview_box__right 削除
+              .exhibition__contents__image_upload__wrap__box__preview#exhibition_image5
+                %img#preview10.preview_image_box/
+                .exhibition_preview_box
+                  .exhibition_preview_box__left#exhibition_edit_btn 編集
+                  .exhibition_preview_box__right 削除
+            .exhibition__contents__image_upload__wrap__input__container#exhibition_wrap_container
+              = f.label "", for:"image_label" do
+                .exhibition__contents__image_upload__wrap__input__container__upload_box#image-box__container
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file1', id: "image_label"
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file2'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file3'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file4'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file5'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file6'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file7'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file8'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file9'
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url, type: "file", class: 'exhibition__contents__image_upload__container__upload_box__file_select js_file js_file10'
+                  .exhibition__contents__image_upload__wrap__input__container__upload_box__text
+                    ドラッグアンドドロップ
+                    またはクリックしてファイルをアップロード
+      .exhibition__contents__description
+        .exhibition__contents__description__head
+          .exhibition__contents__description__head__left
+            商品名
+          .exhibition__contents__description__head__right.label_required
+            必須
+        .exhibition__contents__description__input  
+          = f.text_field :name, class:"exhibition__contents__description__input__form", placeholder:"商品名（必須 40文字まで）", value: @product.name
+        .exhibition__contents__description__box
+          .exhibition__contents__description__box__left
+            商品の説明
+          .exhibition__contents__description__box__right.label_required
+            必須
+        = f.text_area :detail, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class:"exhibition__contents__description__box__textarea", value: @product.detail
+      .exhibition__contents__detail
+        .exhibition__contents__detail__head
+          商品の詳細
+        .exhibition__contents__detail__box
+          .exhibition__contents__detail__box__categories
+            .exhibition__contents__detail__box__categories__head
+              .exhibition__contents__detail__box__categories__head__left
+                カテゴリー
+              .exhibition__contents__detail__box__categories__head__right.label_required
+                必須
+            .exhibition__contents__detail__box__categories__container
+              .exhibition__contents__detail__box__categories__container__wrap
+                - @shipping_categories = ["---","レディース","メンズ","ベビー・キッズ","インテリア・住まい・小物","本・音楽・ゲーム","おもちゃ・ホビー・グッズ","コスメ・香水・美容","家電・スマホ・カメラ","スポーツ・レジャー","ハンドメイド","チケット","自転車・オートバイ","その他"]
+                = f.select :category_parents, @shipping_categories, {}, {selected: 0, id: "shipping_categories", class: "exhibition__contents__shipping__box__shipping_categories__container__wrap__select", value: @product.category_parents}
+                = icon('fas', 'chevron-down', class: "exhibition__contents__detail__box__categories__container__wrap__icon")
+            .exhibition__contents__detail__box__categories__container#append_container_child_1
+              .exhibition__contents__detail__box__categories__container__wrap
+                - @shipping_categories_child_1 = ["---","トップス","ジャケット/アウター","パンツ","スカート","ワンピース","靴","ルームウェア/パジャマ","レッグウェア","帽子","バッグ","アクセサリー","ヘアアクセサリー","小物","時計","ウィッグ/エクステ","浴衣/水着","スーツ/フォーマル/ドレス","マタニティ","その他"]
+                = f.select :category_children, @shipping_categories_child_1, {}, {selected: 0, id: "shipping_categories_child_1", class: "exhibition__contents__shipping__box__shipping_categories__container__wrap__select", value: @product.category_children}
+                = icon('fas', 'chevron-down', class: "exhibition__contents__detail__box__categories__container__wrap__icon")
+            .exhibition__contents__detail__box__categories__container#append_container_grandchild_1
+              .exhibition__contents__detail__box__categories__container__wrap
+                - @shipping_categories_grandchild_1 = ["---","Tシャツ/カットソー(半袖/袖なし)","Tシャツ/カットソー(七部/長袖)","シャツ/ブラウス(半袖/袖なし)","シャツ/ブラウス(七部/長袖)","ポロシャツ","キャミソール","タンクトップ","ホルターネック","ニット/セーター","チュニック","カーディガン/ボレロ","アンサンブル","ベスト/ジレ","パーカー","トレーナー/スウェット","ベアトップ/チューブトップ","ジャージ","その他"]
+                = f.select :category_grand_children, @shipping_categories_grandchild_1, {}, {selected: 0, id: "shipping_categories_grandchild_1", class: "exhibition__contents__shipping__box__shipping_categories__container__wrap__select", value: @product.category_grand_children}
+                = icon('fas', 'chevron-down', class: "exhibition__contents__detail__box__categories__container__wrap__icon")
+          .exhibition__contents__detail__box__size#append_container_size
+            .exhibition__contents__detail__box__size__head
+              .exhibition__contents__detail__box__size__head__left
+                サイズ
+              .exhibition__contents__detail__box__size__head__right.label_required
+                必須
+            .exhibition__contents__detail__box__status__container
+              .exhibition__contents__detail__box__status__container__wrap
+                - @shipping_categories_grandchild_1__size = ["---","XXS以下","XS(SS)","S","M","L","XL(LL)","2XL(3L)","3XL(4L)","4XL(5L)以上","FREE SIZE"]
+                = f.select :size, @shipping_categories_grandchild_1__size, {}, {selected: 0, id:"shipping_categories_grandchild_1__size", class: "exhibition__contents__shipping__box__shipping_categories__container__wrap__select", value: @product.size}
+                = icon('fas', 'chevron-down', class: "exhibition__contents__detail__box__categories__container__wrap__icon")
+          .exhibition__contents__detail__box__brand#append_container_brand
+            .exhibition__contents__detail__box__brand__head
+              .exhibition__contents__detail__box__brand__head__left
+                ブランド
+              .exhibition__contents__detail__box__brand__head__right.label_any
+                任意
+            .exhibition__contents__detail__box__brand__container
+              .exhibition__contents__detail__box__brand__container__wrap
+                = f.text_field :brand, placeholder: "例）シャネル", class: "exhibition__contents__detail__box__brand__container__wrap__input", value: @product.brand
+          .exhibition__contents__detail__box__status
+            .exhibition__contents__detail__box__status__head
+              .exhibition__contents__detail__box__status__head__left
+                商品の状態
+              .exhibition__contents__detail__box__status__head__right.label_required
+                必須
+            .exhibition__contents__detail__box__status__container
+              .exhibition__contents__detail__box__status__container__wrap
+                - @shipping_categories_status = ["---","新品、未使用","未使用に近い","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"]
+                = f.select :status, @shipping_categories_status, {}, {selected: 0, id: "shipping_categories_status", class: "exhibition__contents__detail__box__status__container__wrap__select", value: @product.status}
+                = icon('fas', 'chevron-down', class: "exhibition__contents__detail__box__status__container__wrap__icon")
+      .exhibition__contents__shipping
+        .exhibition__contents__shipping__head
+          発送について
+          = link_to "#" do
+            .exhibition__contents__shipping__head__question
+              ?
+        .exhibition__contents__shipping__box
+          .exhibition__contents__shipping__box__shipping_charges
+            .exhibition__contents__shipping__box__shipping_charges__head
+              .exhibition__contents__shipping__box__shipping_charges__head__left
+                配送料の負担
+              .exhibition__contents__shipping__box__shipping_charges__head__right.label_required
+                必須
+            .exhibition__contents__shipping__box__shipping_charges__container
+              .exhibition__contents__shipping__box__shipping_charges__container__wrap
+                - @shipping_charges = ["---","送料込み(出品者負担)","着払い(購入者負担)"]
+                = f.select :postage, @shipping_charges, {}, {selected: 0, id: "shipping_charges", class: "exhibition__contents__shipping__box__shipping_charges__container__wrap__select", value: @product.postage}
+                = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__shipping_charges__container__wrap__icon")
+          .exhibition__contents__shipping__box__shipping_method#shipping_method_1
+            .exhibition__contents__shipping__box__shipping_method__head
+              .exhibition__contents__shipping__box__shipping_method__head__left
+                配送の方法
+              .exhibition__contents__shipping__box__shipping_method__head__right.label_required
+                必須
+            .exhibition__contents__shipping__box__shipping_method__container
+              .exhibition__contents__shipping__box__shipping_method__container__wrap
+                - @shipping_method_1 = ["---","未定","らくらくアマタツ便","ゆうメール","レターパック","普通郵便(定形、定形外)","クロネコヤマト","ゆうパック","クリックポスト","ゆうパケット"]
+                = f.select :method, @shipping_method_1, {}, {selected: 0, id: "shipping_method_11", class: "exhibition__contents__shipping__box__shipping_method__container__wrap__select", value: @product.method}
+                = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__shipping_method__container__wrap__icon")
+          .exhibition__contents__shipping__box__shipping_method#shipping_method_2
+            .exhibition__contents__shipping__box__shipping_method__head
+              .exhibition__contents__shipping__box__shipping_method__head__left
+                配送の方法
+              .exhibition__contents__shipping__box__shipping_method__head__right.label_required
+                必須
+            .exhibition__contents__shipping__box__shipping_method__container
+              .exhibition__contents__shipping__box__shipping_method__container__wrap
+                - @shipping_method_2 = ["---","未定","クロネコヤマト","ゆうパック","ゆうメール"]
+                = f.select :method, @shipping_method_2, {}, {selected: 0, id: "shipping_method_22", class: "exhibition__contents__shipping__box__shipping_method__container__wrap__select", value: @product.method}
+                = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__shipping_method__container__wrap__icon")
+          .exhibition__contents__shipping__box__area
+            .exhibition__contents__shipping__box__area__head
+              .exhibition__contents__shipping__box__area__head__left
+                発送先の地域
+              .exhibition__contents__shipping__box__area__head__right.label_required
+                必須
+            .exhibition__contents__shipping__box__area__container
+              .exhibition__contents__shipping__box__area__container__wrap
+                = f.collection_select :area, Prefecture.all, :id, :name, prompt: "---", class: "exhibition__contents__shipping__box__area__container__wrap__input", value: @product.area
+                = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__area__container__wrap__icon")
+          .exhibition__contents__shipping__box__days
+            .exhibition__contents__shipping__box__days__head
+              .exhibition__contents__shipping__box__days__head__left
+                発送までの日数
+              .exhibition__contents__shipping__box__days__head__right.label_required
+                必須
+            .exhibition__contents__shipping__box__days__container
+              .exhibition__contents__shipping__box__days__container__wrap
+                - @shipping_days = ["---","1~2日で発送","2~3日で発送","4~7日で発送"]
+                = f.select :situation, @shipping_days, {}, {selected: 0, id: "shipping_days", class: "exhibition__contents__shipping__box__days__container__wrap__select", value: @product.situation}
+                = icon('fas', 'chevron-down', class: "exhibition__contents__shipping__box__days__container__wrap__icon")
+      .exhibition__contents__price
+        .exhibition__contents__price__head
+          販売価格(300〜9,999,999)
+          = link_to "#" do
+            .exhibition__contents__price__head__question
+              ?
+        .exhibition__contents__price__box
+          .exhibition__contents__price__box__price_input
+            .exhibition__contents__price__box__price_input__head
+              .exhibition__contents__price__box__price_input__head__left
+                価格
+              .exhibition__contents__price__box__price_input__head__right.label_required
+                必須
+            .exhibition__contents__price__box__price_input__container
+              .exhibition__contents__price__box__price_input__container__wrap
+                ¥
+                .exhibition__contents__price__box__price_input__container__wrap__item
+                  = f.text_field :price, placeholder: "例）300", id: "input_price", class: "exhibition__contents__price__box__price_input__container__wrap__item__number", value: @product.price
+          .exhibition__contents__price__box__tax
+            .exhibition__contents__price__box__tax__left
+              販売手数料 (10%)
+            .exhibition__contents__price__box__tax__right#price_tax
+              &#8211;
+          .exhibition__contents__price__box__gains
+            .exhibition__contents__price__box__gains__left
+              販売利益
+            .exhibition__contents__price__box__gains__right#final_price
+              &#8212;
+      .exhibition__contents__btn_box
+        .exhibition__contents__btn_box__text
+          %p
+            = link_to "#", class:"exhibition__contents__btn_box__text__link" do
+              禁止されている出品
+            、
+            = link_to "#", class:"exhibition__contents__btn_box__text__link" do
+              行為
+            を必ずご確認ください。
+          %p
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            = link_to "#", class:"exhibition__contents__btn_box__text__link" do
+              偽ブランドの販売
+            は犯罪であり処罰される可能性があります。
+          %p  
+            また、出品をもちまして
+            = link_to "#", class:"exhibition__contents__btn_box__text__link" do
+              加盟店規約
+            に同意したことになります。
+        = f.submit "編集する", class: "exhibition__contents__btn_box__red"
+        = link_to "#" do
+          .exhibition__contents__btn_box__gray
+            もどる
+    .exhibition__footer
+      .exhibition__footer__box
+        .exhibition__footer__box__nav
+          .exhibition__footer__box__nav__1
+            = link_to "#", class: "exhibition__footer__box__nav__link" do
+              プライバシーポリシー
+          .exhibition__footer__box__nav__2
+            = link_to "#", class: "exhibition__footer__box__nav__link" do
+              タツノリ利用規約
+          .exhibition__footer__box__nav__3
+            = link_to "#", class: "exhibition__footer__box__nav__link" do
+              特定商取引に関する表記
+        .exhibition__footer__box__logo
+          = link_to "#" do
+            = image_tag "/images/logo_gray.svg", height: "65px", width: "80px", class: "exhibition__footer__box__logo__icon"
+        %p
+          %small
+            © Fmarket, Inc.
