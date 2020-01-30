@@ -142,5 +142,10 @@
       = link_to"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
         = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg",width:"144px",height:"40px")
 
-= render "layouts/footer_sell_btn"
+- if user_signed_in?
+  = render "layouts/footer_sell_btn"
+- else
+  
+
+
 = render"footer"
