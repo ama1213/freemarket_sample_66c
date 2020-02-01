@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product, except: [:index, :new, :create, :update, :order, :pay, :complete,]
+  before_action :set_product, except: [:index, :new, :create, :update, :search, :order, :pay, :complete,]
   def index
     @products = Product.includes(:images).order('created_at DESC')
   end
@@ -37,22 +37,25 @@ class ProductsController < ApplicationController
   end
 
   def show
-
     @contents = Product.includes(:images).order('created_at DESC')
   end
 
   def order
-    @product = Product.find(params[:product_id])
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
-      #登録された情報がない場合にカード登録画面に移動
-      redirect_to controller: "users/registrations", action: "new_card"
+    if user_signed_in?
+      @product = Product.find(params[:product_id])
+      card = Card.where(user_id: current_user.id).first
+      if card.blank?
+        #登録された情報がない場合にカード登録画面に移動
+        redirect_to controller: "users/registrations", action: "new_card"
+      else
+        Payjp.api_key = ENV['PAYJP_ACCESS_KEY']
+        #保管した顧客IDでpayjpから情報取得
+        customer = Payjp::Customer.retrieve(card.customer_id)
+        #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
+        @default_card_information = customer.cards.retrieve(card.card_id)
+      end
     else
-      Payjp.api_key = ENV['PAYJP_ACCESS_KEY']
-      #保管した顧客IDでpayjpから情報取得
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      redirect_to users_login_path
     end
   end
 
