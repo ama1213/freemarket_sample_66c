@@ -123,7 +123,7 @@
           = link_to product_path(product.id) do
             .search__right__content__box__area
               - product.images.each do |image|
-                = image_tag image.image_url, class: "search__right__content__box__area__image"
+                = image_tag image.image_url.url, class: "search__right__content__box__area__image"
             .search__right__content__box__body
               .search__right__content__box__body__name
                 = product.name
